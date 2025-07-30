@@ -1,0 +1,577 @@
+[2025-07-26T22:03:41.608+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-26T22:03:41.642+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: drift_monitoring_pipeline.check_drift scheduled__2025-07-25T00:00:00+00:00 [queued]>
+[2025-07-26T22:03:41.650+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: drift_monitoring_pipeline.check_drift scheduled__2025-07-25T00:00:00+00:00 [queued]>
+[2025-07-26T22:03:41.651+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2025-07-26T22:03:41.664+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): check_drift> on 2025-07-25 00:00:00+00:00
+[2025-07-26T22:03:41.676+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=526) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-26T22:03:41.675+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'drift_monitoring_pipeline', 'check_drift', 'scheduled__2025-07-25T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/drift_monitoring.py', '--cfg-path', '/tmp/tmph20uzdt0']
+[2025-07-26T22:03:41.678+0000] {standard_task_runner.py:63} INFO - Started process 528 to run task
+[2025-07-26T22:03:41.678+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask check_drift
+[2025-07-26T22:03:41.697+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-26T22:03:41.743+0000] {task_command.py:426} INFO - Running <TaskInstance: drift_monitoring_pipeline.check_drift scheduled__2025-07-25T00:00:00+00:00 [running]> on host 56b9bc5380c1
+[2025-07-26T22:03:41.827+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='salima.mamma25@gmail.com' AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='drift_monitoring_pipeline' AIRFLOW_CTX_TASK_ID='check_drift' AIRFLOW_CTX_EXECUTION_DATE='2025-07-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-25T00:00:00+00:00'
+[2025-07-26T22:03:41.829+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-26T22:03:41.842+0000] {logging_mixin.py:188} WARNING - /opt/***/dags/drift_monitoring.py:38 FutureWarning: ``mlflow.tracking.client.MlflowClient.get_latest_versions`` is deprecated since 2.9.0. Model registry stages will be removed in a future major release. To learn more about the deprecation of model registry stages, see our migration guide here: https://mlflow.org/docs/latest/model-registry.html#migrating-from-stages
+[2025-07-26T22:03:41.928+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-26T22:03:41.929+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/drift_monitoring.py", line 41, in check_drift
+    raise Exception("🚫 Aucun modèle en production trouvé")
+Exception: 🚫 Aucun modèle en production trouvé
+[2025-07-26T22:03:41.944+0000] {taskinstance.py:1205} INFO - Marking task as FAILED. dag_id=drift_monitoring_pipeline, task_id=check_drift, execution_date=20250725T000000, start_date=20250726T220341, end_date=20250726T220341
+[2025-07-26T22:03:41.956+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/email.py:154 RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+[2025-07-26T22:03:41.957+0000] {configuration.py:1050} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-07-26T22:03:41.958+0000] {email.py:271} INFO - Email alerting: attempt 1
+[2025-07-26T22:03:41.966+0000] {configuration.py:1050} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-07-26T22:03:41.967+0000] {email.py:271} INFO - Email alerting: attempt 1
+[2025-07-26T22:03:41.968+0000] {taskinstance.py:879} ERROR - Failed to send email to: ['salima.mamma25@gmail.com']
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2476, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2663, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2686, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/drift_monitoring.py", line 41, in check_drift
+    raise Exception("🚫 Aucun modèle en production trouvé")
+Exception: 🚫 Aucun modèle en production trouvé
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 1063, in _email_alert
+    send_email(task.email, subject, html_content)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+           ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 273, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 317, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 877, in _handle_failure
+    task_instance.email_alert(error, failure_context["task"])
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3148, in email_alert
+    _email_alert(task_instance=self, exception=exception, task=task)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 1065, in _email_alert
+    send_email(task.email, subject, html_content_err)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+           ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 273, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 317, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+[2025-07-26T22:03:41.984+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 7 for task check_drift (🚫 Aucun modèle en production trouvé; 528)
+[2025-07-26T22:03:42.013+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-26T22:03:42.030+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-26T22:03:42.032+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-07-26T22:12:34.415+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-26T22:12:34.448+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: drift_monitoring_pipeline.check_drift scheduled__2025-07-25T00:00:00+00:00 [queued]>
+[2025-07-26T22:12:34.456+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: drift_monitoring_pipeline.check_drift scheduled__2025-07-25T00:00:00+00:00 [queued]>
+[2025-07-26T22:12:34.457+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2025-07-26T22:12:34.472+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): check_drift> on 2025-07-25 00:00:00+00:00
+[2025-07-26T22:12:34.483+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=472) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-26T22:12:34.482+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'drift_monitoring_pipeline', 'check_drift', 'scheduled__2025-07-25T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/drift_monitoring.py', '--cfg-path', '/tmp/tmpbkqg1ab2']
+[2025-07-26T22:12:34.485+0000] {standard_task_runner.py:63} INFO - Started process 474 to run task
+[2025-07-26T22:12:34.485+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask check_drift
+[2025-07-26T22:12:34.502+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-26T22:12:34.543+0000] {task_command.py:426} INFO - Running <TaskInstance: drift_monitoring_pipeline.check_drift scheduled__2025-07-25T00:00:00+00:00 [running]> on host 85e298e94f67
+[2025-07-26T22:12:34.629+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='salima.mamma25@gmail.com' AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='drift_monitoring_pipeline' AIRFLOW_CTX_TASK_ID='check_drift' AIRFLOW_CTX_EXECUTION_DATE='2025-07-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-25T00:00:00+00:00'
+[2025-07-26T22:12:34.631+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-26T22:12:34.644+0000] {logging_mixin.py:188} WARNING - /opt/***/dags/drift_monitoring.py:40 FutureWarning: ``mlflow.tracking.client.MlflowClient.get_latest_versions`` is deprecated since 2.9.0. Model registry stages will be removed in a future major release. To learn more about the deprecation of model registry stages, see our migration guide here: https://mlflow.org/docs/latest/model-registry.html#migrating-from-stages
+[2025-07-26T22:12:34.740+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-26T22:12:34.741+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/drift_monitoring.py", line 48, in check_drift
+    raise Exception("🚫 Aucun modèle en production trouvé (ni stage ni alias)")
+Exception: 🚫 Aucun modèle en production trouvé (ni stage ni alias)
+[2025-07-26T22:12:34.756+0000] {taskinstance.py:1205} INFO - Marking task as FAILED. dag_id=drift_monitoring_pipeline, task_id=check_drift, execution_date=20250725T000000, start_date=20250726T221234, end_date=20250726T221234
+[2025-07-26T22:12:34.771+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/email.py:154 RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+[2025-07-26T22:12:34.772+0000] {configuration.py:1050} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-07-26T22:12:34.773+0000] {email.py:271} INFO - Email alerting: attempt 1
+[2025-07-26T22:12:34.780+0000] {configuration.py:1050} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-07-26T22:12:34.781+0000] {email.py:271} INFO - Email alerting: attempt 1
+[2025-07-26T22:12:34.782+0000] {taskinstance.py:879} ERROR - Failed to send email to: ['salima.mamma25@gmail.com']
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2476, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2663, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2686, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/drift_monitoring.py", line 48, in check_drift
+    raise Exception("🚫 Aucun modèle en production trouvé (ni stage ni alias)")
+Exception: 🚫 Aucun modèle en production trouvé (ni stage ni alias)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 1063, in _email_alert
+    send_email(task.email, subject, html_content)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+           ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 273, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 317, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 877, in _handle_failure
+    task_instance.email_alert(error, failure_context["task"])
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3148, in email_alert
+    _email_alert(task_instance=self, exception=exception, task=task)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 1065, in _email_alert
+    send_email(task.email, subject, html_content_err)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+           ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 273, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 317, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+[2025-07-26T22:12:34.798+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 7 for task check_drift (🚫 Aucun modèle en production trouvé (ni stage ni alias); 474)
+[2025-07-26T22:12:34.819+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-26T22:12:34.838+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-26T22:12:34.840+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-07-26T22:28:54.379+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-26T22:28:54.412+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: drift_monitoring_pipeline.check_drift scheduled__2025-07-25T00:00:00+00:00 [queued]>
+[2025-07-26T22:28:54.422+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: drift_monitoring_pipeline.check_drift scheduled__2025-07-25T00:00:00+00:00 [queued]>
+[2025-07-26T22:28:54.422+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2025-07-26T22:28:54.438+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): check_drift> on 2025-07-25 00:00:00+00:00
+[2025-07-26T22:28:54.450+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=499) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-26T22:28:54.449+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'drift_monitoring_pipeline', 'check_drift', 'scheduled__2025-07-25T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/drift_monitoring.py', '--cfg-path', '/tmp/tmpmygdped8']
+[2025-07-26T22:28:54.452+0000] {standard_task_runner.py:63} INFO - Started process 501 to run task
+[2025-07-26T22:28:54.452+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask check_drift
+[2025-07-26T22:28:54.471+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-26T22:28:54.514+0000] {task_command.py:426} INFO - Running <TaskInstance: drift_monitoring_pipeline.check_drift scheduled__2025-07-25T00:00:00+00:00 [running]> on host a3304ebd726a
+[2025-07-26T22:28:54.608+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='salima.mamma25@gmail.com' AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='drift_monitoring_pipeline' AIRFLOW_CTX_TASK_ID='check_drift' AIRFLOW_CTX_EXECUTION_DATE='2025-07-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-25T00:00:00+00:00'
+[2025-07-26T22:28:54.610+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-26T22:28:54.626+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-26T22:28:54.626+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/drift_monitoring.py", line 41, in check_drift
+    alias = client.get_registered_model_alias(name=model_name, alias="production")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MlflowClient' object has no attribute 'get_registered_model_alias'. Did you mean: 'set_registered_model_alias'?
+[2025-07-26T22:28:54.646+0000] {taskinstance.py:1205} INFO - Marking task as FAILED. dag_id=drift_monitoring_pipeline, task_id=check_drift, execution_date=20250725T000000, start_date=20250726T222854, end_date=20250726T222854
+[2025-07-26T22:28:54.660+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/email.py:154 RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+[2025-07-26T22:28:54.661+0000] {configuration.py:1050} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-07-26T22:28:54.661+0000] {email.py:271} INFO - Email alerting: attempt 1
+[2025-07-26T22:28:54.669+0000] {configuration.py:1050} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-07-26T22:28:54.669+0000] {email.py:271} INFO - Email alerting: attempt 1
+[2025-07-26T22:28:54.670+0000] {taskinstance.py:879} ERROR - Failed to send email to: ['salima.mamma25@gmail.com']
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2476, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2663, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2686, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/drift_monitoring.py", line 41, in check_drift
+    alias = client.get_registered_model_alias(name=model_name, alias="production")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MlflowClient' object has no attribute 'get_registered_model_alias'. Did you mean: 'set_registered_model_alias'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 1063, in _email_alert
+    send_email(task.email, subject, html_content)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+           ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 273, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 317, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 877, in _handle_failure
+    task_instance.email_alert(error, failure_context["task"])
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3148, in email_alert
+    _email_alert(task_instance=self, exception=exception, task=task)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 1065, in _email_alert
+    send_email(task.email, subject, html_content_err)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+           ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 273, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 317, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+[2025-07-26T22:28:54.690+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 7 for task check_drift ('MlflowClient' object has no attribute 'get_registered_model_alias'; 501)
+[2025-07-26T22:28:54.706+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-26T22:28:54.724+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-26T22:28:54.727+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-07-26T22:32:25.850+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-26T22:32:25.884+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: drift_monitoring_pipeline.check_drift scheduled__2025-07-25T00:00:00+00:00 [queued]>
+[2025-07-26T22:32:25.893+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: drift_monitoring_pipeline.check_drift scheduled__2025-07-25T00:00:00+00:00 [queued]>
+[2025-07-26T22:32:25.894+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2025-07-26T22:32:25.906+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): check_drift> on 2025-07-25 00:00:00+00:00
+[2025-07-26T22:32:25.918+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=248) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-26T22:32:25.916+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'drift_monitoring_pipeline', 'check_drift', 'scheduled__2025-07-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/drift_monitoring.py', '--cfg-path', '/tmp/tmpyzr8h890']
+[2025-07-26T22:32:25.919+0000] {standard_task_runner.py:63} INFO - Started process 250 to run task
+[2025-07-26T22:32:25.920+0000] {standard_task_runner.py:91} INFO - Job 2: Subtask check_drift
+[2025-07-26T22:32:25.937+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-26T22:32:25.977+0000] {task_command.py:426} INFO - Running <TaskInstance: drift_monitoring_pipeline.check_drift scheduled__2025-07-25T00:00:00+00:00 [running]> on host 92adb36bb992
+[2025-07-26T22:32:26.080+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='salima.mamma25@gmail.com' AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='drift_monitoring_pipeline' AIRFLOW_CTX_TASK_ID='check_drift' AIRFLOW_CTX_EXECUTION_DATE='2025-07-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-25T00:00:00+00:00'
+[2025-07-26T22:32:26.082+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-26T22:32:26.754+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-26T22:32:26.755+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/drift_monitoring.py", line 48, in check_drift
+    raise Exception("🚫 Aucun modèle avec alias 'production' trouvé")
+Exception: 🚫 Aucun modèle avec alias 'production' trouvé
+[2025-07-26T22:32:26.771+0000] {taskinstance.py:1205} INFO - Marking task as FAILED. dag_id=drift_monitoring_pipeline, task_id=check_drift, execution_date=20250725T000000, start_date=20250726T223225, end_date=20250726T223226
+[2025-07-26T22:32:26.790+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/email.py:154 RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+[2025-07-26T22:32:26.791+0000] {configuration.py:1050} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-07-26T22:32:26.792+0000] {email.py:271} INFO - Email alerting: attempt 1
+[2025-07-26T22:32:26.801+0000] {configuration.py:1050} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-07-26T22:32:26.802+0000] {email.py:271} INFO - Email alerting: attempt 1
+[2025-07-26T22:32:26.803+0000] {taskinstance.py:879} ERROR - Failed to send email to: ['salima.mamma25@gmail.com']
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2476, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2663, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2686, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/drift_monitoring.py", line 48, in check_drift
+    raise Exception("🚫 Aucun modèle avec alias 'production' trouvé")
+Exception: 🚫 Aucun modèle avec alias 'production' trouvé
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 1063, in _email_alert
+    send_email(task.email, subject, html_content)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+           ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 273, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 317, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 877, in _handle_failure
+    task_instance.email_alert(error, failure_context["task"])
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3148, in email_alert
+    _email_alert(task_instance=self, exception=exception, task=task)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 1065, in _email_alert
+    send_email(task.email, subject, html_content_err)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+           ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 273, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/email.py", line 317, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+[2025-07-26T22:32:26.826+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 2 for task check_drift (🚫 Aucun modèle avec alias 'production' trouvé; 250)
+[2025-07-26T22:32:26.857+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-26T22:32:26.877+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-26T22:32:26.880+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-07-26T23:11:54.007+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-26T23:11:54.045+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: drift_monitoring_pipeline.check_drift scheduled__2025-07-25T00:00:00+00:00 [queued]>
+[2025-07-26T23:11:54.056+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: drift_monitoring_pipeline.check_drift scheduled__2025-07-25T00:00:00+00:00 [queued]>
+[2025-07-26T23:11:54.058+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2025-07-26T23:11:54.107+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): check_drift> on 2025-07-25 00:00:00+00:00
+[2025-07-26T23:11:54.121+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=474) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-26T23:11:54.120+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'drift_monitoring_pipeline', 'check_drift', 'scheduled__2025-07-25T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/drift_monitoring.py', '--cfg-path', '/tmp/tmp8jy2bwv9']
+[2025-07-26T23:11:54.124+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask check_drift
+[2025-07-26T23:11:54.123+0000] {standard_task_runner.py:63} INFO - Started process 476 to run task
+[2025-07-26T23:11:54.147+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-26T23:11:54.204+0000] {task_command.py:426} INFO - Running <TaskInstance: drift_monitoring_pipeline.check_drift scheduled__2025-07-25T00:00:00+00:00 [running]> on host 1c2f5c12c560
+[2025-07-26T23:11:54.339+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='salima.mamma25@gmail.com' AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='drift_monitoring_pipeline' AIRFLOW_CTX_TASK_ID='check_drift' AIRFLOW_CTX_EXECUTION_DATE='2025-07-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-25T00:00:00+00:00'
+[2025-07-26T23:11:54.341+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-26T23:11:54.510+0000] {drift_monitoring.py:67} INFO - ✅ val_mae actuel = 0.0320, seuil = 0.05
+[2025-07-26T23:11:54.511+0000] {drift_monitoring.py:83} INFO - 🎉 Aucun drift détecté : rien à faire.
+[2025-07-26T23:11:54.512+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-26T23:11:54.513+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-26T23:11:54.524+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=drift_monitoring_pipeline, task_id=check_drift, execution_date=20250725T000000, start_date=20250726T231154, end_date=20250726T231154
+[2025-07-26T23:11:54.621+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-26T23:11:54.657+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-26T23:11:54.694+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

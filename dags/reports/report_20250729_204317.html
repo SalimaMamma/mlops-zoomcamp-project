@@ -1,0 +1,90 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Rapport de Drift Monitoring - Fallback</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 40px; background-color: #f5f5f5; }
+            .container { background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+            .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+            .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+            .metric-card { background-color: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #007bff; }
+            .metric-value { font-size: 24px; font-weight: bold; color: #333; }
+            .metric-label { color: #666; font-size: 14px; }
+            .alert { background-color: #fff3cd; border: 1px solid #ffeaa7; color: #856404; padding: 15px; border-radius: 5px; margin: 15px 0; }
+            .success { background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; border-radius: 5px; margin: 15px 0; }
+            .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+            .data-table th, .data-table td { border: 1px solid #ddd; padding: 10px; text-align: center; }
+            .data-table th { background-color: #f2f2f2; font-weight: bold; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>🔍 Rapport de Monitoring de Drift</h1>
+                <p><strong>Généré le:</strong> 2025-07-29 20:43:17 UTC</p>
+                <p><strong>Période analysée:</strong> 7 jours glissants</p>
+            </div>
+            
+            <div class="alert">
+                <h3>🚨 DRIFT DÉTECTÉ !</h3>
+                <p><strong>MAE moyen:</strong> 0.1316</p>
+                <p><strong>Seuil configuré:</strong> 0.0500</p>
+                <p><strong>Nombre d'heures analysées:</strong> 1</p>
+            </div>
+            
+            <h2>📊 Métriques de Performance</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">0.1316</div>
+                    <div class="metric-label">Mean Absolute Error (MAE)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">0.0173</div>
+                    <div class="metric-label">Mean Squared Error (MSE)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">0.1316</div>
+                    <div class="metric-label">Root Mean Squared Error (RMSE)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">nan</div>
+                    <div class="metric-label">R² Score</div>
+                </div>
+            </div>
+            
+            <h2>📈 Évolution du MAE par heure</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Heure</th>
+                        <th>MAE</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr style="background-color: #ffebee;">
+                        <td>Heure 1</td>
+                        <td>0.1316</td>
+                        <td>🚨 Au-dessus du seuil</td>
+                    </tr>
+        
+                </tbody>
+            </table>
+            
+            <h2>ℹ️ Informations techniques</h2>
+            <ul>
+                <li><strong>Nombre total d'échantillons:</strong> 1</li>
+                <li><strong>Période d'analyse:</strong> 7 jours glissants</li>
+                <li><strong>Fréquence:</strong> Hebdomadaire</li>
+                <li><strong>Seuil de drift MAE:</strong> 0.0500</li>
+            </ul>
+            
+            <div class="alert">
+                <strong>Note:</strong> Ce rapport a été généré en mode fallback car Evidently n'était pas disponible ou a rencontré une erreur de compatibilité.
+            </div>
+        </div>
+    </body>
+    </html>
+    

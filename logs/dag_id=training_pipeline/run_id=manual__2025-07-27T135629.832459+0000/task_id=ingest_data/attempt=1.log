@@ -1,0 +1,23 @@
+[2025-07-27T13:56:37.183+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-27T13:56:37.221+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: training_pipeline.ingest_data manual__2025-07-27T13:56:29.832459+00:00 [queued]>
+[2025-07-27T13:56:37.231+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: training_pipeline.ingest_data manual__2025-07-27T13:56:29.832459+00:00 [queued]>
+[2025-07-27T13:56:37.238+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 4
+[2025-07-27T13:56:37.254+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): ingest_data> on 2025-07-27 13:56:29.832459+00:00
+[2025-07-27T13:56:37.270+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=333) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-27T13:56:37.268+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'training_pipeline', 'ingest_data', 'manual__2025-07-27T13:56:29.832459+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/training_pipeline.py', '--cfg-path', '/tmp/tmpi0ztt77p']
+[2025-07-27T13:56:37.272+0000] {standard_task_runner.py:63} INFO - Started process 350 to run task
+[2025-07-27T13:56:37.272+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask ingest_data
+[2025-07-27T13:56:37.296+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-27T13:56:37.342+0000] {task_command.py:426} INFO - Running <TaskInstance: training_pipeline.ingest_data manual__2025-07-27T13:56:29.832459+00:00 [running]> on host f0724eaea138
+[2025-07-27T13:56:37.450+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='mlops_team@example.com' AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='training_pipeline' AIRFLOW_CTX_TASK_ID='ingest_data' AIRFLOW_CTX_EXECUTION_DATE='2025-07-27T13:56:29.832459+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-27T13:56:29.832459+00:00'
+[2025-07-27T13:56:37.453+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-27T13:56:37.679+0000] {data_ingestion.py:62} INFO - Fetched 288 candles for BTC-USD from 2025-07-26 13:56:37.483584 to 2025-07-27 13:56:37.483584
+[2025-07-27T13:56:38.091+0000] {data_ingestion.py:103} INFO - Saved data to S3: s3://crypto-mlops-bucket/data/historical_BTC_USD_20250727135637.csv
+[2025-07-27T13:56:38.482+0000] {data_ingestion.py:62} INFO - Fetched 288 candles for ETH-USD from 2025-07-26 13:56:37.483584 to 2025-07-27 13:56:37.483584
+[2025-07-27T13:56:38.506+0000] {data_ingestion.py:103} INFO - Saved data to S3: s3://crypto-mlops-bucket/data/historical_ETH_USD_20250727135638.csv
+[2025-07-27T13:56:38.507+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-27T13:56:38.509+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-27T13:56:38.524+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=training_pipeline, task_id=ingest_data, execution_date=20250727T135629, start_date=20250727T135637, end_date=20250727T135638
+[2025-07-27T13:56:38.577+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-27T13:56:38.619+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-27T13:56:38.623+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

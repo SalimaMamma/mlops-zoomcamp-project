@@ -1,0 +1,52 @@
+data:
+  coinbase_api_url: "https://api.exchange.coinbase.com"
+  websocket_url: "wss://ws-feed.exchange.coinbase.com"
+  symbols: ["BTC-USD", "ETH-USD"]
+  features: ["open", "high", "low", "close", "volume"]
+  lookback_periods: [5, 10, 20, 50]
+  days_back: 30
+  prediction_horizon: 1
+
+aws:
+  region: "us-east-1"
+  s3_bucket: "crypto-mlops-bucket"
+  s3_data_prefix: "data/"
+  s3_model_prefix: "models/"
+  endpoint_url: "http://localstack:4566"
+  access_key_id: "test"
+  secret_access_key: "test"
+
+mlflow:
+  tracking_uri: "http://mlflow:5000"
+  experiment_name: "crypto_lightgbm_prediction"
+  model_name: "crypto_lightgbm_model"
+
+model:
+  objective: "regression"
+  metric: "rmse"
+  boosting_type: "gbdt"
+  num_leaves: 31
+  learning_rate: 0.05
+  feature_fraction: 0.9
+  bagging_fraction: 0.8
+  bagging_freq: 5
+  verbose: -1
+  early_stopping_rounds: 100
+  num_boost_round: 1000
+  mae_drift_threshold: 0.05
+
+serving:
+  host: "0.0.0.0"
+  port: 8000
+  model_stage: "Production"
+  batch_size: 1000
+
+monitoring:
+  drift_threshold: 0.1
+  performance_threshold: 0.15
+  reference_window_size: 1000
+  current_window_size: 500
+  
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

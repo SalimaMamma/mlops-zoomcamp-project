@@ -1,0 +1,22 @@
+[2025-07-29T20:54:28.560+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-29T20:54:28.638+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: training_pipeline.promote_model triggered_by_drift_20250729_204317 [queued]>
+[2025-07-29T20:54:28.648+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: training_pipeline.promote_model triggered_by_drift_20250729_204317 [queued]>
+[2025-07-29T20:54:28.649+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 4
+[2025-07-29T20:54:28.667+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): promote_model> on 2025-07-29 20:43:17+00:00
+[2025-07-29T20:54:28.687+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'training_pipeline', 'promote_model', 'triggered_by_drift_20250729_204317', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/training_pipeline.py', '--cfg-path', '/tmp/tmpxdhlvn3k']
+[2025-07-29T20:54:28.690+0000] {standard_task_runner.py:91} INFO - Job 24: Subtask promote_model
+[2025-07-29T20:54:28.690+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=12298) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-29T20:54:28.691+0000] {standard_task_runner.py:63} INFO - Started process 12356 to run task
+[2025-07-29T20:54:28.748+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-29T20:54:28.791+0000] {task_command.py:426} INFO - Running <TaskInstance: training_pipeline.promote_model triggered_by_drift_20250729_204317 [running]> on host d78ad09e75e4
+[2025-07-29T20:54:28.977+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='mlops_team@example.com' AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='training_pipeline' AIRFLOW_CTX_TASK_ID='promote_model' AIRFLOW_CTX_EXECUTION_DATE='2025-07-29T20:43:17+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='triggered_by_drift_20250729_204317'
+[2025-07-29T20:54:28.979+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-29T20:54:29.070+0000] {training_pipeline.py:149} INFO - ✅ Connexion MLflow OK: http://mlflow:5000
+[2025-07-29T20:54:29.131+0000] {training_pipeline.py:176} INFO - 👉 Promotion version 8
+[2025-07-29T20:54:29.185+0000] {training_pipeline.py:184} INFO - ✅ Modèle promu : alias 'production' pointé vers version 8
+[2025-07-29T20:54:29.186+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-29T20:54:29.188+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-29T20:54:29.199+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=training_pipeline, task_id=promote_model, execution_date=20250729T204317, start_date=20250729T205428, end_date=20250729T205429
+[2025-07-29T20:54:29.275+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-29T20:54:29.304+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-29T20:54:29.340+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      - mynetwork
+    environment:
+      - PYTHONUNBUFFERED=1
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ENDPOINT_URL=http://localstack:4566
+      - REDIS_HOST=redis  
+      - REDIS_PORT=6379   
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+    depends_on:
+      - redis  
+
+  redis:
+    image: redis:7
+
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    name: 07-project_mynetwork
+    driver: bridge

@@ -1,0 +1,178 @@
+version: "3"
+
+services:
+  # LocalStack pour S3
+  localstack:
+    image: localstack/localstack:2.3
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3
+      - DEBUG=1
+      - PERSISTENCE=1
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+    networks:
+      - mynetwork
+    volumes:
+      - ./localstack:/var/lib/localstack
+      - /var/run/docker.sock:/var/run/docker.sock
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4566/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  # Base de données PostgreSQL
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    ports:
+      - "5433:5432"
+    networks:
+      - mynetwork
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U airflow"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # MLflow Tracking Server 
+  mlflow:
+    build:
+      context: .
+      dockerfile: Dockerfile.mlflow
+    ports:
+      - "5000:5000"
+    networks:
+      - mynetwork
+    depends_on:
+      postgres:
+        condition: service_healthy
+      localstack:
+        condition: service_healthy
+    environment:
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=us-east-1
+      - MLFLOW_S3_ENDPOINT_URL=http://localstack:4566
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - mlflow_data:/mlflow
+      - ./mlruns:/mlflow/mlruns
+ 
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 120s
+
+  # Airflow Webserver 
+  airflow-webserver:
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
+    command: ["bash", "/opt/airflow/airflow-entrypoint.sh", "webserver"]
+    ports:
+      - "8081:8080"
+    networks:
+      - mynetwork
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mlflow:
+        condition: service_healthy   
+      localstack:
+        condition: service_healthy
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__WEBSERVER__EXPOSE_CONFIG=True
+      - AIRFLOW_USERNAME=admin
+      - AIRFLOW_PASSWORD=admin
+      - AIRFLOW_EMAIL=admin@example.com
+      - AIRFLOW__WEBSERVER__SECRET_KEY=super_secret_key_123456789
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - PYTHONPATH=/opt/airflow/src:/opt/airflow
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=us-east-1
+      - MLFLOW_S3_ENDPOINT_URL=http://localstack:4566
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./airflow-entrypoint.sh:/opt/airflow/airflow-entrypoint.sh
+      - ./src:/opt/airflow/src
+      - airflow_init:/opt/airflow
+    
+    external_links:
+      - mlflow:mlflow
+    extra_hosts:
+      - "mlflow:172.21.0.4"
+
+  # Airflow Scheduler - 
+  airflow-scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
+    command: ["bash", "/opt/airflow/airflow-entrypoint.sh", "scheduler"]
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mlflow:
+        condition: service_healthy    
+      localstack:
+        condition: service_healthy
+      airflow-webserver:
+        condition: service_started
+    networks:
+      - mynetwork
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__WEBSERVER__SECRET_KEY=super_secret_key_123456789
+      - PYTHONPATH=/opt/airflow/src:/opt/airflow
+      - AIRFLOW_USERNAME=admin
+      - AIRFLOW_PASSWORD=admin
+      - AIRFLOW_EMAIL=admin@example.com
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=us-east-1
+      - MLFLOW_S3_ENDPOINT_URL=http://localstack:4566
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./airflow-entrypoint.sh:/opt/airflow/airflow-entrypoint.sh
+      - ./src:/opt/airflow/src
+      - airflow_init:/opt/airflow
+    
+    external_links:
+      - mlflow:mlflow
+    extra_hosts:
+      - "mlflow:172.21.0.4"
+
+
+
+networks:
+  mynetwork:
+    name: 07-project_mynetwork
+    driver: bridge
+
+volumes:
+  postgres_data:
+  mlflow_data:
+  airflow_init:

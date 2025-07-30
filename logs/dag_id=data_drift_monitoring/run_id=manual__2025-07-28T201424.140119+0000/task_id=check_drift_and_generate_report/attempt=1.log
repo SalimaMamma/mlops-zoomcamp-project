@@ -1,0 +1,407 @@
+[2025-07-28T20:14:39.609+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-28T20:14:39.762+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_drift_monitoring.check_drift_and_generate_report manual__2025-07-28T20:14:24.140119+00:00 [queued]>
+[2025-07-28T20:14:39.778+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_drift_monitoring.check_drift_and_generate_report manual__2025-07-28T20:14:24.140119+00:00 [queued]>
+[2025-07-28T20:14:39.779+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2025-07-28T20:14:39.803+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): check_drift_and_generate_report> on 2025-07-28 20:14:24.140119+00:00
+[2025-07-28T20:14:39.854+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_drift_monitoring', 'check_drift_and_generate_report', 'manual__2025-07-28T20:14:24.140119+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/drift_monitoring.py', '--cfg-path', '/tmp/tmp8xf8k286']
+[2025-07-28T20:14:39.859+0000] {standard_task_runner.py:91} INFO - Job 33: Subtask check_drift_and_generate_report
+[2025-07-28T20:14:39.874+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=49399) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-28T20:14:39.877+0000] {standard_task_runner.py:63} INFO - Started process 49439 to run task
+[2025-07-28T20:14:39.809+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-28T20:14:39.964+0000] {task_command.py:426} INFO - Running <TaskInstance: data_drift_monitoring.check_drift_and_generate_report manual__2025-07-28T20:14:24.140119+00:00 [running]> on host d78ad09e75e4
+[2025-07-28T20:14:40.431+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='data_drift_monitoring' AIRFLOW_CTX_TASK_ID='check_drift_and_generate_report' AIRFLOW_CTX_EXECUTION_DATE='2025-07-28T20:14:24.140119+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-28T20:14:24.140119+00:00'
+[2025-07-28T20:14:40.433+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-28T20:14:40.476+0000] {drift_monitoring.py:60} INFO - Vérification drift de 2025-07-21 19:14:40.475811+00:00 à 2025-07-28 19:14:40.475811+00:00
+[2025-07-28T20:14:40.477+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-21/hour=19/prediction.parquet et targets/date=2025-07-21/hour=19/target.parquet
+[2025-07-28T20:14:40.618+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-21/hour=19/prediction.parquet ou targets/date=2025-07-21/hour=19/target.parquet → ignoré
+[2025-07-28T20:14:40.620+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-21/hour=20/prediction.parquet et targets/date=2025-07-21/hour=20/target.parquet
+[2025-07-28T20:14:40.634+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-21/hour=20/prediction.parquet ou targets/date=2025-07-21/hour=20/target.parquet → ignoré
+[2025-07-28T20:14:40.635+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-21/hour=21/prediction.parquet et targets/date=2025-07-21/hour=21/target.parquet
+[2025-07-28T20:14:40.649+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-21/hour=21/prediction.parquet ou targets/date=2025-07-21/hour=21/target.parquet → ignoré
+[2025-07-28T20:14:40.650+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-21/hour=22/prediction.parquet et targets/date=2025-07-21/hour=22/target.parquet
+[2025-07-28T20:14:40.663+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-21/hour=22/prediction.parquet ou targets/date=2025-07-21/hour=22/target.parquet → ignoré
+[2025-07-28T20:14:40.664+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-21/hour=23/prediction.parquet et targets/date=2025-07-21/hour=23/target.parquet
+[2025-07-28T20:14:40.677+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-21/hour=23/prediction.parquet ou targets/date=2025-07-21/hour=23/target.parquet → ignoré
+[2025-07-28T20:14:40.678+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=00/prediction.parquet et targets/date=2025-07-22/hour=00/target.parquet
+[2025-07-28T20:14:40.691+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=00/prediction.parquet ou targets/date=2025-07-22/hour=00/target.parquet → ignoré
+[2025-07-28T20:14:40.692+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=01/prediction.parquet et targets/date=2025-07-22/hour=01/target.parquet
+[2025-07-28T20:14:40.704+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=01/prediction.parquet ou targets/date=2025-07-22/hour=01/target.parquet → ignoré
+[2025-07-28T20:14:40.706+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=02/prediction.parquet et targets/date=2025-07-22/hour=02/target.parquet
+[2025-07-28T20:14:40.719+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=02/prediction.parquet ou targets/date=2025-07-22/hour=02/target.parquet → ignoré
+[2025-07-28T20:14:40.720+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=03/prediction.parquet et targets/date=2025-07-22/hour=03/target.parquet
+[2025-07-28T20:14:40.733+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=03/prediction.parquet ou targets/date=2025-07-22/hour=03/target.parquet → ignoré
+[2025-07-28T20:14:40.734+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=04/prediction.parquet et targets/date=2025-07-22/hour=04/target.parquet
+[2025-07-28T20:14:40.747+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=04/prediction.parquet ou targets/date=2025-07-22/hour=04/target.parquet → ignoré
+[2025-07-28T20:14:40.748+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=05/prediction.parquet et targets/date=2025-07-22/hour=05/target.parquet
+[2025-07-28T20:14:40.761+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=05/prediction.parquet ou targets/date=2025-07-22/hour=05/target.parquet → ignoré
+[2025-07-28T20:14:40.762+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=06/prediction.parquet et targets/date=2025-07-22/hour=06/target.parquet
+[2025-07-28T20:14:40.778+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=06/prediction.parquet ou targets/date=2025-07-22/hour=06/target.parquet → ignoré
+[2025-07-28T20:14:40.779+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=07/prediction.parquet et targets/date=2025-07-22/hour=07/target.parquet
+[2025-07-28T20:14:40.793+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=07/prediction.parquet ou targets/date=2025-07-22/hour=07/target.parquet → ignoré
+[2025-07-28T20:14:40.794+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=08/prediction.parquet et targets/date=2025-07-22/hour=08/target.parquet
+[2025-07-28T20:14:40.807+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=08/prediction.parquet ou targets/date=2025-07-22/hour=08/target.parquet → ignoré
+[2025-07-28T20:14:40.808+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=09/prediction.parquet et targets/date=2025-07-22/hour=09/target.parquet
+[2025-07-28T20:14:40.820+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=09/prediction.parquet ou targets/date=2025-07-22/hour=09/target.parquet → ignoré
+[2025-07-28T20:14:40.821+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=10/prediction.parquet et targets/date=2025-07-22/hour=10/target.parquet
+[2025-07-28T20:14:40.833+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=10/prediction.parquet ou targets/date=2025-07-22/hour=10/target.parquet → ignoré
+[2025-07-28T20:14:40.834+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=11/prediction.parquet et targets/date=2025-07-22/hour=11/target.parquet
+[2025-07-28T20:14:40.847+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=11/prediction.parquet ou targets/date=2025-07-22/hour=11/target.parquet → ignoré
+[2025-07-28T20:14:40.848+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=12/prediction.parquet et targets/date=2025-07-22/hour=12/target.parquet
+[2025-07-28T20:14:40.861+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=12/prediction.parquet ou targets/date=2025-07-22/hour=12/target.parquet → ignoré
+[2025-07-28T20:14:40.862+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=13/prediction.parquet et targets/date=2025-07-22/hour=13/target.parquet
+[2025-07-28T20:14:40.874+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=13/prediction.parquet ou targets/date=2025-07-22/hour=13/target.parquet → ignoré
+[2025-07-28T20:14:40.875+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=14/prediction.parquet et targets/date=2025-07-22/hour=14/target.parquet
+[2025-07-28T20:14:40.887+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=14/prediction.parquet ou targets/date=2025-07-22/hour=14/target.parquet → ignoré
+[2025-07-28T20:14:40.888+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=15/prediction.parquet et targets/date=2025-07-22/hour=15/target.parquet
+[2025-07-28T20:14:40.900+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=15/prediction.parquet ou targets/date=2025-07-22/hour=15/target.parquet → ignoré
+[2025-07-28T20:14:40.902+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=16/prediction.parquet et targets/date=2025-07-22/hour=16/target.parquet
+[2025-07-28T20:14:40.914+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=16/prediction.parquet ou targets/date=2025-07-22/hour=16/target.parquet → ignoré
+[2025-07-28T20:14:40.915+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=17/prediction.parquet et targets/date=2025-07-22/hour=17/target.parquet
+[2025-07-28T20:14:40.927+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=17/prediction.parquet ou targets/date=2025-07-22/hour=17/target.parquet → ignoré
+[2025-07-28T20:14:40.928+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=18/prediction.parquet et targets/date=2025-07-22/hour=18/target.parquet
+[2025-07-28T20:14:40.940+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=18/prediction.parquet ou targets/date=2025-07-22/hour=18/target.parquet → ignoré
+[2025-07-28T20:14:40.941+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=19/prediction.parquet et targets/date=2025-07-22/hour=19/target.parquet
+[2025-07-28T20:14:40.953+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=19/prediction.parquet ou targets/date=2025-07-22/hour=19/target.parquet → ignoré
+[2025-07-28T20:14:40.954+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=20/prediction.parquet et targets/date=2025-07-22/hour=20/target.parquet
+[2025-07-28T20:14:40.969+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=20/prediction.parquet ou targets/date=2025-07-22/hour=20/target.parquet → ignoré
+[2025-07-28T20:14:40.970+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=21/prediction.parquet et targets/date=2025-07-22/hour=21/target.parquet
+[2025-07-28T20:14:40.982+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=21/prediction.parquet ou targets/date=2025-07-22/hour=21/target.parquet → ignoré
+[2025-07-28T20:14:40.983+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=22/prediction.parquet et targets/date=2025-07-22/hour=22/target.parquet
+[2025-07-28T20:14:40.994+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=22/prediction.parquet ou targets/date=2025-07-22/hour=22/target.parquet → ignoré
+[2025-07-28T20:14:40.995+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-22/hour=23/prediction.parquet et targets/date=2025-07-22/hour=23/target.parquet
+[2025-07-28T20:14:41.007+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-22/hour=23/prediction.parquet ou targets/date=2025-07-22/hour=23/target.parquet → ignoré
+[2025-07-28T20:14:41.008+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=00/prediction.parquet et targets/date=2025-07-23/hour=00/target.parquet
+[2025-07-28T20:14:41.021+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=00/prediction.parquet ou targets/date=2025-07-23/hour=00/target.parquet → ignoré
+[2025-07-28T20:14:41.022+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=01/prediction.parquet et targets/date=2025-07-23/hour=01/target.parquet
+[2025-07-28T20:14:41.034+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=01/prediction.parquet ou targets/date=2025-07-23/hour=01/target.parquet → ignoré
+[2025-07-28T20:14:41.035+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=02/prediction.parquet et targets/date=2025-07-23/hour=02/target.parquet
+[2025-07-28T20:14:41.049+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=02/prediction.parquet ou targets/date=2025-07-23/hour=02/target.parquet → ignoré
+[2025-07-28T20:14:41.050+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=03/prediction.parquet et targets/date=2025-07-23/hour=03/target.parquet
+[2025-07-28T20:14:41.063+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=03/prediction.parquet ou targets/date=2025-07-23/hour=03/target.parquet → ignoré
+[2025-07-28T20:14:41.064+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=04/prediction.parquet et targets/date=2025-07-23/hour=04/target.parquet
+[2025-07-28T20:14:41.078+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=04/prediction.parquet ou targets/date=2025-07-23/hour=04/target.parquet → ignoré
+[2025-07-28T20:14:41.079+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=05/prediction.parquet et targets/date=2025-07-23/hour=05/target.parquet
+[2025-07-28T20:14:41.094+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=05/prediction.parquet ou targets/date=2025-07-23/hour=05/target.parquet → ignoré
+[2025-07-28T20:14:41.095+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=06/prediction.parquet et targets/date=2025-07-23/hour=06/target.parquet
+[2025-07-28T20:14:41.109+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=06/prediction.parquet ou targets/date=2025-07-23/hour=06/target.parquet → ignoré
+[2025-07-28T20:14:41.110+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=07/prediction.parquet et targets/date=2025-07-23/hour=07/target.parquet
+[2025-07-28T20:14:41.126+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=07/prediction.parquet ou targets/date=2025-07-23/hour=07/target.parquet → ignoré
+[2025-07-28T20:14:41.127+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=08/prediction.parquet et targets/date=2025-07-23/hour=08/target.parquet
+[2025-07-28T20:14:41.140+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=08/prediction.parquet ou targets/date=2025-07-23/hour=08/target.parquet → ignoré
+[2025-07-28T20:14:41.141+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=09/prediction.parquet et targets/date=2025-07-23/hour=09/target.parquet
+[2025-07-28T20:14:41.155+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=09/prediction.parquet ou targets/date=2025-07-23/hour=09/target.parquet → ignoré
+[2025-07-28T20:14:41.156+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=10/prediction.parquet et targets/date=2025-07-23/hour=10/target.parquet
+[2025-07-28T20:14:41.168+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=10/prediction.parquet ou targets/date=2025-07-23/hour=10/target.parquet → ignoré
+[2025-07-28T20:14:41.169+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=11/prediction.parquet et targets/date=2025-07-23/hour=11/target.parquet
+[2025-07-28T20:14:41.181+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=11/prediction.parquet ou targets/date=2025-07-23/hour=11/target.parquet → ignoré
+[2025-07-28T20:14:41.182+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=12/prediction.parquet et targets/date=2025-07-23/hour=12/target.parquet
+[2025-07-28T20:14:41.194+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=12/prediction.parquet ou targets/date=2025-07-23/hour=12/target.parquet → ignoré
+[2025-07-28T20:14:41.195+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=13/prediction.parquet et targets/date=2025-07-23/hour=13/target.parquet
+[2025-07-28T20:14:41.208+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=13/prediction.parquet ou targets/date=2025-07-23/hour=13/target.parquet → ignoré
+[2025-07-28T20:14:41.209+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=14/prediction.parquet et targets/date=2025-07-23/hour=14/target.parquet
+[2025-07-28T20:14:41.222+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=14/prediction.parquet ou targets/date=2025-07-23/hour=14/target.parquet → ignoré
+[2025-07-28T20:14:41.223+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=15/prediction.parquet et targets/date=2025-07-23/hour=15/target.parquet
+[2025-07-28T20:14:41.234+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=15/prediction.parquet ou targets/date=2025-07-23/hour=15/target.parquet → ignoré
+[2025-07-28T20:14:41.235+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=16/prediction.parquet et targets/date=2025-07-23/hour=16/target.parquet
+[2025-07-28T20:14:41.247+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=16/prediction.parquet ou targets/date=2025-07-23/hour=16/target.parquet → ignoré
+[2025-07-28T20:14:41.248+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=17/prediction.parquet et targets/date=2025-07-23/hour=17/target.parquet
+[2025-07-28T20:14:41.260+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=17/prediction.parquet ou targets/date=2025-07-23/hour=17/target.parquet → ignoré
+[2025-07-28T20:14:41.261+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=18/prediction.parquet et targets/date=2025-07-23/hour=18/target.parquet
+[2025-07-28T20:14:41.274+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=18/prediction.parquet ou targets/date=2025-07-23/hour=18/target.parquet → ignoré
+[2025-07-28T20:14:41.275+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=19/prediction.parquet et targets/date=2025-07-23/hour=19/target.parquet
+[2025-07-28T20:14:41.289+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=19/prediction.parquet ou targets/date=2025-07-23/hour=19/target.parquet → ignoré
+[2025-07-28T20:14:41.290+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=20/prediction.parquet et targets/date=2025-07-23/hour=20/target.parquet
+[2025-07-28T20:14:41.302+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=20/prediction.parquet ou targets/date=2025-07-23/hour=20/target.parquet → ignoré
+[2025-07-28T20:14:41.303+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=21/prediction.parquet et targets/date=2025-07-23/hour=21/target.parquet
+[2025-07-28T20:14:41.315+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=21/prediction.parquet ou targets/date=2025-07-23/hour=21/target.parquet → ignoré
+[2025-07-28T20:14:41.317+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=22/prediction.parquet et targets/date=2025-07-23/hour=22/target.parquet
+[2025-07-28T20:14:41.334+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=22/prediction.parquet ou targets/date=2025-07-23/hour=22/target.parquet → ignoré
+[2025-07-28T20:14:41.335+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-23/hour=23/prediction.parquet et targets/date=2025-07-23/hour=23/target.parquet
+[2025-07-28T20:14:41.355+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-23/hour=23/prediction.parquet ou targets/date=2025-07-23/hour=23/target.parquet → ignoré
+[2025-07-28T20:14:41.357+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=00/prediction.parquet et targets/date=2025-07-24/hour=00/target.parquet
+[2025-07-28T20:14:41.373+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=00/prediction.parquet ou targets/date=2025-07-24/hour=00/target.parquet → ignoré
+[2025-07-28T20:14:41.374+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=01/prediction.parquet et targets/date=2025-07-24/hour=01/target.parquet
+[2025-07-28T20:14:41.389+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=01/prediction.parquet ou targets/date=2025-07-24/hour=01/target.parquet → ignoré
+[2025-07-28T20:14:41.390+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=02/prediction.parquet et targets/date=2025-07-24/hour=02/target.parquet
+[2025-07-28T20:14:41.405+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=02/prediction.parquet ou targets/date=2025-07-24/hour=02/target.parquet → ignoré
+[2025-07-28T20:14:41.406+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=03/prediction.parquet et targets/date=2025-07-24/hour=03/target.parquet
+[2025-07-28T20:14:41.421+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=03/prediction.parquet ou targets/date=2025-07-24/hour=03/target.parquet → ignoré
+[2025-07-28T20:14:41.422+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=04/prediction.parquet et targets/date=2025-07-24/hour=04/target.parquet
+[2025-07-28T20:14:41.435+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=04/prediction.parquet ou targets/date=2025-07-24/hour=04/target.parquet → ignoré
+[2025-07-28T20:14:41.437+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=05/prediction.parquet et targets/date=2025-07-24/hour=05/target.parquet
+[2025-07-28T20:14:41.450+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=05/prediction.parquet ou targets/date=2025-07-24/hour=05/target.parquet → ignoré
+[2025-07-28T20:14:41.451+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=06/prediction.parquet et targets/date=2025-07-24/hour=06/target.parquet
+[2025-07-28T20:14:41.463+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=06/prediction.parquet ou targets/date=2025-07-24/hour=06/target.parquet → ignoré
+[2025-07-28T20:14:41.464+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=07/prediction.parquet et targets/date=2025-07-24/hour=07/target.parquet
+[2025-07-28T20:14:41.479+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=07/prediction.parquet ou targets/date=2025-07-24/hour=07/target.parquet → ignoré
+[2025-07-28T20:14:41.480+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=08/prediction.parquet et targets/date=2025-07-24/hour=08/target.parquet
+[2025-07-28T20:14:41.495+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=08/prediction.parquet ou targets/date=2025-07-24/hour=08/target.parquet → ignoré
+[2025-07-28T20:14:41.497+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=09/prediction.parquet et targets/date=2025-07-24/hour=09/target.parquet
+[2025-07-28T20:14:41.512+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=09/prediction.parquet ou targets/date=2025-07-24/hour=09/target.parquet → ignoré
+[2025-07-28T20:14:41.513+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=10/prediction.parquet et targets/date=2025-07-24/hour=10/target.parquet
+[2025-07-28T20:14:41.528+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=10/prediction.parquet ou targets/date=2025-07-24/hour=10/target.parquet → ignoré
+[2025-07-28T20:14:41.529+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=11/prediction.parquet et targets/date=2025-07-24/hour=11/target.parquet
+[2025-07-28T20:14:41.543+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=11/prediction.parquet ou targets/date=2025-07-24/hour=11/target.parquet → ignoré
+[2025-07-28T20:14:41.544+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=12/prediction.parquet et targets/date=2025-07-24/hour=12/target.parquet
+[2025-07-28T20:14:41.559+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=12/prediction.parquet ou targets/date=2025-07-24/hour=12/target.parquet → ignoré
+[2025-07-28T20:14:41.560+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=13/prediction.parquet et targets/date=2025-07-24/hour=13/target.parquet
+[2025-07-28T20:14:41.573+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=13/prediction.parquet ou targets/date=2025-07-24/hour=13/target.parquet → ignoré
+[2025-07-28T20:14:41.574+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=14/prediction.parquet et targets/date=2025-07-24/hour=14/target.parquet
+[2025-07-28T20:14:41.587+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=14/prediction.parquet ou targets/date=2025-07-24/hour=14/target.parquet → ignoré
+[2025-07-28T20:14:41.588+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=15/prediction.parquet et targets/date=2025-07-24/hour=15/target.parquet
+[2025-07-28T20:14:41.600+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=15/prediction.parquet ou targets/date=2025-07-24/hour=15/target.parquet → ignoré
+[2025-07-28T20:14:41.601+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=16/prediction.parquet et targets/date=2025-07-24/hour=16/target.parquet
+[2025-07-28T20:14:41.613+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=16/prediction.parquet ou targets/date=2025-07-24/hour=16/target.parquet → ignoré
+[2025-07-28T20:14:41.614+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=17/prediction.parquet et targets/date=2025-07-24/hour=17/target.parquet
+[2025-07-28T20:14:41.628+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=17/prediction.parquet ou targets/date=2025-07-24/hour=17/target.parquet → ignoré
+[2025-07-28T20:14:41.629+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=18/prediction.parquet et targets/date=2025-07-24/hour=18/target.parquet
+[2025-07-28T20:14:41.642+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=18/prediction.parquet ou targets/date=2025-07-24/hour=18/target.parquet → ignoré
+[2025-07-28T20:14:41.643+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=19/prediction.parquet et targets/date=2025-07-24/hour=19/target.parquet
+[2025-07-28T20:14:41.656+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=19/prediction.parquet ou targets/date=2025-07-24/hour=19/target.parquet → ignoré
+[2025-07-28T20:14:41.657+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=20/prediction.parquet et targets/date=2025-07-24/hour=20/target.parquet
+[2025-07-28T20:14:41.668+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=20/prediction.parquet ou targets/date=2025-07-24/hour=20/target.parquet → ignoré
+[2025-07-28T20:14:41.670+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=21/prediction.parquet et targets/date=2025-07-24/hour=21/target.parquet
+[2025-07-28T20:14:41.682+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=21/prediction.parquet ou targets/date=2025-07-24/hour=21/target.parquet → ignoré
+[2025-07-28T20:14:41.683+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=22/prediction.parquet et targets/date=2025-07-24/hour=22/target.parquet
+[2025-07-28T20:14:41.694+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=22/prediction.parquet ou targets/date=2025-07-24/hour=22/target.parquet → ignoré
+[2025-07-28T20:14:41.695+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-24/hour=23/prediction.parquet et targets/date=2025-07-24/hour=23/target.parquet
+[2025-07-28T20:14:41.706+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-24/hour=23/prediction.parquet ou targets/date=2025-07-24/hour=23/target.parquet → ignoré
+[2025-07-28T20:14:41.707+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=00/prediction.parquet et targets/date=2025-07-25/hour=00/target.parquet
+[2025-07-28T20:14:41.718+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=00/prediction.parquet ou targets/date=2025-07-25/hour=00/target.parquet → ignoré
+[2025-07-28T20:14:41.719+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=01/prediction.parquet et targets/date=2025-07-25/hour=01/target.parquet
+[2025-07-28T20:14:41.731+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=01/prediction.parquet ou targets/date=2025-07-25/hour=01/target.parquet → ignoré
+[2025-07-28T20:14:41.732+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=02/prediction.parquet et targets/date=2025-07-25/hour=02/target.parquet
+[2025-07-28T20:14:41.744+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=02/prediction.parquet ou targets/date=2025-07-25/hour=02/target.parquet → ignoré
+[2025-07-28T20:14:41.745+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=03/prediction.parquet et targets/date=2025-07-25/hour=03/target.parquet
+[2025-07-28T20:14:41.757+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=03/prediction.parquet ou targets/date=2025-07-25/hour=03/target.parquet → ignoré
+[2025-07-28T20:14:41.758+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=04/prediction.parquet et targets/date=2025-07-25/hour=04/target.parquet
+[2025-07-28T20:14:41.769+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=04/prediction.parquet ou targets/date=2025-07-25/hour=04/target.parquet → ignoré
+[2025-07-28T20:14:41.770+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=05/prediction.parquet et targets/date=2025-07-25/hour=05/target.parquet
+[2025-07-28T20:14:41.782+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=05/prediction.parquet ou targets/date=2025-07-25/hour=05/target.parquet → ignoré
+[2025-07-28T20:14:41.783+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=06/prediction.parquet et targets/date=2025-07-25/hour=06/target.parquet
+[2025-07-28T20:14:41.794+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=06/prediction.parquet ou targets/date=2025-07-25/hour=06/target.parquet → ignoré
+[2025-07-28T20:14:41.795+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=07/prediction.parquet et targets/date=2025-07-25/hour=07/target.parquet
+[2025-07-28T20:14:41.808+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=07/prediction.parquet ou targets/date=2025-07-25/hour=07/target.parquet → ignoré
+[2025-07-28T20:14:41.809+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=08/prediction.parquet et targets/date=2025-07-25/hour=08/target.parquet
+[2025-07-28T20:14:41.822+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=08/prediction.parquet ou targets/date=2025-07-25/hour=08/target.parquet → ignoré
+[2025-07-28T20:14:41.823+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=09/prediction.parquet et targets/date=2025-07-25/hour=09/target.parquet
+[2025-07-28T20:14:41.835+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=09/prediction.parquet ou targets/date=2025-07-25/hour=09/target.parquet → ignoré
+[2025-07-28T20:14:41.837+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=10/prediction.parquet et targets/date=2025-07-25/hour=10/target.parquet
+[2025-07-28T20:14:41.849+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=10/prediction.parquet ou targets/date=2025-07-25/hour=10/target.parquet → ignoré
+[2025-07-28T20:14:41.850+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=11/prediction.parquet et targets/date=2025-07-25/hour=11/target.parquet
+[2025-07-28T20:14:41.863+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=11/prediction.parquet ou targets/date=2025-07-25/hour=11/target.parquet → ignoré
+[2025-07-28T20:14:41.864+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=12/prediction.parquet et targets/date=2025-07-25/hour=12/target.parquet
+[2025-07-28T20:14:41.875+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=12/prediction.parquet ou targets/date=2025-07-25/hour=12/target.parquet → ignoré
+[2025-07-28T20:14:41.877+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=13/prediction.parquet et targets/date=2025-07-25/hour=13/target.parquet
+[2025-07-28T20:14:41.889+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=13/prediction.parquet ou targets/date=2025-07-25/hour=13/target.parquet → ignoré
+[2025-07-28T20:14:41.890+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=14/prediction.parquet et targets/date=2025-07-25/hour=14/target.parquet
+[2025-07-28T20:14:41.903+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=14/prediction.parquet ou targets/date=2025-07-25/hour=14/target.parquet → ignoré
+[2025-07-28T20:14:41.904+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=15/prediction.parquet et targets/date=2025-07-25/hour=15/target.parquet
+[2025-07-28T20:14:41.917+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=15/prediction.parquet ou targets/date=2025-07-25/hour=15/target.parquet → ignoré
+[2025-07-28T20:14:41.919+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=16/prediction.parquet et targets/date=2025-07-25/hour=16/target.parquet
+[2025-07-28T20:14:41.931+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=16/prediction.parquet ou targets/date=2025-07-25/hour=16/target.parquet → ignoré
+[2025-07-28T20:14:41.932+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=17/prediction.parquet et targets/date=2025-07-25/hour=17/target.parquet
+[2025-07-28T20:14:41.945+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=17/prediction.parquet ou targets/date=2025-07-25/hour=17/target.parquet → ignoré
+[2025-07-28T20:14:41.946+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=18/prediction.parquet et targets/date=2025-07-25/hour=18/target.parquet
+[2025-07-28T20:14:41.959+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=18/prediction.parquet ou targets/date=2025-07-25/hour=18/target.parquet → ignoré
+[2025-07-28T20:14:41.960+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=19/prediction.parquet et targets/date=2025-07-25/hour=19/target.parquet
+[2025-07-28T20:14:41.973+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=19/prediction.parquet ou targets/date=2025-07-25/hour=19/target.parquet → ignoré
+[2025-07-28T20:14:41.974+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=20/prediction.parquet et targets/date=2025-07-25/hour=20/target.parquet
+[2025-07-28T20:14:41.988+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=20/prediction.parquet ou targets/date=2025-07-25/hour=20/target.parquet → ignoré
+[2025-07-28T20:14:41.989+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=21/prediction.parquet et targets/date=2025-07-25/hour=21/target.parquet
+[2025-07-28T20:14:42.002+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=21/prediction.parquet ou targets/date=2025-07-25/hour=21/target.parquet → ignoré
+[2025-07-28T20:14:42.003+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=22/prediction.parquet et targets/date=2025-07-25/hour=22/target.parquet
+[2025-07-28T20:14:42.017+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=22/prediction.parquet ou targets/date=2025-07-25/hour=22/target.parquet → ignoré
+[2025-07-28T20:14:42.018+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-25/hour=23/prediction.parquet et targets/date=2025-07-25/hour=23/target.parquet
+[2025-07-28T20:14:42.032+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-25/hour=23/prediction.parquet ou targets/date=2025-07-25/hour=23/target.parquet → ignoré
+[2025-07-28T20:14:42.033+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=00/prediction.parquet et targets/date=2025-07-26/hour=00/target.parquet
+[2025-07-28T20:14:42.047+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=00/prediction.parquet ou targets/date=2025-07-26/hour=00/target.parquet → ignoré
+[2025-07-28T20:14:42.049+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=01/prediction.parquet et targets/date=2025-07-26/hour=01/target.parquet
+[2025-07-28T20:14:42.062+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=01/prediction.parquet ou targets/date=2025-07-26/hour=01/target.parquet → ignoré
+[2025-07-28T20:14:42.063+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=02/prediction.parquet et targets/date=2025-07-26/hour=02/target.parquet
+[2025-07-28T20:14:42.076+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=02/prediction.parquet ou targets/date=2025-07-26/hour=02/target.parquet → ignoré
+[2025-07-28T20:14:42.078+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=03/prediction.parquet et targets/date=2025-07-26/hour=03/target.parquet
+[2025-07-28T20:14:42.091+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=03/prediction.parquet ou targets/date=2025-07-26/hour=03/target.parquet → ignoré
+[2025-07-28T20:14:42.092+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=04/prediction.parquet et targets/date=2025-07-26/hour=04/target.parquet
+[2025-07-28T20:14:42.104+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=04/prediction.parquet ou targets/date=2025-07-26/hour=04/target.parquet → ignoré
+[2025-07-28T20:14:42.105+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=05/prediction.parquet et targets/date=2025-07-26/hour=05/target.parquet
+[2025-07-28T20:14:42.118+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=05/prediction.parquet ou targets/date=2025-07-26/hour=05/target.parquet → ignoré
+[2025-07-28T20:14:42.119+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=06/prediction.parquet et targets/date=2025-07-26/hour=06/target.parquet
+[2025-07-28T20:14:42.131+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=06/prediction.parquet ou targets/date=2025-07-26/hour=06/target.parquet → ignoré
+[2025-07-28T20:14:42.133+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=07/prediction.parquet et targets/date=2025-07-26/hour=07/target.parquet
+[2025-07-28T20:14:42.144+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=07/prediction.parquet ou targets/date=2025-07-26/hour=07/target.parquet → ignoré
+[2025-07-28T20:14:42.145+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=08/prediction.parquet et targets/date=2025-07-26/hour=08/target.parquet
+[2025-07-28T20:14:42.163+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=08/prediction.parquet ou targets/date=2025-07-26/hour=08/target.parquet → ignoré
+[2025-07-28T20:14:42.165+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=09/prediction.parquet et targets/date=2025-07-26/hour=09/target.parquet
+[2025-07-28T20:14:42.184+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=09/prediction.parquet ou targets/date=2025-07-26/hour=09/target.parquet → ignoré
+[2025-07-28T20:14:42.185+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=10/prediction.parquet et targets/date=2025-07-26/hour=10/target.parquet
+[2025-07-28T20:14:42.205+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=10/prediction.parquet ou targets/date=2025-07-26/hour=10/target.parquet → ignoré
+[2025-07-28T20:14:42.206+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=11/prediction.parquet et targets/date=2025-07-26/hour=11/target.parquet
+[2025-07-28T20:14:42.226+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=11/prediction.parquet ou targets/date=2025-07-26/hour=11/target.parquet → ignoré
+[2025-07-28T20:14:42.228+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=12/prediction.parquet et targets/date=2025-07-26/hour=12/target.parquet
+[2025-07-28T20:14:42.253+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=12/prediction.parquet ou targets/date=2025-07-26/hour=12/target.parquet → ignoré
+[2025-07-28T20:14:42.255+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=13/prediction.parquet et targets/date=2025-07-26/hour=13/target.parquet
+[2025-07-28T20:14:42.273+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=13/prediction.parquet ou targets/date=2025-07-26/hour=13/target.parquet → ignoré
+[2025-07-28T20:14:42.275+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=14/prediction.parquet et targets/date=2025-07-26/hour=14/target.parquet
+[2025-07-28T20:14:42.292+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=14/prediction.parquet ou targets/date=2025-07-26/hour=14/target.parquet → ignoré
+[2025-07-28T20:14:42.294+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=15/prediction.parquet et targets/date=2025-07-26/hour=15/target.parquet
+[2025-07-28T20:14:42.313+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=15/prediction.parquet ou targets/date=2025-07-26/hour=15/target.parquet → ignoré
+[2025-07-28T20:14:42.315+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=16/prediction.parquet et targets/date=2025-07-26/hour=16/target.parquet
+[2025-07-28T20:14:42.330+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=16/prediction.parquet ou targets/date=2025-07-26/hour=16/target.parquet → ignoré
+[2025-07-28T20:14:42.331+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=17/prediction.parquet et targets/date=2025-07-26/hour=17/target.parquet
+[2025-07-28T20:14:42.345+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=17/prediction.parquet ou targets/date=2025-07-26/hour=17/target.parquet → ignoré
+[2025-07-28T20:14:42.347+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=18/prediction.parquet et targets/date=2025-07-26/hour=18/target.parquet
+[2025-07-28T20:14:42.362+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=18/prediction.parquet ou targets/date=2025-07-26/hour=18/target.parquet → ignoré
+[2025-07-28T20:14:42.363+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=19/prediction.parquet et targets/date=2025-07-26/hour=19/target.parquet
+[2025-07-28T20:14:42.380+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=19/prediction.parquet ou targets/date=2025-07-26/hour=19/target.parquet → ignoré
+[2025-07-28T20:14:42.381+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=20/prediction.parquet et targets/date=2025-07-26/hour=20/target.parquet
+[2025-07-28T20:14:42.397+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=20/prediction.parquet ou targets/date=2025-07-26/hour=20/target.parquet → ignoré
+[2025-07-28T20:14:42.398+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=21/prediction.parquet et targets/date=2025-07-26/hour=21/target.parquet
+[2025-07-28T20:14:42.414+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=21/prediction.parquet ou targets/date=2025-07-26/hour=21/target.parquet → ignoré
+[2025-07-28T20:14:42.415+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=22/prediction.parquet et targets/date=2025-07-26/hour=22/target.parquet
+[2025-07-28T20:14:42.430+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=22/prediction.parquet ou targets/date=2025-07-26/hour=22/target.parquet → ignoré
+[2025-07-28T20:14:42.431+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-26/hour=23/prediction.parquet et targets/date=2025-07-26/hour=23/target.parquet
+[2025-07-28T20:14:42.446+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-26/hour=23/prediction.parquet ou targets/date=2025-07-26/hour=23/target.parquet → ignoré
+[2025-07-28T20:14:42.447+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=00/prediction.parquet et targets/date=2025-07-27/hour=00/target.parquet
+[2025-07-28T20:14:42.460+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=00/prediction.parquet ou targets/date=2025-07-27/hour=00/target.parquet → ignoré
+[2025-07-28T20:14:42.461+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=01/prediction.parquet et targets/date=2025-07-27/hour=01/target.parquet
+[2025-07-28T20:14:42.477+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=01/prediction.parquet ou targets/date=2025-07-27/hour=01/target.parquet → ignoré
+[2025-07-28T20:14:42.479+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=02/prediction.parquet et targets/date=2025-07-27/hour=02/target.parquet
+[2025-07-28T20:14:42.493+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=02/prediction.parquet ou targets/date=2025-07-27/hour=02/target.parquet → ignoré
+[2025-07-28T20:14:42.495+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=03/prediction.parquet et targets/date=2025-07-27/hour=03/target.parquet
+[2025-07-28T20:14:42.509+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=03/prediction.parquet ou targets/date=2025-07-27/hour=03/target.parquet → ignoré
+[2025-07-28T20:14:42.510+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=04/prediction.parquet et targets/date=2025-07-27/hour=04/target.parquet
+[2025-07-28T20:14:42.524+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=04/prediction.parquet ou targets/date=2025-07-27/hour=04/target.parquet → ignoré
+[2025-07-28T20:14:42.525+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=05/prediction.parquet et targets/date=2025-07-27/hour=05/target.parquet
+[2025-07-28T20:14:42.538+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=05/prediction.parquet ou targets/date=2025-07-27/hour=05/target.parquet → ignoré
+[2025-07-28T20:14:42.539+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=06/prediction.parquet et targets/date=2025-07-27/hour=06/target.parquet
+[2025-07-28T20:14:42.551+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=06/prediction.parquet ou targets/date=2025-07-27/hour=06/target.parquet → ignoré
+[2025-07-28T20:14:42.552+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=07/prediction.parquet et targets/date=2025-07-27/hour=07/target.parquet
+[2025-07-28T20:14:42.564+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=07/prediction.parquet ou targets/date=2025-07-27/hour=07/target.parquet → ignoré
+[2025-07-28T20:14:42.565+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=08/prediction.parquet et targets/date=2025-07-27/hour=08/target.parquet
+[2025-07-28T20:14:42.578+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=08/prediction.parquet ou targets/date=2025-07-27/hour=08/target.parquet → ignoré
+[2025-07-28T20:14:42.579+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=09/prediction.parquet et targets/date=2025-07-27/hour=09/target.parquet
+[2025-07-28T20:14:42.590+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=09/prediction.parquet ou targets/date=2025-07-27/hour=09/target.parquet → ignoré
+[2025-07-28T20:14:42.591+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=10/prediction.parquet et targets/date=2025-07-27/hour=10/target.parquet
+[2025-07-28T20:14:42.602+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=10/prediction.parquet ou targets/date=2025-07-27/hour=10/target.parquet → ignoré
+[2025-07-28T20:14:42.603+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=11/prediction.parquet et targets/date=2025-07-27/hour=11/target.parquet
+[2025-07-28T20:14:42.615+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=11/prediction.parquet ou targets/date=2025-07-27/hour=11/target.parquet → ignoré
+[2025-07-28T20:14:42.616+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=12/prediction.parquet et targets/date=2025-07-27/hour=12/target.parquet
+[2025-07-28T20:14:42.629+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=12/prediction.parquet ou targets/date=2025-07-27/hour=12/target.parquet → ignoré
+[2025-07-28T20:14:42.630+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=13/prediction.parquet et targets/date=2025-07-27/hour=13/target.parquet
+[2025-07-28T20:14:42.642+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=13/prediction.parquet ou targets/date=2025-07-27/hour=13/target.parquet → ignoré
+[2025-07-28T20:14:42.643+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=14/prediction.parquet et targets/date=2025-07-27/hour=14/target.parquet
+[2025-07-28T20:14:42.654+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=14/prediction.parquet ou targets/date=2025-07-27/hour=14/target.parquet → ignoré
+[2025-07-28T20:14:42.655+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=15/prediction.parquet et targets/date=2025-07-27/hour=15/target.parquet
+[2025-07-28T20:14:42.666+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=15/prediction.parquet ou targets/date=2025-07-27/hour=15/target.parquet → ignoré
+[2025-07-28T20:14:42.667+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=16/prediction.parquet et targets/date=2025-07-27/hour=16/target.parquet
+[2025-07-28T20:14:42.679+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=16/prediction.parquet ou targets/date=2025-07-27/hour=16/target.parquet → ignoré
+[2025-07-28T20:14:42.680+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=17/prediction.parquet et targets/date=2025-07-27/hour=17/target.parquet
+[2025-07-28T20:14:42.693+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=17/prediction.parquet ou targets/date=2025-07-27/hour=17/target.parquet → ignoré
+[2025-07-28T20:14:42.694+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=18/prediction.parquet et targets/date=2025-07-27/hour=18/target.parquet
+[2025-07-28T20:14:42.706+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=18/prediction.parquet ou targets/date=2025-07-27/hour=18/target.parquet → ignoré
+[2025-07-28T20:14:42.707+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=19/prediction.parquet et targets/date=2025-07-27/hour=19/target.parquet
+[2025-07-28T20:14:42.718+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=19/prediction.parquet ou targets/date=2025-07-27/hour=19/target.parquet → ignoré
+[2025-07-28T20:14:42.719+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=20/prediction.parquet et targets/date=2025-07-27/hour=20/target.parquet
+[2025-07-28T20:14:42.731+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=20/prediction.parquet ou targets/date=2025-07-27/hour=20/target.parquet → ignoré
+[2025-07-28T20:14:42.732+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=21/prediction.parquet et targets/date=2025-07-27/hour=21/target.parquet
+[2025-07-28T20:14:42.744+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=21/prediction.parquet ou targets/date=2025-07-27/hour=21/target.parquet → ignoré
+[2025-07-28T20:14:42.745+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=22/prediction.parquet et targets/date=2025-07-27/hour=22/target.parquet
+[2025-07-28T20:14:42.757+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=22/prediction.parquet ou targets/date=2025-07-27/hour=22/target.parquet → ignoré
+[2025-07-28T20:14:42.758+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-27/hour=23/prediction.parquet et targets/date=2025-07-27/hour=23/target.parquet
+[2025-07-28T20:14:42.771+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-27/hour=23/prediction.parquet ou targets/date=2025-07-27/hour=23/target.parquet → ignoré
+[2025-07-28T20:14:42.772+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=00/prediction.parquet et targets/date=2025-07-28/hour=00/target.parquet
+[2025-07-28T20:14:42.784+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-28/hour=00/prediction.parquet ou targets/date=2025-07-28/hour=00/target.parquet → ignoré
+[2025-07-28T20:14:42.786+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=01/prediction.parquet et targets/date=2025-07-28/hour=01/target.parquet
+[2025-07-28T20:14:42.799+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-28/hour=01/prediction.parquet ou targets/date=2025-07-28/hour=01/target.parquet → ignoré
+[2025-07-28T20:14:42.800+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=02/prediction.parquet et targets/date=2025-07-28/hour=02/target.parquet
+[2025-07-28T20:14:42.814+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-28/hour=02/prediction.parquet ou targets/date=2025-07-28/hour=02/target.parquet → ignoré
+[2025-07-28T20:14:42.815+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=03/prediction.parquet et targets/date=2025-07-28/hour=03/target.parquet
+[2025-07-28T20:14:42.829+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-28/hour=03/prediction.parquet ou targets/date=2025-07-28/hour=03/target.parquet → ignoré
+[2025-07-28T20:14:42.830+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=04/prediction.parquet et targets/date=2025-07-28/hour=04/target.parquet
+[2025-07-28T20:14:42.844+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-28/hour=04/prediction.parquet ou targets/date=2025-07-28/hour=04/target.parquet → ignoré
+[2025-07-28T20:14:42.845+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=05/prediction.parquet et targets/date=2025-07-28/hour=05/target.parquet
+[2025-07-28T20:14:42.860+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-28/hour=05/prediction.parquet ou targets/date=2025-07-28/hour=05/target.parquet → ignoré
+[2025-07-28T20:14:42.861+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=06/prediction.parquet et targets/date=2025-07-28/hour=06/target.parquet
+[2025-07-28T20:14:42.878+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-28/hour=06/prediction.parquet ou targets/date=2025-07-28/hour=06/target.parquet → ignoré
+[2025-07-28T20:14:42.879+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=07/prediction.parquet et targets/date=2025-07-28/hour=07/target.parquet
+[2025-07-28T20:14:42.894+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-28/hour=07/prediction.parquet ou targets/date=2025-07-28/hour=07/target.parquet → ignoré
+[2025-07-28T20:14:42.896+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=08/prediction.parquet et targets/date=2025-07-28/hour=08/target.parquet
+[2025-07-28T20:14:42.910+0000] {drift_monitoring.py:115} WARNING - ⚠️ Fichier manquant : predictions/date=2025-07-28/hour=08/prediction.parquet ou targets/date=2025-07-28/hour=08/target.parquet → ignoré
+[2025-07-28T20:14:42.911+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=09/prediction.parquet et targets/date=2025-07-28/hour=09/target.parquet
+[2025-07-28T20:14:43.348+0000] {drift_monitoring.py:98} INFO - ✅ MAE pour 2025-07-28 09 = 0.0206
+[2025-07-28T20:14:43.389+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=10/prediction.parquet et targets/date=2025-07-28/hour=10/target.parquet
+[2025-07-28T20:14:43.425+0000] {drift_monitoring.py:98} INFO - ✅ MAE pour 2025-07-28 10 = 0.0248
+[2025-07-28T20:14:43.431+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=11/prediction.parquet et targets/date=2025-07-28/hour=11/target.parquet
+[2025-07-28T20:14:43.471+0000] {drift_monitoring.py:98} INFO - ✅ MAE pour 2025-07-28 11 = 0.0107
+[2025-07-28T20:14:43.476+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=12/prediction.parquet et targets/date=2025-07-28/hour=12/target.parquet
+[2025-07-28T20:14:43.512+0000] {drift_monitoring.py:98} INFO - ✅ MAE pour 2025-07-28 12 = 0.0758
+[2025-07-28T20:14:43.516+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=13/prediction.parquet et targets/date=2025-07-28/hour=13/target.parquet
+[2025-07-28T20:14:43.551+0000] {drift_monitoring.py:98} INFO - ✅ MAE pour 2025-07-28 13 = 0.0816
+[2025-07-28T20:14:43.555+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=14/prediction.parquet et targets/date=2025-07-28/hour=14/target.parquet
+[2025-07-28T20:14:43.588+0000] {drift_monitoring.py:98} INFO - ✅ MAE pour 2025-07-28 14 = 0.0644
+[2025-07-28T20:14:43.593+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=15/prediction.parquet et targets/date=2025-07-28/hour=15/target.parquet
+[2025-07-28T20:14:43.631+0000] {drift_monitoring.py:98} INFO - ✅ MAE pour 2025-07-28 15 = 0.0824
+[2025-07-28T20:14:43.636+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=16/prediction.parquet et targets/date=2025-07-28/hour=16/target.parquet
+[2025-07-28T20:14:43.674+0000] {drift_monitoring.py:98} INFO - ✅ MAE pour 2025-07-28 16 = 0.0700
+[2025-07-28T20:14:43.680+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=17/prediction.parquet et targets/date=2025-07-28/hour=17/target.parquet
+[2025-07-28T20:14:43.720+0000] {drift_monitoring.py:98} INFO - ✅ MAE pour 2025-07-28 17 = 0.0700
+[2025-07-28T20:14:43.725+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=18/prediction.parquet et targets/date=2025-07-28/hour=18/target.parquet
+[2025-07-28T20:14:43.767+0000] {drift_monitoring.py:98} INFO - ✅ MAE pour 2025-07-28 18 = 0.0462
+[2025-07-28T20:14:43.773+0000] {drift_monitoring.py:75} INFO - 📥 Téléchargement predictions/date=2025-07-28/hour=19/prediction.parquet et targets/date=2025-07-28/hour=19/target.parquet
+[2025-07-28T20:14:43.817+0000] {drift_monitoring.py:98} INFO - ✅ MAE pour 2025-07-28 19 = 0.1089
+[2025-07-28T20:14:43.822+0000] {drift_monitoring.py:129} INFO - 📊 MAE moyen sur 11 heures : 0.0596 | Seuil : 0.0500
+[2025-07-28T20:14:44.216+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-28T20:14:44.217+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/drift_monitoring.py", line 142, in check_drift_and_report
+    report.save_html(report_path)
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/suite/base_suite.py", line 264, in save_html
+    dashboard_id, dashboard_info, graphs = self._build_dashboard_info()
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/report/report.py", line 232, in _build_dashboard_info
+    html_info = renderer.render_html(metric)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/metrics/regression_performance/regression_quality.py", line 283, in render_html
+    metric_result = obj.get_result()
+                    ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/base_metric.py", line 271, in get_result
+    raise result.exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/calculation_engine/engine.py", line 72, in execute_metrics
+    calculations[metric] = calculation.calculate(context, converted_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/calculation_engine/python_engine.py", line 103, in calculate
+    return self.metric.calculate(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/metrics/regression_performance/regression_quality.py", line 119, in calculate
+    rmse_score_value = mean_squared_error(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 194, in wrapper
+    params = func_sig.bind(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/inspect.py", line 3259, in bind
+    return self._bind(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/inspect.py", line 3248, in _bind
+    raise TypeError(
+TypeError: got an unexpected keyword argument 'squared'
+[2025-07-28T20:14:44.242+0000] {taskinstance.py:1205} INFO - Marking task as FAILED. dag_id=data_drift_monitoring, task_id=check_drift_and_generate_report, execution_date=20250728T201424, start_date=20250728T201439, end_date=20250728T201444
+[2025-07-28T20:14:44.266+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 33 for task check_drift_and_generate_report (got an unexpected keyword argument 'squared'; 49439)
+[2025-07-28T20:14:44.298+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-28T20:14:44.328+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-28T20:14:44.331+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

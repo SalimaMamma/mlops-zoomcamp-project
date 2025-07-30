@@ -1,0 +1,406 @@
+[2025-07-28T21:10:49.513+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-28T21:10:49.555+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: training_pipeline.train_model triggered_by_drift_20250728_210522 [queued]>
+[2025-07-28T21:10:49.565+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: training_pipeline.train_model triggered_by_drift_20250728_210522 [queued]>
+[2025-07-28T21:10:49.566+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 4
+[2025-07-28T21:10:49.580+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): train_model> on 2025-07-28 21:05:22+00:00
+[2025-07-28T21:10:49.601+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=58215) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-28T21:10:49.600+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'training_pipeline', 'train_model', 'triggered_by_drift_20250728_210522', '--job-id', '45', '--raw', '--subdir', 'DAGS_FOLDER/training_pipeline.py', '--cfg-path', '/tmp/tmp8_0armj0']
+[2025-07-28T21:10:49.602+0000] {standard_task_runner.py:63} INFO - Started process 58257 to run task
+[2025-07-28T21:10:49.602+0000] {standard_task_runner.py:91} INFO - Job 45: Subtask train_model
+[2025-07-28T21:10:49.623+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-28T21:10:49.664+0000] {task_command.py:426} INFO - Running <TaskInstance: training_pipeline.train_model triggered_by_drift_20250728_210522 [running]> on host d78ad09e75e4
+[2025-07-28T21:10:49.822+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='mlops_team@example.com' AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='training_pipeline' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2025-07-28T21:05:22+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='triggered_by_drift_20250728_210522'
+[2025-07-28T21:10:49.825+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-28T21:10:49.997+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728101554.csv
+[2025-07-28T21:10:50.050+0000] {data_processing.py:40} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250728101811.csv
+[2025-07-28T21:10:50.092+0000] {data_processing.py:40} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250728101831.csv
+[2025-07-28T21:10:50.108+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728105614.csv
+[2025-07-28T21:10:50.142+0000] {data_processing.py:40} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250728110017.csv
+[2025-07-28T21:10:50.159+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728110436.csv
+[2025-07-28T21:10:50.177+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728111630.csv
+[2025-07-28T21:10:50.196+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728112512.csv
+[2025-07-28T21:10:50.232+0000] {data_processing.py:40} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250728113121.csv
+[2025-07-28T21:10:50.251+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728113444.csv
+[2025-07-28T21:10:50.269+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728114226.csv
+[2025-07-28T21:10:50.303+0000] {data_processing.py:40} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250728120012.csv
+[2025-07-28T21:10:50.336+0000] {data_processing.py:40} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250728133614.csv
+[2025-07-28T21:10:50.371+0000] {data_processing.py:40} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250728140029.csv
+[2025-07-28T21:10:50.400+0000] {data_processing.py:40} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250728150011.csv
+[2025-07-28T21:10:50.432+0000] {data_processing.py:40} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250728153157.csv
+[2025-07-28T21:10:50.448+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728153357.csv
+[2025-07-28T21:10:50.464+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728154411.csv
+[2025-07-28T21:10:50.479+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728154903.csv
+[2025-07-28T21:10:50.507+0000] {data_processing.py:40} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250728160214.csv
+[2025-07-28T21:10:50.521+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728160216.csv
+[2025-07-28T21:10:50.537+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728160822.csv
+[2025-07-28T21:10:50.554+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728161845.csv
+[2025-07-28T21:10:50.569+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728162615.csv
+[2025-07-28T21:10:50.585+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728163844.csv
+[2025-07-28T21:10:50.617+0000] {data_processing.py:40} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250728181838.csv
+[2025-07-28T21:10:50.633+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728181859.csv
+[2025-07-28T21:10:50.676+0000] {data_processing.py:40} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250728181903.csv
+[2025-07-28T21:10:50.706+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728182842.csv
+[2025-07-28T21:10:50.736+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728185243.csv
+[2025-07-28T21:10:50.753+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728185839.csv
+[2025-07-28T21:10:50.817+0000] {data_processing.py:40} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250728190017.csv
+[2025-07-28T21:10:50.832+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728190526.csv
+[2025-07-28T21:10:50.847+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728191208.csv
+[2025-07-28T21:10:50.872+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728192202.csv
+[2025-07-28T21:10:50.893+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728193908.csv
+[2025-07-28T21:10:50.911+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728195054.csv
+[2025-07-28T21:10:50.946+0000] {data_processing.py:40} INFO - Loaded 8669 records from S3: data/historical_BTC_USD_20250728200000.csv
+[2025-07-28T21:10:50.964+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728200240.csv
+[2025-07-28T21:10:51.000+0000] {data_processing.py:40} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250728200258.csv
+[2025-07-28T21:10:51.018+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728200725.csv
+[2025-07-28T21:10:51.035+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728204015.csv
+[2025-07-28T21:10:51.054+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728204041.csv
+[2025-07-28T21:10:51.073+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728204632.csv
+[2025-07-28T21:10:51.121+0000] {data_processing.py:40} INFO - Loaded 11560 records from S3: data/historical_BTC_USD_20250728204643.csv
+[2025-07-28T21:10:51.138+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728210317.csv
+[2025-07-28T21:10:51.155+0000] {data_processing.py:40} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250728211037.csv
+[2025-07-28T21:10:51.192+0000] {data_processing.py:84} INFO - Combined 20292 records for BTC-USD
+[2025-07-28T21:10:51.451+0000] {data_processing.py:162} INFO - Removed 50 rows with NaN values. Final shape: (20242, 84)
+[2025-07-28T21:10:51.461+0000] {logging_mixin.py:188} WARNING - /opt/***/src/data_processing.py:230 FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+[2025-07-28T21:10:51.598+0000] {logging_mixin.py:188} WARNING - /opt/***/src/data_processing.py:177 FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+[2025-07-28T21:10:51.619+0000] {data_processing.py:179} INFO - Prepared features: (20242, 80), Target: (20242,)
+[2025-07-28T21:10:51.620+0000] {data_processing.py:180} INFO - Feature columns: 80
+[2025-07-28T21:10:51.680+0000] {data_processing.py:202} INFO - Saved preprocessor to S3: s3://crypto-mlops-bucket/models/preprocessors/scaler_BTC_USD.pickle
+[2025-07-28T21:10:51.768+0000] {logging_mixin.py:188} WARNING - 2025/07/28 21:10:51 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2025-07-28T21:10:51.848+0000] {model.py:70} INFO - Starting hyperparameter optimization with 100 trials
+[2025-07-28T21:10:53.947+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:03.219+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[8]	valid_0's rmse: 0.10484
+[2025-07-28T21:11:03.348+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:03.601+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104852
+[2025-07-28T21:11:03.787+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:04.223+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104808
+[2025-07-28T21:11:04.363+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:04.737+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104956
+[2025-07-28T21:11:04.890+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:05.413+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104955
+[2025-07-28T21:11:05.544+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:05.709+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.104846
+[2025-07-28T21:11:05.849+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:06.314+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104913
+[2025-07-28T21:11:06.454+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:08.328+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104957
+[2025-07-28T21:11:08.505+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:08.863+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104864
+[2025-07-28T21:11:09.391+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:10.882+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104881
+[2025-07-28T21:11:11.088+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:13.119+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104791
+[2025-07-28T21:11:13.310+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:14.124+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104945
+[2025-07-28T21:11:14.311+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:14.909+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104837
+[2025-07-28T21:11:15.063+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:15.793+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104889
+[2025-07-28T21:11:15.945+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:16.887+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104911
+[2025-07-28T21:11:17.086+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:18.204+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[11]	valid_0's rmse: 0.104828
+[2025-07-28T21:11:18.356+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:18.624+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.10484
+[2025-07-28T21:11:18.805+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:19.230+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.104946
+[2025-07-28T21:11:19.372+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:20.032+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.1049
+[2025-07-28T21:11:20.323+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:23.731+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104862
+[2025-07-28T21:11:24.037+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:38.240+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.104868
+[2025-07-28T21:11:38.670+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:44.132+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[13]	valid_0's rmse: 0.104865
+[2025-07-28T21:11:44.610+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:49.588+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[29]	valid_0's rmse: 0.104802
+[2025-07-28T21:11:49.870+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:50.907+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104878
+[2025-07-28T21:11:51.055+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:51.455+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104846
+[2025-07-28T21:11:51.597+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:51.925+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104935
+[2025-07-28T21:11:52.078+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:52.650+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[13]	valid_0's rmse: 0.10473
+[2025-07-28T21:11:52.804+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:11:53.295+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[10]	valid_0's rmse: 0.104819
+[2025-07-28T21:11:53.454+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:12:53.259+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[18]	valid_0's rmse: 0.104801
+[2025-07-28T21:12:54.649+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:02.549+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104872
+[2025-07-28T21:13:02.738+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:06.467+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104841
+[2025-07-28T21:13:06.671+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:07.635+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.10486
+[2025-07-28T21:13:07.818+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:08.435+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[6]	valid_0's rmse: 0.104855
+[2025-07-28T21:13:08.575+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:09.601+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[10]	valid_0's rmse: 0.104827
+[2025-07-28T21:13:09.814+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:10.535+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[35]	valid_0's rmse: 0.104805
+[2025-07-28T21:13:10.730+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:12.027+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104947
+[2025-07-28T21:13:12.309+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:16.452+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[20]	valid_0's rmse: 0.104806
+[2025-07-28T21:13:16.638+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:18.336+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[3]	valid_0's rmse: 0.104814
+[2025-07-28T21:13:18.751+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:25.503+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104788
+[2025-07-28T21:13:27.711+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:37.035+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104925
+[2025-07-28T21:13:37.187+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:37.531+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[6]	valid_0's rmse: 0.104811
+[2025-07-28T21:13:37.672+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:38.134+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104862
+[2025-07-28T21:13:38.334+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:38.824+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.10486
+[2025-07-28T21:13:38.957+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:39.403+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104871
+[2025-07-28T21:13:39.552+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:40.046+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104888
+[2025-07-28T21:13:40.194+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:42.100+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.105003
+[2025-07-28T21:13:42.330+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:13:45.096+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104794
+[2025-07-28T21:13:45.460+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:14:02.794+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.104801
+[2025-07-28T21:14:03.041+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:14:38.552+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.104764
+[2025-07-28T21:14:39.519+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:15:06.618+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104892
+[2025-07-28T21:15:06.866+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:15:08.588+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.105078
+[2025-07-28T21:15:08.849+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:16:16.471+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104795
+[2025-07-28T21:16:18.506+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:17:34.023+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104811
+[2025-07-28T21:17:36.435+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:19:49.647+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.104864
+[2025-07-28T21:19:49.826+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:19:50.404+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.104907
+[2025-07-28T21:19:50.601+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:19:51.002+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104898
+[2025-07-28T21:19:51.197+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:19:52.224+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104821
+[2025-07-28T21:19:52.398+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:19:52.964+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104974
+[2025-07-28T21:19:53.145+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:01.044+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104972
+[2025-07-28T21:20:01.894+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:12.019+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104901
+[2025-07-28T21:20:12.202+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:15.929+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104955
+[2025-07-28T21:20:16.888+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:23.101+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104877
+[2025-07-28T21:20:23.354+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:27.088+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104953
+[2025-07-28T21:20:27.294+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:27.681+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104848
+[2025-07-28T21:20:27.883+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:29.381+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104999
+[2025-07-28T21:20:29.597+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:29.996+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104887
+[2025-07-28T21:20:30.186+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:30.912+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.10487
+[2025-07-28T21:20:31.166+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:38.017+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104983
+[2025-07-28T21:20:38.210+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:39.223+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.104888
+[2025-07-28T21:20:39.411+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:39.695+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[10]	valid_0's rmse: 0.104842
+[2025-07-28T21:20:39.903+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:45.963+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.104974
+[2025-07-28T21:20:46.404+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:48.832+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.104913
+[2025-07-28T21:20:49.017+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:49.807+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.104834
+[2025-07-28T21:20:49.967+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:51.528+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104932
+[2025-07-28T21:20:51.693+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:20:52.360+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104893
+[2025-07-28T21:20:52.722+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:02.185+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104888
+[2025-07-28T21:21:02.256+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:04.683+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.105006
+[2025-07-28T21:21:04.862+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:05.365+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.10484
+[2025-07-28T21:21:05.527+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:05.949+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104915
+[2025-07-28T21:21:06.090+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:06.616+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.104778
+[2025-07-28T21:21:06.805+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:07.097+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.105079
+[2025-07-28T21:21:07.330+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:12.687+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.10489
+[2025-07-28T21:21:12.848+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:13.202+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104912
+[2025-07-28T21:21:13.355+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:15.984+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104947
+[2025-07-28T21:21:16.158+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:17.313+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[6]	valid_0's rmse: 0.104851
+[2025-07-28T21:21:17.547+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:37.530+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104909
+[2025-07-28T21:21:38.687+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:42.428+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.105006
+[2025-07-28T21:21:43.697+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:49.423+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104833
+[2025-07-28T21:21:49.573+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:51.319+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104878
+[2025-07-28T21:21:51.583+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:52.800+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.104891
+[2025-07-28T21:21:53.006+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:54.042+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[6]	valid_0's rmse: 0.10484
+[2025-07-28T21:21:54.365+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:56.121+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.105021
+[2025-07-28T21:21:56.332+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:57.076+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[14]	valid_0's rmse: 0.104792
+[2025-07-28T21:21:57.296+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:21:58.026+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[6]	valid_0's rmse: 0.104836
+[2025-07-28T21:21:58.221+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:22:04.864+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[3]	valid_0's rmse: 0.104805
+[2025-07-28T21:22:05.170+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:22:06.481+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[13]	valid_0's rmse: 0.104812
+[2025-07-28T21:22:06.670+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:22:07.501+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.104845
+[2025-07-28T21:22:07.659+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:22:08.175+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[18]	valid_0's rmse: 0.104782
+[2025-07-28T21:22:08.390+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:22:08.952+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[14]	valid_0's rmse: 0.104847
+[2025-07-28T21:22:09.115+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:22:10.336+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[3]	valid_0's rmse: 0.104857
+[2025-07-28T21:22:10.365+0000] {model.py:78} INFO - Best parameters: {'num_leaves': 62, 'learning_rate': 0.03335999493352206, 'feature_fraction': 0.7507773979030501, 'bagging_fraction': 0.5473753502318619, 'bagging_freq': 4, 'min_child_samples': 76, 'max_depth': 10, 'reg_alpha': 0.24376266235953806, 'reg_lambda': 0.4088738937545183}
+[2025-07-28T21:22:10.367+0000] {model.py:79} INFO - Best RMSE: 0.1047
+[2025-07-28T21:22:11.109+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-28T21:22:18.538+0000] {logging_mixin.py:188} INFO - [100]	train's rmse: 0.236924	val's rmse: 0.105677
+[2025-07-28T21:22:18.915+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[13]	train's rmse: 0.244312	val's rmse: 0.10473
+[2025-07-28T21:22:19.478+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
+[2025-07-28T21:22:30.834+0000] {logging_mixin.py:188} WARNING - 2025/07/28 21:22:30 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
+[2025-07-28T21:22:31.134+0000] {logging_mixin.py:188} WARNING - Registered model 'crypto_lightgbm_model_BTC_USD' already exists. Creating a new version of this model...
+[2025-07-28T21:22:31.232+0000] {logging_mixin.py:188} WARNING - 2025/07/28 21:22:31 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: crypto_lightgbm_model_BTC_USD, version 5
+[2025-07-28T21:22:31.234+0000] {logging_mixin.py:188} WARNING - Created version '5' of model 'crypto_lightgbm_model_BTC_USD'.
+[2025-07-28T21:22:31.236+0000] {model.py:168} INFO - Training completed. MLflow run ID: 89e62537bbff45eb9a717c7dcf50cbcd
+[2025-07-28T21:22:31.266+0000] {logging_mixin.py:188} INFO - 🏃 View run lightgbm_training_BTC-USD_20250728_211051 at: http://mlflow:5000/#/experiments/0/runs/89e62537bbff45eb9a717c7dcf50cbcd
+[2025-07-28T21:22:31.267+0000] {logging_mixin.py:188} INFO - 🧪 View experiment at: http://mlflow:5000/#/experiments/0
+[2025-07-28T21:22:31.300+0000] {training_pipeline.py:126} INFO - Métriques nettoyées: {'train_rmse': 0.244312, 'val_rmse': 0.10473, 'train_mae': 0.101931, 'val_mae': 0.075373, 'train_r2': 0.010463, 'val_r2': 0.002248}
+[2025-07-28T21:22:31.385+0000] {model.py:235} INFO - Saved model to S3: s3://crypto-mlops-bucket/models/BTC-USD/model_89e62537bbff45eb9a717c7dcf50cbcd.txt
+[2025-07-28T21:22:31.439+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-28T21:22:31.500+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-28T21:22:31.755+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=training_pipeline, task_id=train_model, execution_date=20250728T210522, start_date=20250728T211049, end_date=20250728T212231
+[2025-07-28T21:22:31.892+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-28T21:22:32.239+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-28T21:22:32.242+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

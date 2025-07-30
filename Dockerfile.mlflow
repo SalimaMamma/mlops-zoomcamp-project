@@ -1,0 +1,30 @@
+FROM python:3.9-slim
+
+# Variables
+ENV PYTHONUNBUFFERED=1
+
+# Dépendances système
+RUN apt-get update && apt-get install -y \
+  gcc \
+  g++ \
+  libpq-dev \
+  curl \
+  netcat-openbsd \
+  postgresql-client \
+  awscli \
+  build-essential && \
+  rm -rf /var/lib/apt/lists/*
+
+# Dépendances Python
+RUN pip install --upgrade pip && \
+  pip install mlflow==2.10.2 psycopg2-binary==2.9.9 boto3==1.34.0 requests==2.31.0
+
+# Entrypoint
+COPY mlflow-entrypoint.sh /mlflow-entrypoint.sh
+RUN chmod +x /mlflow-entrypoint.sh
+
+WORKDIR /mlflow
+
+EXPOSE 5000
+
+ENTRYPOINT ["/mlflow-entrypoint.sh"]

@@ -1,0 +1,23 @@
+FROM apache/airflow:2.9.0
+
+
+USER root
+
+# Installer dépendances système nécessaires
+RUN apt-get update && \
+    apt-get install -y libgomp1 build-essential && \
+    rm -rf /var/lib/apt/lists/*
+
+# Copy requirements file and entrypoint script
+COPY requirements.txt /tmp/requirements.txt
+COPY airflow-entrypoint.sh /airflow-entrypoint.sh
+
+# Make the entrypoint script executable
+RUN chmod +x /airflow-entrypoint.sh
+
+USER airflow
+
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+
+ENTRYPOINT ["/airflow-entrypoint.sh"]

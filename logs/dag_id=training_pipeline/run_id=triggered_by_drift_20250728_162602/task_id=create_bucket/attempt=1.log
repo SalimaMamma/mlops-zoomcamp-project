@@ -1,0 +1,20 @@
+[2025-07-28T16:26:09.918+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-28T16:26:09.963+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: training_pipeline.create_bucket triggered_by_drift_20250728_162602 [queued]>
+[2025-07-28T16:26:09.974+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: training_pipeline.create_bucket triggered_by_drift_20250728_162602 [queued]>
+[2025-07-28T16:26:09.981+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 4
+[2025-07-28T16:26:09.996+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): create_bucket> on 2025-07-28 16:26:02+00:00
+[2025-07-28T16:26:10.014+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'training_pipeline', 'create_bucket', 'triggered_by_drift_20250728_162602', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/training_pipeline.py', '--cfg-path', '/tmp/tmpc2a1bwt3']
+[2025-07-28T16:26:10.017+0000] {standard_task_runner.py:91} INFO - Job 24: Subtask create_bucket
+[2025-07-28T16:26:10.018+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=32240) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-28T16:26:10.019+0000] {standard_task_runner.py:63} INFO - Started process 32278 to run task
+[2025-07-28T16:26:10.043+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-28T16:26:10.080+0000] {task_command.py:426} INFO - Running <TaskInstance: training_pipeline.create_bucket triggered_by_drift_20250728_162602 [running]> on host d78ad09e75e4
+[2025-07-28T16:26:10.186+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='mlops_team@example.com' AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='training_pipeline' AIRFLOW_CTX_TASK_ID='create_bucket' AIRFLOW_CTX_EXECUTION_DATE='2025-07-28T16:26:02+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='triggered_by_drift_20250728_162602'
+[2025-07-28T16:26:10.188+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-28T16:26:10.230+0000] {training_pipeline.py:40} INFO - Bucket crypto-mlops-bucket déjà existant ✅
+[2025-07-28T16:26:10.231+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-28T16:26:10.232+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-28T16:26:10.244+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=training_pipeline, task_id=create_bucket, execution_date=20250728T162602, start_date=20250728T162609, end_date=20250728T162610
+[2025-07-28T16:26:10.274+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-28T16:26:10.306+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-28T16:26:10.309+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

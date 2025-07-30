@@ -1,0 +1,110 @@
+[2025-07-27T14:45:44.350+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-27T14:45:44.393+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: preprocessing_hourly.preprocess_and_upload manual__2025-07-27T14:39:36.499219+00:00 [queued]>
+[2025-07-27T14:45:44.405+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: preprocessing_hourly.preprocess_and_upload manual__2025-07-27T14:39:36.499219+00:00 [queued]>
+[2025-07-27T14:45:44.406+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2025-07-27T14:45:44.619+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): preprocess_and_upload> on 2025-07-27 14:39:36.499219+00:00
+[2025-07-27T14:45:44.635+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'preprocessing_hourly', 'preprocess_and_upload', 'manual__2025-07-27T14:39:36.499219+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_inference.py', '--cfg-path', '/tmp/tmp_db7nf__']
+[2025-07-27T14:45:44.636+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1191) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-27T14:45:44.638+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask preprocess_and_upload
+[2025-07-27T14:45:44.638+0000] {standard_task_runner.py:63} INFO - Started process 1208 to run task
+[2025-07-27T14:45:44.657+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-27T14:45:44.706+0000] {task_command.py:426} INFO - Running <TaskInstance: preprocessing_hourly.preprocess_and_upload manual__2025-07-27T14:39:36.499219+00:00 [running]> on host e24ac6c53b70
+[2025-07-27T14:45:44.808+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='preprocessing_hourly' AIRFLOW_CTX_TASK_ID='preprocess_and_upload' AIRFLOW_CTX_EXECUTION_DATE='2025-07-27T14:39:36.499219+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-27T14:39:36.499219+00:00'
+[2025-07-27T14:45:44.810+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-27T14:45:44.851+0000] {ingestion_inference.py:52} INFO - Bucket crypto-preprocessed exists
+[2025-07-27T14:45:45.044+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-06-27 14:45:44.865430 to 2025-06-28 15:45:44.865430
+[2025-07-27T14:45:45.463+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-06-28 15:45:44.865430 to 2025-06-29 16:45:44.865430
+[2025-07-27T14:45:45.625+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-06-29 16:45:44.865430 to 2025-06-30 17:45:44.865430
+[2025-07-27T14:45:46.118+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-06-30 17:45:44.865430 to 2025-07-01 18:45:44.865430
+[2025-07-27T14:45:46.296+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-01 18:45:44.865430 to 2025-07-02 19:45:44.865430
+[2025-07-27T14:45:46.499+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-02 19:45:44.865430 to 2025-07-03 20:45:44.865430
+[2025-07-27T14:45:46.690+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-03 20:45:44.865430 to 2025-07-04 21:45:44.865430
+[2025-07-27T14:45:45.356+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-04 21:45:44.865430 to 2025-07-05 22:45:44.865430
+[2025-07-27T14:45:45.573+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-05 22:45:44.865430 to 2025-07-06 23:45:44.865430
+[2025-07-27T14:45:45.771+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-06 23:45:44.865430 to 2025-07-08 00:45:44.865430
+[2025-07-27T14:45:46.186+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-08 00:45:44.865430 to 2025-07-09 01:45:44.865430
+[2025-07-27T14:45:46.394+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-09 01:45:44.865430 to 2025-07-10 02:45:44.865430
+[2025-07-27T14:45:46.583+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-10 02:45:44.865430 to 2025-07-11 03:45:44.865430
+[2025-07-27T14:45:46.756+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-11 03:45:44.865430 to 2025-07-12 04:45:44.865430
+[2025-07-27T14:45:47.458+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-12 04:45:44.865430 to 2025-07-13 05:45:44.865430
+[2025-07-27T14:45:47.664+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-13 05:45:44.865430 to 2025-07-14 06:45:44.865430
+[2025-07-27T14:45:47.868+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-14 06:45:44.865430 to 2025-07-15 07:45:44.865430
+[2025-07-27T14:45:48.066+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-15 07:45:44.865430 to 2025-07-16 08:45:44.865430
+[2025-07-27T14:45:48.473+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-16 08:45:44.865430 to 2025-07-17 09:45:44.865430
+[2025-07-27T14:45:48.643+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-17 09:45:44.865430 to 2025-07-18 10:45:44.865430
+[2025-07-27T14:45:51.098+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-18 10:45:44.865430 to 2025-07-19 11:45:44.865430
+[2025-07-27T14:45:51.299+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-19 11:45:44.865430 to 2025-07-20 12:45:44.865430
+[2025-07-27T14:45:51.733+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-20 12:45:44.865430 to 2025-07-21 13:45:44.865430
+[2025-07-27T14:45:51.939+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-21 13:45:44.865430 to 2025-07-22 14:45:44.865430
+[2025-07-27T14:45:52.263+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-22 14:45:44.865430 to 2025-07-23 15:45:44.865430
+[2025-07-27T14:45:52.449+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-23 15:45:44.865430 to 2025-07-24 16:45:44.865430
+[2025-07-27T14:45:53.332+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-24 16:45:44.865430 to 2025-07-25 17:45:44.865430
+[2025-07-27T14:45:54.050+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for BTC-USD from 2025-07-25 17:45:44.865430 to 2025-07-26 18:45:44.865430
+[2025-07-27T14:45:54.258+0000] {data_ingestion.py:62} INFO - Fetched 240 candles for BTC-USD from 2025-07-26 18:45:44.865430 to 2025-07-27 14:45:44.865430
+[2025-07-27T14:45:54.408+0000] {data_ingestion.py:103} INFO - Saved data to S3: s3://crypto-mlops-bucket/data/historical_BTC_USD_20250727144554.csv
+[2025-07-27T14:45:55.454+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-06-27 14:45:44.865430 to 2025-06-28 15:45:44.865430
+[2025-07-27T14:45:55.672+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-06-28 15:45:44.865430 to 2025-06-29 16:45:44.865430
+[2025-07-27T14:45:55.910+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-06-29 16:45:44.865430 to 2025-06-30 17:45:44.865430
+[2025-07-27T14:45:56.090+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-06-30 17:45:44.865430 to 2025-07-01 18:45:44.865430
+[2025-07-27T14:45:56.294+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-01 18:45:44.865430 to 2025-07-02 19:45:44.865430
+[2025-07-27T14:45:56.464+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-02 19:45:44.865430 to 2025-07-03 20:45:44.865430
+[2025-07-27T14:45:56.637+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-03 20:45:44.865430 to 2025-07-04 21:45:44.865430
+[2025-07-27T14:45:56.844+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-04 21:45:44.865430 to 2025-07-05 22:45:44.865430
+[2025-07-27T14:45:57.025+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-05 22:45:44.865430 to 2025-07-06 23:45:44.865430
+[2025-07-27T14:45:57.479+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-06 23:45:44.865430 to 2025-07-08 00:45:44.865430
+[2025-07-27T14:45:57.741+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-08 00:45:44.865430 to 2025-07-09 01:45:44.865430
+[2025-07-27T14:45:57.957+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-09 01:45:44.865430 to 2025-07-10 02:45:44.865430
+[2025-07-27T14:45:58.403+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-10 02:45:44.865430 to 2025-07-11 03:45:44.865430
+[2025-07-27T14:45:58.599+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-11 03:45:44.865430 to 2025-07-12 04:45:44.865430
+[2025-07-27T14:45:58.800+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-12 04:45:44.865430 to 2025-07-13 05:45:44.865430
+[2025-07-27T14:45:59.234+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-13 05:45:44.865430 to 2025-07-14 06:45:44.865430
+[2025-07-27T14:45:59.926+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-14 06:45:44.865430 to 2025-07-15 07:45:44.865430
+[2025-07-27T14:46:01.176+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-15 07:45:44.865430 to 2025-07-16 08:45:44.865430
+[2025-07-27T14:46:01.366+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-16 08:45:44.865430 to 2025-07-17 09:45:44.865430
+[2025-07-27T14:46:01.572+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-17 09:45:44.865430 to 2025-07-18 10:45:44.865430
+[2025-07-27T14:46:05.627+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-18 10:45:44.865430 to 2025-07-19 11:45:44.865430
+[2025-07-27T14:46:06.175+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-19 11:45:44.865430 to 2025-07-20 12:45:44.865430
+[2025-07-27T14:46:06.380+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-20 12:45:44.865430 to 2025-07-21 13:45:44.865430
+[2025-07-27T14:46:06.558+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-21 13:45:44.865430 to 2025-07-22 14:45:44.865430
+[2025-07-27T14:46:06.772+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-22 14:45:44.865430 to 2025-07-23 15:45:44.865430
+[2025-07-27T14:46:07.231+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-23 15:45:44.865430 to 2025-07-24 16:45:44.865430
+[2025-07-27T14:46:08.052+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-24 16:45:44.865430 to 2025-07-25 17:45:44.865430
+[2025-07-27T14:46:08.698+0000] {data_ingestion.py:62} INFO - Fetched 300 candles for ETH-USD from 2025-07-25 17:45:44.865430 to 2025-07-26 18:45:44.865430
+[2025-07-27T14:46:08.861+0000] {data_ingestion.py:62} INFO - Fetched 240 candles for ETH-USD from 2025-07-26 18:45:44.865430 to 2025-07-27 14:45:44.865430
+[2025-07-27T14:46:08.940+0000] {data_ingestion.py:103} INFO - Saved data to S3: s3://crypto-mlops-bucket/data/historical_ETH_USD_20250727144608.csv
+[2025-07-27T14:46:09.066+0000] {data_processing.py:160} INFO - Removed 50 rows with NaN values. Final shape: (8590, 84)
+[2025-07-27T14:46:09.093+0000] {data_processing.py:217} ERROR - Error loading preprocessor from S3: An error occurred (NoSuchKey) when calling the GetObject operation: The specified key does not exist.
+[2025-07-27T14:46:09.096+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-27T14:46:09.097+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/ingestion_inference.py", line 74, in preprocess_and_upload
+    X_scaled = processor.scaler.transform(X)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/preprocessing/_data.py", line 1042, in transform
+    check_is_fitted(self)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1661, in check_is_fitted
+    raise NotFittedError(msg % {"name": type(estimator).__name__})
+sklearn.exceptions.NotFittedError: This StandardScaler instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+[2025-07-27T14:46:09.113+0000] {taskinstance.py:1205} INFO - Marking task as UP_FOR_RETRY. dag_id=preprocessing_hourly, task_id=preprocess_and_upload, execution_date=20250727T143936, start_date=20250727T144544, end_date=20250727T144609
+[2025-07-27T14:46:09.128+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 9 for task preprocess_and_upload (This StandardScaler instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.; 1208)
+[2025-07-27T14:46:09.183+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-27T14:46:09.201+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-27T14:46:09.204+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -7,7 +7,7 @@ A robust, production-grade MLOps pipeline for real-time **cryptocurrency price v
 ## 📌 Problem Statement
 
 ### ✅ What This Solves
-- **Real-time crypto price *variation* prediction** for multiple coins (BTC, ETH, ADA, etc.)
+- **Real-time crypto price *variation* prediction** for Bitcoin
 - Advanced **time series modeling** with rich feature engineering: lags, rolling windows, technical indicators.
 - Fully automated ML lifecycle: **ingest → train → monitor → retrain → serve**.
 - Scalable API for **algorithmic trading**, portfolio management, and market trend detection.
@@ -131,7 +131,7 @@ cp .env.example .env
 # Update .env with your configs (API keys, DB, etc.)
 
 docker-compose -f docker-compose.airflow.yml up --build
-Go to http://localhost:8080 to access Airflow UI
+Go to http://localhost:8081 to access Airflow UI
 Trigger the Model Training Pipeline manually to start the process
 Access mlflow UI at http://localhost:5000 to see model versions and metrics
 
@@ -139,5 +139,10 @@ docker-compose -f docker-compose.api.yml up --build
 
 Access the FastAPI at http://localhost:8000
 
-You can now use the API to make predictions: 
+You can now use the client_.py file :
+Example : python src/client_.py --date 2025-03-28 --hour 9
+
+Or call the API to make predictions:
+
 curl -X GET "http://localhost:8000/predict?date=2025-07-28&hour=15"
+

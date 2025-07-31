@@ -1,7 +1,7 @@
 data:
   coinbase_api_url: "https://api.exchange.coinbase.com"
   websocket_url: "wss://ws-feed.exchange.coinbase.com"
-  symbols: ["BTC-USD", "ETH-USD"]
+  symbols: ["BTC-USD"]
   features: ["open", "high", "low", "close", "volume"]
   lookback_periods: [5, 10, 20, 50]
   days_back: 30

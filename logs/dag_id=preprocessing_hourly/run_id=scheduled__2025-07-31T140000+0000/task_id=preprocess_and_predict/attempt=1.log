@@ -1,0 +1,109 @@
+[2025-07-31T15:23:04.480+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-31T15:23:04.536+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: preprocessing_hourly.preprocess_and_predict scheduled__2025-07-31T14:00:00+00:00 [queued]>
+[2025-07-31T15:23:04.548+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: preprocessing_hourly.preprocess_and_predict scheduled__2025-07-31T14:00:00+00:00 [queued]>
+[2025-07-31T15:23:04.550+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2025-07-31T15:23:04.576+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): preprocess_and_predict> on 2025-07-31 14:00:00+00:00
+[2025-07-31T15:23:04.604+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=8338) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-31T15:23:04.602+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'preprocessing_hourly', 'preprocess_and_predict', 'scheduled__2025-07-31T14:00:00+00:00', '--job-id', '217', '--raw', '--subdir', 'DAGS_FOLDER/hourly_inference.py', '--cfg-path', '/tmp/tmpdrx7b2ev']
+[2025-07-31T15:23:04.606+0000] {standard_task_runner.py:63} INFO - Started process 8413 to run task
+[2025-07-31T15:23:04.607+0000] {standard_task_runner.py:91} INFO - Job 217: Subtask preprocess_and_predict
+[2025-07-31T15:23:04.630+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-31T15:23:04.688+0000] {task_command.py:426} INFO - Running <TaskInstance: preprocessing_hourly.preprocess_and_predict scheduled__2025-07-31T14:00:00+00:00 [running]> on host 44c57df83f33
+[2025-07-31T15:23:04.928+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='preprocessing_hourly' AIRFLOW_CTX_TASK_ID='preprocess_and_predict' AIRFLOW_CTX_EXECUTION_DATE='2025-07-31T14:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-31T14:00:00+00:00'
+[2025-07-31T15:23:04.931+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-31T15:23:04.955+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/context.py:320 AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+[2025-07-31T15:23:04.956+0000] {hourly_inference.py:70} INFO - [DEBUG] Execution date: 2025-07-31 14:00:00+00:00 (type=<class 'Proxy'>)
+[2025-07-31T15:23:04.982+0000] {hourly_inference.py:58} INFO - Bucket crypto-mlops-bucket exists
+[2025-07-31T15:23:05.008+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-01 14:00:00+00:00, current_end: 2025-07-02 15:00:00+00:00
+[2025-07-31T15:23:05.374+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-01 14:00:00+00:00 to 2025-07-02 15:00:00+00:00
+[2025-07-31T15:23:05.376+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-02 15:00:00+00:00, current_end: 2025-07-03 16:00:00+00:00
+[2025-07-31T15:23:05.591+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-02 15:00:00+00:00 to 2025-07-03 16:00:00+00:00
+[2025-07-31T15:23:05.593+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-03 16:00:00+00:00, current_end: 2025-07-04 17:00:00+00:00
+[2025-07-31T15:23:05.757+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-03 16:00:00+00:00 to 2025-07-04 17:00:00+00:00
+[2025-07-31T15:23:05.760+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-04 17:00:00+00:00, current_end: 2025-07-05 18:00:00+00:00
+[2025-07-31T15:23:05.960+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-04 17:00:00+00:00 to 2025-07-05 18:00:00+00:00
+[2025-07-31T15:23:05.963+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-05 18:00:00+00:00, current_end: 2025-07-06 19:00:00+00:00
+[2025-07-31T15:23:06.365+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-05 18:00:00+00:00 to 2025-07-06 19:00:00+00:00
+[2025-07-31T15:23:06.368+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-06 19:00:00+00:00, current_end: 2025-07-07 20:00:00+00:00
+[2025-07-31T15:23:06.780+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-06 19:00:00+00:00 to 2025-07-07 20:00:00+00:00
+[2025-07-31T15:23:06.783+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-07 20:00:00+00:00, current_end: 2025-07-08 21:00:00+00:00
+[2025-07-31T15:23:07.267+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-07 20:00:00+00:00 to 2025-07-08 21:00:00+00:00
+[2025-07-31T15:23:07.269+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-08 21:00:00+00:00, current_end: 2025-07-09 22:00:00+00:00
+[2025-07-31T15:23:07.499+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-08 21:00:00+00:00 to 2025-07-09 22:00:00+00:00
+[2025-07-31T15:23:07.501+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-09 22:00:00+00:00, current_end: 2025-07-10 23:00:00+00:00
+[2025-07-31T15:23:07.701+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-09 22:00:00+00:00 to 2025-07-10 23:00:00+00:00
+[2025-07-31T15:23:07.704+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-10 23:00:00+00:00, current_end: 2025-07-12 00:00:00+00:00
+[2025-07-31T15:23:07.912+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-10 23:00:00+00:00 to 2025-07-12 00:00:00+00:00
+[2025-07-31T15:23:07.914+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-12 00:00:00+00:00, current_end: 2025-07-13 01:00:00+00:00
+[2025-07-31T15:23:08.091+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-12 00:00:00+00:00 to 2025-07-13 01:00:00+00:00
+[2025-07-31T15:23:08.094+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-13 01:00:00+00:00, current_end: 2025-07-14 02:00:00+00:00
+[2025-07-31T15:23:08.274+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-13 01:00:00+00:00 to 2025-07-14 02:00:00+00:00
+[2025-07-31T15:23:08.276+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-14 02:00:00+00:00, current_end: 2025-07-15 03:00:00+00:00
+[2025-07-31T15:23:08.462+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-14 02:00:00+00:00 to 2025-07-15 03:00:00+00:00
+[2025-07-31T15:23:08.466+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-15 03:00:00+00:00, current_end: 2025-07-16 04:00:00+00:00
+[2025-07-31T15:23:08.666+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-15 03:00:00+00:00 to 2025-07-16 04:00:00+00:00
+[2025-07-31T15:23:08.670+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-16 04:00:00+00:00, current_end: 2025-07-17 05:00:00+00:00
+[2025-07-31T15:23:08.886+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-16 04:00:00+00:00 to 2025-07-17 05:00:00+00:00
+[2025-07-31T15:23:08.889+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-17 05:00:00+00:00, current_end: 2025-07-18 06:00:00+00:00
+[2025-07-31T15:23:09.291+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-17 05:00:00+00:00 to 2025-07-18 06:00:00+00:00
+[2025-07-31T15:23:09.293+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-18 06:00:00+00:00, current_end: 2025-07-19 07:00:00+00:00
+[2025-07-31T15:23:09.494+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-18 06:00:00+00:00 to 2025-07-19 07:00:00+00:00
+[2025-07-31T15:23:09.496+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-19 07:00:00+00:00, current_end: 2025-07-20 08:00:00+00:00
+[2025-07-31T15:23:09.704+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-19 07:00:00+00:00 to 2025-07-20 08:00:00+00:00
+[2025-07-31T15:23:09.706+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-20 08:00:00+00:00, current_end: 2025-07-21 09:00:00+00:00
+[2025-07-31T15:23:09.886+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-20 08:00:00+00:00 to 2025-07-21 09:00:00+00:00
+[2025-07-31T15:23:09.888+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-21 09:00:00+00:00, current_end: 2025-07-22 10:00:00+00:00
+[2025-07-31T15:23:10.364+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-21 09:00:00+00:00 to 2025-07-22 10:00:00+00:00
+[2025-07-31T15:23:10.366+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-22 10:00:00+00:00, current_end: 2025-07-23 11:00:00+00:00
+[2025-07-31T15:23:10.585+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-22 10:00:00+00:00 to 2025-07-23 11:00:00+00:00
+[2025-07-31T15:23:10.588+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-23 11:00:00+00:00, current_end: 2025-07-24 12:00:00+00:00
+[2025-07-31T15:23:11.073+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-23 11:00:00+00:00 to 2025-07-24 12:00:00+00:00
+[2025-07-31T15:23:11.075+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-24 12:00:00+00:00, current_end: 2025-07-25 13:00:00+00:00
+[2025-07-31T15:23:11.279+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-24 12:00:00+00:00 to 2025-07-25 13:00:00+00:00
+[2025-07-31T15:23:11.281+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-25 13:00:00+00:00, current_end: 2025-07-26 14:00:00+00:00
+[2025-07-31T15:23:11.487+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-25 13:00:00+00:00 to 2025-07-26 14:00:00+00:00
+[2025-07-31T15:23:11.491+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-26 14:00:00+00:00, current_end: 2025-07-27 15:00:00+00:00
+[2025-07-31T15:23:11.668+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-26 14:00:00+00:00 to 2025-07-27 15:00:00+00:00
+[2025-07-31T15:23:11.671+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-27 15:00:00+00:00, current_end: 2025-07-28 16:00:00+00:00
+[2025-07-31T15:23:12.161+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-27 15:00:00+00:00 to 2025-07-28 16:00:00+00:00
+[2025-07-31T15:23:12.164+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-28 16:00:00+00:00, current_end: 2025-07-29 17:00:00+00:00
+[2025-07-31T15:23:12.362+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-28 16:00:00+00:00 to 2025-07-29 17:00:00+00:00
+[2025-07-31T15:23:12.364+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-29 17:00:00+00:00, current_end: 2025-07-30 18:00:00+00:00
+[2025-07-31T15:23:12.824+0000] {data_ingestion.py:62} INFO - Fetched 301 candles for BTC-USD from 2025-07-29 17:00:00+00:00 to 2025-07-30 18:00:00+00:00
+[2025-07-31T15:23:12.827+0000] {data_ingestion.py:42} INFO - current_start: 2025-07-30 18:00:00+00:00, current_end: 2025-07-31 14:00:00+00:00
+[2025-07-31T15:23:13.235+0000] {data_ingestion.py:62} INFO - Fetched 241 candles for BTC-USD from 2025-07-30 18:00:00+00:00 to 2025-07-31 14:00:00+00:00
+[2025-07-31T15:23:13.487+0000] {data_ingestion.py:104} INFO - Saved data to S3: s3://crypto-mlops-bucket/data/historical_BTC_USD_20250731140000.csv
+[2025-07-31T15:23:13.488+0000] {hourly_inference.py:84} INFO - Données brutes récupérées : shape=(8669, 7)
+[2025-07-31T15:23:13.601+0000] {data_processing.py:41} INFO - Loaded 8669 records from S3: data/historical_BTC_USD_20250731120000.csv
+[2025-07-31T15:23:13.651+0000] {data_processing.py:41} INFO - Loaded 8669 records from S3: data/historical_BTC_USD_20250731130000.csv
+[2025-07-31T15:23:13.670+0000] {data_processing.py:41} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250731130525.csv
+[2025-07-31T15:23:13.753+0000] {data_processing.py:41} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250731131241.csv
+[2025-07-31T15:23:13.797+0000] {data_processing.py:41} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250731133338.csv
+[2025-07-31T15:23:13.836+0000] {data_processing.py:41} INFO - Loaded 8669 records from S3: data/historical_BTC_USD_20250731140000.csv
+[2025-07-31T15:23:13.877+0000] {data_processing.py:41} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250731142123.csv
+[2025-07-31T15:23:13.897+0000] {data_processing.py:84} INFO - Combined 8669 records for BTC-USD
+[2025-07-31T15:23:13.901+0000] {hourly_inference.py:88} INFO - Données combinées : shape=(8669, 7)
+[2025-07-31T15:23:14.107+0000] {data_processing.py:168} INFO - Removed 50 rows with NaN values. Final shape: (8619, 84)
+[2025-07-31T15:23:14.108+0000] {hourly_inference.py:91} INFO - Features : shape=(8619, 84)
+[2025-07-31T15:23:14.147+0000] {logging_mixin.py:188} WARNING - /opt/***/src/data_processing.py:187 FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+[2025-07-31T15:23:14.160+0000] {data_processing.py:189} INFO - Prepared features: (8619, 80), Target: (8619,)
+[2025-07-31T15:23:14.161+0000] {data_processing.py:190} INFO - Feature columns: 80
+[2025-07-31T15:23:14.178+0000] {hourly_inference.py:106} INFO - Last row : shape=(1, 80)
+[2025-07-31T15:23:14.231+0000] {hourly_inference.py:116} INFO - ✅ Features uploaded → s3://crypto-mlops-bucket/features/date=2025-07-31/hour=14/features.parquet
+[2025-07-31T15:23:14.247+0000] {hourly_inference.py:131} INFO - ✅ Target uploaded → s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=13/target.parquet
+[2025-07-31T15:23:15.462+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
+[2025-07-31T15:23:15.587+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:   0%|          | 0/5 [00:00<?, ?it/s]
+[2025-07-31T15:23:15.617+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  20%|##        | 1/5 [00:00<00:00, 37.11it/s]
+[2025-07-31T15:23:15.619+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  40%|####      | 2/5 [00:00<00:00, 69.74it/s]
+[2025-07-31T15:23:15.666+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  60%|######    | 3/5 [00:00<00:00, 39.44it/s]
+[2025-07-31T15:23:15.667+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  80%|########  | 4/5 [00:00<00:00, 51.83it/s]
+[2025-07-31T15:23:15.668+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 64.15it/s]
+[2025-07-31T15:23:15.669+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 63.56it/s]
+[2025-07-31T15:23:16.048+0000] {hourly_inference.py:144} INFO - ✅ Model loaded: crypto_lightgbm_model_BTC_USD, version 15
+[2025-07-31T15:23:16.079+0000] {hourly_inference.py:164} INFO - ✅ Prediction uploaded → s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=14/prediction.parquet
+[2025-07-31T15:23:16.084+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-31T15:23:16.086+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-31T15:23:16.103+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=preprocessing_hourly, task_id=preprocess_and_predict, execution_date=20250731T140000, start_date=20250731T152304, end_date=20250731T152316
+[2025-07-31T15:23:16.178+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-31T15:23:16.209+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-31T15:23:16.245+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,1 @@
+[2025-07-31T12:39:56.081+0000] {task_context_logger.py:104} ERROR - Executor reports task instance <TaskInstance: drift_monitoring.check_drift_and_report manual__2025-07-31T12:39:54.002105+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

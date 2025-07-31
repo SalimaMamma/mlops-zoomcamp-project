@@ -115,14 +115,16 @@ def preprocess_and_predict(**context):
     s3_client.put_object(Bucket=BUCKET_NAME, Key=key_features, Body=buffer.getvalue())
     logging.info(f"✅ Features uploaded → s3://{BUCKET_NAME}/{key_features}")
 
-    # --- Save target ---
+    # --- Save target of the precedent timestamp for monitoring---
     df_target = pd.DataFrame({"target": [df_last["target"].iloc[0]]})
     table_target = pa.Table.from_pandas(df_target.reset_index(drop=True))
     buffer_target = io.BytesIO()
     pq.write_table(table_target, buffer_target)
     buffer_target.seek(0)
-
-    key_target = f"targets/date={date_str}/hour={hour_str}/target.parquet"
+    prev_execution_date = execution_date - timedelta(hours=1)
+    prev_date_str = prev_execution_date.strftime("%Y-%m-%d")
+    prev_hour_str = prev_execution_date.strftime("%H")
+    key_target = f"targets/date={prev_date_str}/hour={prev_hour_str}/target.parquet"
     s3_client.put_object(
         Bucket=BUCKET_NAME, Key=key_target, Body=buffer_target.getvalue()
     )

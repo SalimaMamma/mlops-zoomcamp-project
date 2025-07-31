@@ -2,7 +2,7 @@ import logging
 import os
 from datetime import datetime
 from typing import Any, Dict, Optional, Tuple
-
+import json
 import boto3
 import joblib
 import lightgbm as lgb
@@ -205,6 +205,26 @@ class CryptoLightGBMModel:
 
             run_id = mlflow.active_run().info.run_id
             logger.info(f"Training completed. MLflow run ID: {run_id}")
+            
+            # Save metrics to S3
+            self.save_metrics_to_s3(
+                {
+                    "train_rmse": train_rmse,
+                    "val_rmse": val_rmse,
+                    "train_mae": train_mae,
+                    "val_mae": val_mae,
+                    "train_r2": train_r2,
+                    "val_r2": val_r2,
+                    "best_iteration": self.model.best_iteration,
+                },
+                symbol
+            )
+
+            # Sauvegarde référence datasets
+            self.save_reference_data_to_s3(X_train, y_train, X_val, y_val, symbol, run_id)
+            
+            # Sauvegarde des prédictions de référence
+            self.save_reference_predictions_to_s3(X_train, y_train, train_pred, X_val, y_val, val_pred, symbol, run_id)
 
             return {
                 "model": self.model,
@@ -228,6 +248,166 @@ class CryptoLightGBMModel:
 
         predictions = self.model.predict(X)
         return predictions
+
+    def save_reference_data_to_s3(
+        self,
+        X_train: pd.DataFrame,
+        y_train: pd.Series,
+        X_val: pd.DataFrame,
+        y_val: pd.Series,
+        symbol: str,
+        run_id: str,
+    ):
+        """
+        Save training and validation datasets to S3 as CSV.
+        """
+        try:
+            s3_client = boto3.client(
+                "s3",
+                region_name=self.config["aws"]["region"],
+                aws_access_key_id=self.config["aws"]["access_key_id"],
+                aws_secret_access_key=self.config["aws"]["secret_access_key"],
+                endpoint_url=self.config["aws"]["endpoint_url"],
+            )
+            bucket = self.config["aws"]["s3_bucket"]
+
+            # Merge features + target
+            train_df = X_train.copy()
+            train_df["target"] = y_train
+            val_df = X_val.copy()
+            val_df["target"] = y_val
+
+            # Save local
+            train_path = f"/tmp/train_{symbol}_{run_id}.csv"
+            val_path = f"/tmp/val_{symbol}_{run_id}.csv"
+            train_df.to_csv(train_path, index=False)
+            val_df.to_csv(val_path, index=False)
+
+            # S3 keys
+            s3_train_key = f"{self.config['aws']['s3_model_prefix']}/reference/train_{run_id}.csv"
+            s3_val_key = f"{self.config['aws']['s3_model_prefix']}/reference/val_{run_id}.csv"
+
+            # Upload to S3
+            with open(train_path, "rb") as f:
+                s3_client.put_object(
+                    Bucket=bucket, Key=s3_train_key, Body=f.read(), ContentType="text/csv"
+                )
+            with open(val_path, "rb") as f:
+                s3_client.put_object(
+                    Bucket=bucket, Key=s3_val_key, Body=f.read(), ContentType="text/csv"
+                )
+
+            # Clean local files
+            os.remove(train_path)
+            os.remove(val_path)
+
+            logger.info(f"Saved training reference data to S3: s3://{bucket}/{s3_train_key}")
+            logger.info(f"Saved validation reference data to S3: s3://{bucket}/{s3_val_key}")
+
+        except Exception as e:
+            logger.error(f"Error saving reference data to S3: {str(e)}")
+
+    def save_reference_predictions_to_s3(
+        self,
+        X_train: pd.DataFrame,
+        y_train: pd.Series,
+        train_pred: np.ndarray,
+        X_val: pd.DataFrame,
+        y_val: pd.Series,
+        val_pred: np.ndarray,
+        symbol: str,
+        run_id: str,
+    ):
+        """
+        Save training and validation predictions to S3 as CSV for Evidently monitoring.
+        """
+        try:
+            s3_client = boto3.client(
+                "s3",
+                region_name=self.config["aws"]["region"],
+                aws_access_key_id=self.config["aws"]["access_key_id"],
+                aws_secret_access_key=self.config["aws"]["secret_access_key"],
+                endpoint_url=self.config["aws"]["endpoint_url"],
+            )
+            bucket = self.config["aws"]["s3_bucket"]
+
+            # Create dataframes with target and prediction columns
+            train_pred_df = pd.DataFrame({
+                "target": y_train,
+                "prediction": train_pred
+            })
+            
+            val_pred_df = pd.DataFrame({
+                "target": y_val,
+                "prediction": val_pred
+            })
+
+            # Save local
+            train_pred_path = f"/tmp/train_predictions_{symbol}_{run_id}.csv"
+            val_pred_path = f"/tmp/val_predictions_{symbol}_{run_id}.csv"
+            train_pred_df.to_csv(train_pred_path, index=False)
+            val_pred_df.to_csv(val_pred_path, index=False)
+
+            # S3 keys
+            s3_train_pred_key = f"{self.config['aws']['s3_model_prefix']}/reference/train_predictions_{run_id}.csv"
+            s3_val_pred_key = f"{self.config['aws']['s3_model_prefix']}/reference/val_predictions_{run_id}.csv"
+
+            # Upload to S3
+            with open(train_pred_path, "rb") as f:
+                s3_client.put_object(
+                    Bucket=bucket, Key=s3_train_pred_key, Body=f.read(), ContentType="text/csv"
+                )
+            with open(val_pred_path, "rb") as f:
+                s3_client.put_object(
+                    Bucket=bucket, Key=s3_val_pred_key, Body=f.read(), ContentType="text/csv"
+                )
+
+            # Clean local files
+            os.remove(train_pred_path)
+            os.remove(val_pred_path)
+
+            logger.info(f"Saved training predictions to S3: s3://{bucket}/{s3_train_pred_key}")
+            logger.info(f"Saved validation predictions to S3: s3://{bucket}/{s3_val_pred_key}")
+
+        except Exception as e:
+            logger.error(f"Error saving reference predictions to S3: {str(e)}")
+
+    def save_metrics_to_s3(self, metrics: Dict, symbol: str):
+        """
+        Save training metrics to S3 as JSON.
+        """
+        try:
+            s3_client = boto3.client(
+                "s3",
+                region_name=self.config["aws"]["region"],
+                aws_access_key_id=self.config["aws"]["access_key_id"],
+                aws_secret_access_key=self.config["aws"]["secret_access_key"],
+                endpoint_url=self.config["aws"]["endpoint_url"],
+            )
+            bucket = self.config["aws"]["s3_bucket"]
+
+            metrics_path = f"/tmp/metrics_{symbol}.json"
+            with open(metrics_path, "w") as f:
+                json.dump(metrics, f, indent=4)
+
+            s3_key = (
+                f"{self.config['aws']['s3_model_prefix']}/metrics/metrics.json"
+            )
+
+            with open(metrics_path, "rb") as f:
+                s3_client.put_object(
+                    Bucket=bucket,
+                    Key=s3_key,
+                    Body=f.read(),
+                    ContentType="application/json",
+                )
+
+            os.remove(metrics_path)
+
+            logger.info(f"Saved training metrics to S3: s3://{bucket}/{s3_key}")
+
+        except Exception as e:
+            logger.error(f"Error saving training metrics to S3: {str(e)}")
 
     def save_model_to_s3(self, symbol: str, run_id: str):
 

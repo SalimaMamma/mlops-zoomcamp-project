@@ -42,7 +42,7 @@ serving:
   batch_size: 1000
 
 monitoring:
-  drift_threshold: 0.1
+  drift_threshold: 0.15
   performance_threshold: 0.15
   reference_window_size: 1000
   current_window_size: 500

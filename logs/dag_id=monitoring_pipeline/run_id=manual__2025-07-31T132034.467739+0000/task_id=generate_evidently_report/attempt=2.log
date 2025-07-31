@@ -1,0 +1,63 @@
+[2025-07-31T13:26:05.357+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-31T13:26:05.411+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: monitoring_pipeline.generate_evidently_report manual__2025-07-31T13:20:34.467739+00:00 [queued]>
+[2025-07-31T13:26:05.425+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: monitoring_pipeline.generate_evidently_report manual__2025-07-31T13:20:34.467739+00:00 [queued]>
+[2025-07-31T13:26:05.443+0000] {taskinstance.py:2303} INFO - Starting attempt 2 of 2
+[2025-07-31T13:26:05.470+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): generate_evidently_report> on 2025-07-31 13:20:34.467739+00:00
+[2025-07-31T13:26:05.495+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=4325) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-31T13:26:05.493+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'monitoring_pipeline', 'generate_evidently_report', 'manual__2025-07-31T13:20:34.467739+00:00', '--job-id', '203', '--raw', '--subdir', 'DAGS_FOLDER/drift_monitoring.py', '--cfg-path', '/tmp/tmphhqu1oix']
+[2025-07-31T13:26:05.498+0000] {standard_task_runner.py:63} INFO - Started process 4365 to run task
+[2025-07-31T13:26:05.498+0000] {standard_task_runner.py:91} INFO - Job 203: Subtask generate_evidently_report
+[2025-07-31T13:26:05.526+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-31T13:26:05.589+0000] {task_command.py:426} INFO - Running <TaskInstance: monitoring_pipeline.generate_evidently_report manual__2025-07-31T13:20:34.467739+00:00 [running]> on host 44c57df83f33
+[2025-07-31T13:26:05.770+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='monitoring_pipeline' AIRFLOW_CTX_TASK_ID='generate_evidently_report' AIRFLOW_CTX_EXECUTION_DATE='2025-07-31T13:20:34.467739+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-31T13:20:34.467739+00:00'
+[2025-07-31T13:26:05.772+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-31T13:26:05.798+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-31T13:26:05.800+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/drift_monitoring.py", line 84, in generate_evidently_report
+    df_features = load_data_from_s3("features", days=7)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/drift_monitoring.py", line 68, in load_data_from_s3
+    obj = s3_client.get_object(Bucket=BUCKET_NAME, Key=key)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/botocore/client.py", line 569, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/botocore/client.py", line 964, in _make_api_call
+    api_params = self._emit_api_params(
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/botocore/client.py", line 1083, in _emit_api_params
+    self.meta.events.emit(
+  File "/home/airflow/.local/lib/python3.12/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+               ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/botocore/handlers.py", line 295, in validate_bucket_name
+    if not VALID_BUCKET.search(bucket) and not VALID_S3_ARN.search(bucket):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'dict'
+[2025-07-31T13:26:05.823+0000] {taskinstance.py:1205} INFO - Marking task as FAILED. dag_id=monitoring_pipeline, task_id=generate_evidently_report, execution_date=20250731T132034, start_date=20250731T132605, end_date=20250731T132605
+[2025-07-31T13:26:05.843+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 203 for task generate_evidently_report (expected string or bytes-like object, got 'dict'; 4365)
+[2025-07-31T13:26:05.881+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-31T13:26:05.919+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-31T13:26:05.960+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

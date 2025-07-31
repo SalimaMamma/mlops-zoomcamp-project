@@ -67,17 +67,17 @@ def validate_and_clean_metrics(metrics: Dict[str, Any]) -> Dict[str, float]:
 
     for key, value in metrics.items():
         try:
-            # Convertir en float si possible
+           
             float_value = float(value)
 
-            # Vérifier si la valeur est valide (pas NaN, pas infinie)
+            
             if math.isnan(float_value) or math.isinf(float_value):
                 logger.warning(
                     f"Métrique {key} invalide ({float_value}), remplacée par 0.0"
                 )
                 cleaned_metrics[key] = 0.0
             else:
-                # Arrondir à 6 décimales pour éviter les problèmes de précision
+                
                 cleaned_metrics[key] = round(float_value, 6)
 
         except (ValueError, TypeError) as e:

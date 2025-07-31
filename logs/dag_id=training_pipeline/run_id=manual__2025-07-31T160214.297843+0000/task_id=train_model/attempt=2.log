@@ -1,0 +1,85 @@
+[2025-07-31T16:07:48.131+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-31T16:07:48.170+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: training_pipeline.train_model manual__2025-07-31T16:02:14.297843+00:00 [queued]>
+[2025-07-31T16:07:48.178+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: training_pipeline.train_model manual__2025-07-31T16:02:14.297843+00:00 [queued]>
+[2025-07-31T16:07:48.179+0000] {taskinstance.py:2303} INFO - Starting attempt 2 of 4
+[2025-07-31T16:07:48.193+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): train_model> on 2025-07-31 16:02:14.297843+00:00
+[2025-07-31T16:07:48.210+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'training_pipeline', 'train_model', 'manual__2025-07-31T16:02:14.297843+00:00', '--job-id', '234', '--raw', '--subdir', 'DAGS_FOLDER/training_pipeline.py', '--cfg-path', '/tmp/tmppmhf4zxf']
+[2025-07-31T16:07:48.211+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=13930) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-31T16:07:48.213+0000] {standard_task_runner.py:91} INFO - Job 234: Subtask train_model
+[2025-07-31T16:07:48.213+0000] {standard_task_runner.py:63} INFO - Started process 13948 to run task
+[2025-07-31T16:07:48.230+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-31T16:07:48.270+0000] {task_command.py:426} INFO - Running <TaskInstance: training_pipeline.train_model manual__2025-07-31T16:02:14.297843+00:00 [running]> on host 44c57df83f33
+[2025-07-31T16:07:48.376+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='mlops_team@example.com' AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='training_pipeline' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2025-07-31T16:02:14.297843+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-31T16:02:14.297843+00:00'
+[2025-07-31T16:07:48.377+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-31T16:07:48.467+0000] {data_processing.py:41} INFO - Loaded 8669 records from S3: data/historical_BTC_USD_20250731120000.csv
+[2025-07-31T16:07:48.499+0000] {data_processing.py:41} INFO - Loaded 8669 records from S3: data/historical_BTC_USD_20250731130000.csv
+[2025-07-31T16:07:48.512+0000] {data_processing.py:41} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250731130525.csv
+[2025-07-31T16:07:48.538+0000] {data_processing.py:41} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250731131241.csv
+[2025-07-31T16:07:48.566+0000] {data_processing.py:41} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250731133338.csv
+[2025-07-31T16:07:48.593+0000] {data_processing.py:41} INFO - Loaded 8669 records from S3: data/historical_BTC_USD_20250731140000.csv
+[2025-07-31T16:07:48.618+0000] {data_processing.py:41} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250731142123.csv
+[2025-07-31T16:07:48.645+0000] {data_processing.py:41} INFO - Loaded 8669 records from S3: data/historical_BTC_USD_20250731150000.csv
+[2025-07-31T16:07:48.674+0000] {data_processing.py:41} INFO - Loaded 8640 records from S3: data/historical_BTC_USD_20250731152644.csv
+[2025-07-31T16:07:48.688+0000] {data_processing.py:41} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250731154536.csv
+[2025-07-31T16:07:48.704+0000] {data_processing.py:41} INFO - Loaded 288 records from S3: data/historical_BTC_USD_20250731160221.csv
+[2025-07-31T16:07:48.720+0000] {data_processing.py:84} INFO - Combined 8689 records for BTC-USD
+[2025-07-31T16:07:48.826+0000] {data_processing.py:168} INFO - Removed 50 rows with NaN values. Final shape: (8639, 84)
+[2025-07-31T16:07:48.832+0000] {logging_mixin.py:188} WARNING - /opt/***/src/data_processing.py:238 FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+[2025-07-31T16:07:48.849+0000] {logging_mixin.py:188} WARNING - /opt/***/src/data_processing.py:187 FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+[2025-07-31T16:07:48.858+0000] {data_processing.py:189} INFO - Prepared features: (8639, 80), Target: (8639,)
+[2025-07-31T16:07:48.859+0000] {data_processing.py:190} INFO - Feature columns: 80
+[2025-07-31T16:07:48.886+0000] {data_processing.py:211} INFO - Saved preprocessor to S3: s3://crypto-mlops-bucket/models/preprocessors/scaler_BTC_USD.pickle
+[2025-07-31T16:07:48.939+0000] {logging_mixin.py:188} WARNING - 2025/07/31 16:07:48 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2025-07-31T16:07:49.017+0000] {model.py:92} INFO - Starting hyperparameter optimization with 100 trials
+[2025-07-31T16:07:49.188+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-31T16:07:51.515+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.0800806
+[2025-07-31T16:07:51.890+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-31T16:07:58.034+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.0801959
+[2025-07-31T16:07:58.209+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-31T16:07:58.808+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.0801893
+[2025-07-31T16:07:58.888+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-31T16:07:59.972+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[3]	valid_0's rmse: 0.0802949
+[2025-07-31T16:08:00.057+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-31T16:08:00.516+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[9]	valid_0's rmse: 0.0800508
+[2025-07-31T16:08:00.594+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-31T16:08:01.456+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[2]	valid_0's rmse: 0.0800798
+[2025-07-31T16:08:01.818+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-31T16:08:05.779+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.0801312
+[2025-07-31T16:08:05.902+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-31T16:08:08.104+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[1]	valid_0's rmse: 0.0801718
+[2025-07-31T16:08:08.239+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-31T16:08:20.678+0000] {logging_mixin.py:188} INFO - Early stopping, best iteration is:
+[3]	valid_0's rmse: 0.0799692
+[2025-07-31T16:08:20.868+0000] {logging_mixin.py:188} INFO - Training until validation scores don't improve for 100 rounds
+[2025-07-31T16:08:43.809+0000] {local_task_job_runner.py:310} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-07-31T16:08:43.833+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-07-31T16:08:43.854+0000] {process_utils.py:132} INFO - Sending 15 to group 13948. PIDs of all processes in the group: [13948]
+[2025-07-31T16:08:43.871+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 13948
+[2025-07-31T16:08:45.828+0000] {taskinstance.py:2607} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-07-31T16:08:45.882+0000] {logging_mixin.py:188} INFO - 🏃 View run lightgbm_training_BTC-USD_20250731_160748 at: http://mlflow:5000/#/experiments/0/runs/3f99b4f618ad4ccc8c8cc43f66294743
+[2025-07-31T16:08:45.883+0000] {logging_mixin.py:188} INFO - 🧪 View experiment at: http://mlflow:5000/#/experiments/0
+[2025-07-31T16:08:45.927+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-31T16:08:46.026+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=13948, status='terminated', exitcode=0, started='16:07:47') (13948) terminated with exit code 0

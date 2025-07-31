@@ -1,0 +1,431 @@
+[2025-07-31T22:03:24.531+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-31T22:03:24.578+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: drift_monitoring_dag.check_drift_and_trigger manual__2025-07-31T22:03:20.882915+00:00 [queued]>
+[2025-07-31T22:03:24.590+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: drift_monitoring_dag.check_drift_and_trigger manual__2025-07-31T22:03:20.882915+00:00 [queued]>
+[2025-07-31T22:03:24.592+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2025-07-31T22:03:24.611+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): check_drift_and_trigger> on 2025-07-31 22:03:20.882915+00:00
+[2025-07-31T22:03:24.639+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'drift_monitoring_dag', 'check_drift_and_trigger', 'manual__2025-07-31T22:03:20.882915+00:00', '--job-id', '284', '--raw', '--subdir', 'DAGS_FOLDER/drift_monitoring.py', '--cfg-path', '/tmp/tmp_7xh1a37']
+[2025-07-31T22:03:24.641+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=25540) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-31T22:03:24.643+0000] {standard_task_runner.py:91} INFO - Job 284: Subtask check_drift_and_trigger
+[2025-07-31T22:03:24.644+0000] {standard_task_runner.py:63} INFO - Started process 25558 to run task
+[2025-07-31T22:03:24.667+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-31T22:03:24.747+0000] {task_command.py:426} INFO - Running <TaskInstance: drift_monitoring_dag.check_drift_and_trigger manual__2025-07-31T22:03:20.882915+00:00 [running]> on host 44c57df83f33
+[2025-07-31T22:03:24.878+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='drift_monitoring_dag' AIRFLOW_CTX_TASK_ID='check_drift_and_trigger' AIRFLOW_CTX_EXECUTION_DATE='2025-07-31T22:03:20.882915+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-31T22:03:20.882915+00:00'
+[2025-07-31T22:03:24.881+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-31T22:03:24.922+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=22/prediction.parquet
+[2025-07-31T22:03:24.933+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=22/target.parquet
+[2025-07-31T22:03:24.988+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=21/target.parquet
+[2025-07-31T22:03:25.070+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=18/prediction.parquet
+[2025-07-31T22:03:25.095+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=17/prediction.parquet
+[2025-07-31T22:03:25.104+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=17/target.parquet
+[2025-07-31T22:03:25.128+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=16/target.parquet
+[2025-07-31T22:03:25.226+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=12/prediction.parquet
+[2025-07-31T22:03:25.252+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=11/prediction.parquet
+[2025-07-31T22:03:25.262+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=11/target.parquet
+[2025-07-31T22:03:25.273+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=10/prediction.parquet
+[2025-07-31T22:03:25.283+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=10/target.parquet
+[2025-07-31T22:03:25.293+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=09/prediction.parquet
+[2025-07-31T22:03:25.303+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=09/target.parquet
+[2025-07-31T22:03:25.314+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=08/prediction.parquet
+[2025-07-31T22:03:25.324+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=08/target.parquet
+[2025-07-31T22:03:25.334+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=07/prediction.parquet
+[2025-07-31T22:03:25.345+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=07/target.parquet
+[2025-07-31T22:03:25.354+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=06/prediction.parquet
+[2025-07-31T22:03:25.364+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=06/target.parquet
+[2025-07-31T22:03:25.374+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=05/prediction.parquet
+[2025-07-31T22:03:25.384+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=05/target.parquet
+[2025-07-31T22:03:25.395+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=04/prediction.parquet
+[2025-07-31T22:03:25.406+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=04/target.parquet
+[2025-07-31T22:03:25.416+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=03/prediction.parquet
+[2025-07-31T22:03:25.426+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=03/target.parquet
+[2025-07-31T22:03:25.439+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=02/prediction.parquet
+[2025-07-31T22:03:25.449+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=02/target.parquet
+[2025-07-31T22:03:25.459+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=01/prediction.parquet
+[2025-07-31T22:03:25.469+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=01/target.parquet
+[2025-07-31T22:03:25.479+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-31/hour=00/prediction.parquet
+[2025-07-31T22:03:25.490+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-31/hour=00/target.parquet
+[2025-07-31T22:03:25.500+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=23/prediction.parquet
+[2025-07-31T22:03:25.512+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=23/target.parquet
+[2025-07-31T22:03:25.521+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=22/prediction.parquet
+[2025-07-31T22:03:25.533+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=22/target.parquet
+[2025-07-31T22:03:25.545+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=21/prediction.parquet
+[2025-07-31T22:03:25.557+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=21/target.parquet
+[2025-07-31T22:03:25.570+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=20/prediction.parquet
+[2025-07-31T22:03:25.581+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=20/target.parquet
+[2025-07-31T22:03:25.593+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=19/prediction.parquet
+[2025-07-31T22:03:25.604+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=19/target.parquet
+[2025-07-31T22:03:25.615+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=18/prediction.parquet
+[2025-07-31T22:03:25.627+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=18/target.parquet
+[2025-07-31T22:03:25.638+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=17/prediction.parquet
+[2025-07-31T22:03:25.650+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=17/target.parquet
+[2025-07-31T22:03:25.661+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=16/prediction.parquet
+[2025-07-31T22:03:25.673+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=16/target.parquet
+[2025-07-31T22:03:25.687+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=15/prediction.parquet
+[2025-07-31T22:03:25.707+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=15/target.parquet
+[2025-07-31T22:03:25.725+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=14/prediction.parquet
+[2025-07-31T22:03:25.748+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=14/target.parquet
+[2025-07-31T22:03:25.766+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=13/prediction.parquet
+[2025-07-31T22:03:25.781+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=13/target.parquet
+[2025-07-31T22:03:25.794+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=12/prediction.parquet
+[2025-07-31T22:03:25.807+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=12/target.parquet
+[2025-07-31T22:03:25.820+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=11/prediction.parquet
+[2025-07-31T22:03:25.831+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=11/target.parquet
+[2025-07-31T22:03:25.845+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=10/prediction.parquet
+[2025-07-31T22:03:25.857+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=10/target.parquet
+[2025-07-31T22:03:25.869+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=09/prediction.parquet
+[2025-07-31T22:03:25.881+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=09/target.parquet
+[2025-07-31T22:03:25.894+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=08/prediction.parquet
+[2025-07-31T22:03:25.907+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=08/target.parquet
+[2025-07-31T22:03:25.926+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=07/prediction.parquet
+[2025-07-31T22:03:25.945+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=07/target.parquet
+[2025-07-31T22:03:25.963+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=06/prediction.parquet
+[2025-07-31T22:03:25.984+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=06/target.parquet
+[2025-07-31T22:03:26.004+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=05/prediction.parquet
+[2025-07-31T22:03:26.024+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=05/target.parquet
+[2025-07-31T22:03:26.043+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=04/prediction.parquet
+[2025-07-31T22:03:26.061+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=04/target.parquet
+[2025-07-31T22:03:26.078+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=03/prediction.parquet
+[2025-07-31T22:03:26.091+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=03/target.parquet
+[2025-07-31T22:03:26.103+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=02/prediction.parquet
+[2025-07-31T22:03:26.117+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=02/target.parquet
+[2025-07-31T22:03:26.132+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=01/prediction.parquet
+[2025-07-31T22:03:26.145+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=01/target.parquet
+[2025-07-31T22:03:26.158+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-30/hour=00/prediction.parquet
+[2025-07-31T22:03:26.170+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-30/hour=00/target.parquet
+[2025-07-31T22:03:26.184+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=23/prediction.parquet
+[2025-07-31T22:03:26.195+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=23/target.parquet
+[2025-07-31T22:03:26.207+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=22/prediction.parquet
+[2025-07-31T22:03:26.218+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=22/target.parquet
+[2025-07-31T22:03:26.228+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=21/prediction.parquet
+[2025-07-31T22:03:26.240+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=21/target.parquet
+[2025-07-31T22:03:26.250+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=20/prediction.parquet
+[2025-07-31T22:03:26.261+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=20/target.parquet
+[2025-07-31T22:03:26.272+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=19/prediction.parquet
+[2025-07-31T22:03:26.282+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=19/target.parquet
+[2025-07-31T22:03:26.293+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=18/prediction.parquet
+[2025-07-31T22:03:26.303+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=18/target.parquet
+[2025-07-31T22:03:26.314+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=17/prediction.parquet
+[2025-07-31T22:03:26.325+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=17/target.parquet
+[2025-07-31T22:03:26.336+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=16/prediction.parquet
+[2025-07-31T22:03:26.347+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=16/target.parquet
+[2025-07-31T22:03:26.357+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=15/prediction.parquet
+[2025-07-31T22:03:26.368+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=15/target.parquet
+[2025-07-31T22:03:26.379+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=14/prediction.parquet
+[2025-07-31T22:03:26.389+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=14/target.parquet
+[2025-07-31T22:03:26.401+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=13/prediction.parquet
+[2025-07-31T22:03:26.411+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=13/target.parquet
+[2025-07-31T22:03:26.422+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=12/prediction.parquet
+[2025-07-31T22:03:26.433+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=12/target.parquet
+[2025-07-31T22:03:26.443+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=11/prediction.parquet
+[2025-07-31T22:03:26.454+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=11/target.parquet
+[2025-07-31T22:03:26.463+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=10/prediction.parquet
+[2025-07-31T22:03:26.475+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=10/target.parquet
+[2025-07-31T22:03:26.485+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=09/prediction.parquet
+[2025-07-31T22:03:26.496+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=09/target.parquet
+[2025-07-31T22:03:26.508+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=08/prediction.parquet
+[2025-07-31T22:03:26.517+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=08/target.parquet
+[2025-07-31T22:03:26.529+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=07/prediction.parquet
+[2025-07-31T22:03:26.539+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=07/target.parquet
+[2025-07-31T22:03:26.550+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=06/prediction.parquet
+[2025-07-31T22:03:26.560+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=06/target.parquet
+[2025-07-31T22:03:26.571+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=05/prediction.parquet
+[2025-07-31T22:03:26.583+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=05/target.parquet
+[2025-07-31T22:03:26.594+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=04/prediction.parquet
+[2025-07-31T22:03:26.606+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=04/target.parquet
+[2025-07-31T22:03:26.619+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=03/prediction.parquet
+[2025-07-31T22:03:26.631+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=03/target.parquet
+[2025-07-31T22:03:26.642+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=02/prediction.parquet
+[2025-07-31T22:03:26.654+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=02/target.parquet
+[2025-07-31T22:03:26.664+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=01/prediction.parquet
+[2025-07-31T22:03:26.680+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=01/target.parquet
+[2025-07-31T22:03:26.692+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-29/hour=00/prediction.parquet
+[2025-07-31T22:03:26.702+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-29/hour=00/target.parquet
+[2025-07-31T22:03:26.713+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=23/prediction.parquet
+[2025-07-31T22:03:26.725+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=23/target.parquet
+[2025-07-31T22:03:26.740+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=22/prediction.parquet
+[2025-07-31T22:03:26.757+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=22/target.parquet
+[2025-07-31T22:03:26.771+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=21/prediction.parquet
+[2025-07-31T22:03:26.786+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=21/target.parquet
+[2025-07-31T22:03:26.803+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=20/prediction.parquet
+[2025-07-31T22:03:26.818+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=20/target.parquet
+[2025-07-31T22:03:26.833+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=19/prediction.parquet
+[2025-07-31T22:03:26.846+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=19/target.parquet
+[2025-07-31T22:03:26.858+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=18/prediction.parquet
+[2025-07-31T22:03:26.870+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=18/target.parquet
+[2025-07-31T22:03:26.881+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=17/prediction.parquet
+[2025-07-31T22:03:26.893+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=17/target.parquet
+[2025-07-31T22:03:26.905+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=16/prediction.parquet
+[2025-07-31T22:03:26.917+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=16/target.parquet
+[2025-07-31T22:03:26.929+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=15/prediction.parquet
+[2025-07-31T22:03:26.940+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=15/target.parquet
+[2025-07-31T22:03:26.951+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=14/prediction.parquet
+[2025-07-31T22:03:26.963+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=14/target.parquet
+[2025-07-31T22:03:26.975+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=13/prediction.parquet
+[2025-07-31T22:03:26.985+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=13/target.parquet
+[2025-07-31T22:03:26.996+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=12/prediction.parquet
+[2025-07-31T22:03:27.007+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=12/target.parquet
+[2025-07-31T22:03:27.019+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=11/prediction.parquet
+[2025-07-31T22:03:27.031+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=11/target.parquet
+[2025-07-31T22:03:27.044+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=10/prediction.parquet
+[2025-07-31T22:03:27.057+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=10/target.parquet
+[2025-07-31T22:03:27.070+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=09/prediction.parquet
+[2025-07-31T22:03:27.083+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=09/target.parquet
+[2025-07-31T22:03:27.094+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=08/prediction.parquet
+[2025-07-31T22:03:27.106+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=08/target.parquet
+[2025-07-31T22:03:27.117+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=07/prediction.parquet
+[2025-07-31T22:03:27.130+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=07/target.parquet
+[2025-07-31T22:03:27.142+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=06/prediction.parquet
+[2025-07-31T22:03:27.153+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=06/target.parquet
+[2025-07-31T22:03:27.164+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=05/prediction.parquet
+[2025-07-31T22:03:27.175+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=05/target.parquet
+[2025-07-31T22:03:27.186+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=04/prediction.parquet
+[2025-07-31T22:03:27.198+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=04/target.parquet
+[2025-07-31T22:03:27.209+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=03/prediction.parquet
+[2025-07-31T22:03:27.220+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=03/target.parquet
+[2025-07-31T22:03:27.232+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=02/prediction.parquet
+[2025-07-31T22:03:27.244+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=02/target.parquet
+[2025-07-31T22:03:27.257+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=01/prediction.parquet
+[2025-07-31T22:03:27.269+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=01/target.parquet
+[2025-07-31T22:03:27.282+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-28/hour=00/prediction.parquet
+[2025-07-31T22:03:27.295+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-28/hour=00/target.parquet
+[2025-07-31T22:03:27.308+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=23/prediction.parquet
+[2025-07-31T22:03:27.322+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=23/target.parquet
+[2025-07-31T22:03:27.339+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=22/prediction.parquet
+[2025-07-31T22:03:27.354+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=22/target.parquet
+[2025-07-31T22:03:27.367+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=21/prediction.parquet
+[2025-07-31T22:03:27.381+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=21/target.parquet
+[2025-07-31T22:03:27.395+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=20/prediction.parquet
+[2025-07-31T22:03:27.409+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=20/target.parquet
+[2025-07-31T22:03:27.422+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=19/prediction.parquet
+[2025-07-31T22:03:27.435+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=19/target.parquet
+[2025-07-31T22:03:27.450+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=18/prediction.parquet
+[2025-07-31T22:03:27.463+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=18/target.parquet
+[2025-07-31T22:03:27.477+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=17/prediction.parquet
+[2025-07-31T22:03:27.490+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=17/target.parquet
+[2025-07-31T22:03:27.503+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=16/prediction.parquet
+[2025-07-31T22:03:27.517+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=16/target.parquet
+[2025-07-31T22:03:27.530+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=15/prediction.parquet
+[2025-07-31T22:03:27.545+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=15/target.parquet
+[2025-07-31T22:03:27.559+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=14/prediction.parquet
+[2025-07-31T22:03:27.572+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=14/target.parquet
+[2025-07-31T22:03:27.584+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=13/prediction.parquet
+[2025-07-31T22:03:27.598+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=13/target.parquet
+[2025-07-31T22:03:27.612+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=12/prediction.parquet
+[2025-07-31T22:03:27.625+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=12/target.parquet
+[2025-07-31T22:03:27.637+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=11/prediction.parquet
+[2025-07-31T22:03:27.650+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=11/target.parquet
+[2025-07-31T22:03:27.664+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=10/prediction.parquet
+[2025-07-31T22:03:27.676+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=10/target.parquet
+[2025-07-31T22:03:27.689+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=09/prediction.parquet
+[2025-07-31T22:03:27.701+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=09/target.parquet
+[2025-07-31T22:03:27.714+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=08/prediction.parquet
+[2025-07-31T22:03:27.727+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=08/target.parquet
+[2025-07-31T22:03:27.739+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=07/prediction.parquet
+[2025-07-31T22:03:27.751+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=07/target.parquet
+[2025-07-31T22:03:27.763+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=06/prediction.parquet
+[2025-07-31T22:03:27.776+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=06/target.parquet
+[2025-07-31T22:03:27.789+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=05/prediction.parquet
+[2025-07-31T22:03:27.801+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=05/target.parquet
+[2025-07-31T22:03:27.813+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=04/prediction.parquet
+[2025-07-31T22:03:27.826+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=04/target.parquet
+[2025-07-31T22:03:27.838+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=03/prediction.parquet
+[2025-07-31T22:03:27.851+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=03/target.parquet
+[2025-07-31T22:03:27.863+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=02/prediction.parquet
+[2025-07-31T22:03:27.875+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=02/target.parquet
+[2025-07-31T22:03:27.890+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=01/prediction.parquet
+[2025-07-31T22:03:27.903+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=01/target.parquet
+[2025-07-31T22:03:27.916+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-27/hour=00/prediction.parquet
+[2025-07-31T22:03:27.927+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-27/hour=00/target.parquet
+[2025-07-31T22:03:27.940+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=23/prediction.parquet
+[2025-07-31T22:03:27.951+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=23/target.parquet
+[2025-07-31T22:03:27.963+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=22/prediction.parquet
+[2025-07-31T22:03:27.975+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=22/target.parquet
+[2025-07-31T22:03:27.988+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=21/prediction.parquet
+[2025-07-31T22:03:28.001+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=21/target.parquet
+[2025-07-31T22:03:28.015+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=20/prediction.parquet
+[2025-07-31T22:03:28.028+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=20/target.parquet
+[2025-07-31T22:03:28.040+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=19/prediction.parquet
+[2025-07-31T22:03:28.053+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=19/target.parquet
+[2025-07-31T22:03:28.066+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=18/prediction.parquet
+[2025-07-31T22:03:28.080+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=18/target.parquet
+[2025-07-31T22:03:28.092+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=17/prediction.parquet
+[2025-07-31T22:03:28.104+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=17/target.parquet
+[2025-07-31T22:03:28.118+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=16/prediction.parquet
+[2025-07-31T22:03:28.131+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=16/target.parquet
+[2025-07-31T22:03:28.143+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=15/prediction.parquet
+[2025-07-31T22:03:28.156+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=15/target.parquet
+[2025-07-31T22:03:28.172+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=14/prediction.parquet
+[2025-07-31T22:03:28.184+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=14/target.parquet
+[2025-07-31T22:03:28.196+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=13/prediction.parquet
+[2025-07-31T22:03:28.208+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=13/target.parquet
+[2025-07-31T22:03:28.219+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=12/prediction.parquet
+[2025-07-31T22:03:28.231+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=12/target.parquet
+[2025-07-31T22:03:28.242+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=11/prediction.parquet
+[2025-07-31T22:03:28.254+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=11/target.parquet
+[2025-07-31T22:03:28.266+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=10/prediction.parquet
+[2025-07-31T22:03:28.278+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=10/target.parquet
+[2025-07-31T22:03:28.290+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=09/prediction.parquet
+[2025-07-31T22:03:28.301+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=09/target.parquet
+[2025-07-31T22:03:28.313+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=08/prediction.parquet
+[2025-07-31T22:03:28.324+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=08/target.parquet
+[2025-07-31T22:03:28.336+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=07/prediction.parquet
+[2025-07-31T22:03:28.349+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=07/target.parquet
+[2025-07-31T22:03:28.360+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=06/prediction.parquet
+[2025-07-31T22:03:28.372+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=06/target.parquet
+[2025-07-31T22:03:28.385+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=05/prediction.parquet
+[2025-07-31T22:03:28.397+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=05/target.parquet
+[2025-07-31T22:03:28.409+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=04/prediction.parquet
+[2025-07-31T22:03:28.421+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=04/target.parquet
+[2025-07-31T22:03:28.434+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=03/prediction.parquet
+[2025-07-31T22:03:28.448+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=03/target.parquet
+[2025-07-31T22:03:28.461+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=02/prediction.parquet
+[2025-07-31T22:03:28.476+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=02/target.parquet
+[2025-07-31T22:03:28.492+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=01/prediction.parquet
+[2025-07-31T22:03:28.508+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=01/target.parquet
+[2025-07-31T22:03:28.524+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-26/hour=00/prediction.parquet
+[2025-07-31T22:03:28.538+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-26/hour=00/target.parquet
+[2025-07-31T22:03:28.551+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=23/prediction.parquet
+[2025-07-31T22:03:28.563+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=23/target.parquet
+[2025-07-31T22:03:28.577+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=22/prediction.parquet
+[2025-07-31T22:03:28.590+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=22/target.parquet
+[2025-07-31T22:03:28.601+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=21/prediction.parquet
+[2025-07-31T22:03:28.613+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=21/target.parquet
+[2025-07-31T22:03:28.627+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=20/prediction.parquet
+[2025-07-31T22:03:28.640+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=20/target.parquet
+[2025-07-31T22:03:28.653+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=19/prediction.parquet
+[2025-07-31T22:03:28.665+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=19/target.parquet
+[2025-07-31T22:03:28.678+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=18/prediction.parquet
+[2025-07-31T22:03:28.690+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=18/target.parquet
+[2025-07-31T22:03:28.701+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=17/prediction.parquet
+[2025-07-31T22:03:28.712+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=17/target.parquet
+[2025-07-31T22:03:28.723+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=16/prediction.parquet
+[2025-07-31T22:03:28.737+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=16/target.parquet
+[2025-07-31T22:03:28.749+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=15/prediction.parquet
+[2025-07-31T22:03:28.760+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=15/target.parquet
+[2025-07-31T22:03:28.771+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=14/prediction.parquet
+[2025-07-31T22:03:28.782+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=14/target.parquet
+[2025-07-31T22:03:28.796+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=13/prediction.parquet
+[2025-07-31T22:03:28.808+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=13/target.parquet
+[2025-07-31T22:03:28.821+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=12/prediction.parquet
+[2025-07-31T22:03:28.832+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=12/target.parquet
+[2025-07-31T22:03:28.847+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=11/prediction.parquet
+[2025-07-31T22:03:28.859+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=11/target.parquet
+[2025-07-31T22:03:28.871+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=10/prediction.parquet
+[2025-07-31T22:03:28.882+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=10/target.parquet
+[2025-07-31T22:03:28.893+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=09/prediction.parquet
+[2025-07-31T22:03:28.905+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=09/target.parquet
+[2025-07-31T22:03:28.919+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=08/prediction.parquet
+[2025-07-31T22:03:28.932+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=08/target.parquet
+[2025-07-31T22:03:28.944+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=07/prediction.parquet
+[2025-07-31T22:03:28.958+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=07/target.parquet
+[2025-07-31T22:03:28.971+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=06/prediction.parquet
+[2025-07-31T22:03:28.983+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=06/target.parquet
+[2025-07-31T22:03:28.995+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=05/prediction.parquet
+[2025-07-31T22:03:29.007+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=05/target.parquet
+[2025-07-31T22:03:29.019+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=04/prediction.parquet
+[2025-07-31T22:03:29.031+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=04/target.parquet
+[2025-07-31T22:03:29.042+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=03/prediction.parquet
+[2025-07-31T22:03:29.054+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=03/target.parquet
+[2025-07-31T22:03:29.067+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=02/prediction.parquet
+[2025-07-31T22:03:29.079+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=02/target.parquet
+[2025-07-31T22:03:29.093+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=01/prediction.parquet
+[2025-07-31T22:03:29.105+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=01/target.parquet
+[2025-07-31T22:03:29.119+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-25/hour=00/prediction.parquet
+[2025-07-31T22:03:29.134+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-25/hour=00/target.parquet
+[2025-07-31T22:03:29.148+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/predictions/date=2025-07-24/hour=23/prediction.parquet
+[2025-07-31T22:03:29.161+0000] {drift_monitoring.py:58} WARNING - File not found: s3://crypto-mlops-bucket/targets/date=2025-07-24/hour=23/target.parquet
+[2025-07-31T22:03:29.171+0000] {drift_monitoring.py:321} INFO - Loaded 5 data points for drift analysis
+[2025-07-31T22:03:29.171+0000] {drift_monitoring.py:329} INFO - Minimum points required per window: 2
+[2025-07-31T22:03:29.179+0000] {drift_monitoring.py:343} INFO - Window 0: MAE = 0.0545 with 5 points
+[2025-07-31T22:03:29.183+0000] {drift_monitoring.py:343} INFO - Window 1: MAE = 0.0545 with 5 points
+[2025-07-31T22:03:29.185+0000] {drift_monitoring.py:343} INFO - Window 2: MAE = 0.0545 with 5 points
+[2025-07-31T22:03:29.188+0000] {drift_monitoring.py:343} INFO - Window 3: MAE = 0.0588 with 4 points
+[2025-07-31T22:03:29.190+0000] {drift_monitoring.py:343} INFO - Window 4: MAE = 0.0762 with 3 points
+[2025-07-31T22:03:29.193+0000] {drift_monitoring.py:343} INFO - Window 5: MAE = 0.0762 with 3 points
+[2025-07-31T22:03:29.195+0000] {drift_monitoring.py:343} INFO - Window 6: MAE = 0.0762 with 3 points
+[2025-07-31T22:03:29.198+0000] {drift_monitoring.py:343} INFO - Window 7: MAE = 0.0762 with 3 points
+[2025-07-31T22:03:29.200+0000] {drift_monitoring.py:343} INFO - Window 8: MAE = 0.0796 with 2 points
+[2025-07-31T22:03:29.211+0000] {drift_monitoring.py:360} INFO - Current MAE: 0.0545
+[2025-07-31T22:03:29.212+0000] {drift_monitoring.py:361} INFO - Mean MAE over analysis period: 0.0674
+[2025-07-31T22:03:29.212+0000] {drift_monitoring.py:362} INFO - Drift threshold: 0.15
+[2025-07-31T22:03:29.213+0000] {drift_monitoring.py:208} INFO - Loading reference metrics from s3://crypto-mlops-bucket/models//metrics/metrics.json
+[2025-07-31T22:03:29.226+0000] {drift_monitoring.py:214} INFO - Loaded reference metrics: {'train_rmse': 0.10132790942815612, 'val_rmse': 0.08004477997499375, 'train_mae': 0.06905127232818739, 'val_mae': 0.05703907570127514, 'train_r2': 0.018434416395335385, 'val_r2': 0.0086746685610547, 'best_iteration': 4}
+[2025-07-31T22:03:29.226+0000] {drift_monitoring.py:369} INFO - Reference MAE: 0.0570
+[2025-07-31T22:03:29.227+0000] {drift_monitoring.py:372} INFO - MAE degradation vs reference: -4.41%
+[2025-07-31T22:03:29.228+0000] {drift_monitoring.py:82} INFO - Searching for reference files with prefix: models//reference/
+[2025-07-31T22:03:29.244+0000] {drift_monitoring.py:107} INFO - Found 2 files in reference directory
+[2025-07-31T22:03:29.245+0000] {drift_monitoring.py:120} INFO - Found run_id: c22d2fb8a0c54cd9be9be996e63addeb (modified: 2025-07-31 21:37:52+00:00)
+[2025-07-31T22:03:29.246+0000] {drift_monitoring.py:131} INFO - Latest run_id selected: c22d2fb8a0c54cd9be9be996e63addeb
+[2025-07-31T22:03:29.247+0000] {drift_monitoring.py:149} INFO - Loading reference data for run_id: c22d2fb8a0c54cd9be9be996e63addeb
+[2025-07-31T22:03:29.247+0000] {drift_monitoring.py:155} INFO - Trying to load train data from: s3://crypto-mlops-bucket/models//reference/train_c22d2fb8a0c54cd9be9be996e63addeb.csv
+[2025-07-31T22:03:29.248+0000] {drift_monitoring.py:156} INFO - Trying to load val data from: s3://crypto-mlops-bucket/models//reference/val_c22d2fb8a0c54cd9be9be996e63addeb.csv
+[2025-07-31T22:03:29.535+0000] {drift_monitoring.py:182} INFO - Loaded training reference data: 6964 rows, columns: ['low', 'high', 'open', 'close', 'volume', 'price_change', 'volume_change', 'high_low_ratio', 'close_open_ratio', 'price_range', 'sma_5', 'ema_5', 'volume_sma_5', 'price_vs_sma_5', 'price_vs_ema_5', 'sma_10', 'ema_10', 'volume_sma_10', 'price_vs_sma_10', 'price_vs_ema_10', 'sma_20', 'ema_20', 'volume_sma_20', 'price_vs_sma_20', 'price_vs_ema_20', 'sma_50', 'ema_50', 'volume_sma_50', 'price_vs_sma_50', 'price_vs_ema_50', 'macd', 'macd_signal', 'rsi', 'bbands_upper', 'bbands_lower', 'bbands_position', 'atr', 'volume_sma_ratio', 'close_lag_1', 'volume_lag_1', 'rsi_lag_1', 'price_change_lag_1', 'close_lag_2', 'volume_lag_2', 'rsi_lag_2', 'price_change_lag_2', 'close_lag_3', 'volume_lag_3', 'rsi_lag_3', 'price_change_lag_3', 'close_lag_5', 'volume_lag_5', 'rsi_lag_5', 'price_change_lag_5', 'close_lag_10', 'volume_lag_10', 'rsi_lag_10', 'price_change_lag_10', 'close_std_5', 'volume_std_5', 'price_change_std_5', 'close_min_5', 'close_max_5', 'close_position_5', 'close_std_10', 'volume_std_10', 'price_change_std_10', 'close_min_10', 'close_max_10', 'close_position_10', 'close_std_20', 'volume_std_20', 'price_change_std_20', 'close_min_20', 'close_max_20', 'close_position_20', 'hour', 'day_of_week', 'day_of_month', 'month', 'target']
+[2025-07-31T22:03:29.645+0000] {drift_monitoring.py:183} INFO - Train data sample:
+        low      high      open  ...  day_of_month  month    target
+0 -1.841472 -1.805576 -1.842404  ...     -1.754518    0.0  0.175052
+1 -1.790232 -1.760827 -1.795628  ...     -1.754518    0.0 -0.128173
+2 -1.787269 -1.762919 -1.756692  ...     -1.754518    0.0  0.034480
+3 -1.788614 -1.787585 -1.785251  ...     -1.754518    0.0  0.058501
+4 -1.772529 -1.766365 -1.777579  ...     -1.754518    0.0 -0.015417
+
+[5 rows x 81 columns]
+[2025-07-31T22:03:29.646+0000] {drift_monitoring.py:187} INFO - Loaded validation reference data: 1741 rows, columns: ['low', 'high', 'open', 'close', 'volume', 'price_change', 'volume_change', 'high_low_ratio', 'close_open_ratio', 'price_range', 'sma_5', 'ema_5', 'volume_sma_5', 'price_vs_sma_5', 'price_vs_ema_5', 'sma_10', 'ema_10', 'volume_sma_10', 'price_vs_sma_10', 'price_vs_ema_10', 'sma_20', 'ema_20', 'volume_sma_20', 'price_vs_sma_20', 'price_vs_ema_20', 'sma_50', 'ema_50', 'volume_sma_50', 'price_vs_sma_50', 'price_vs_ema_50', 'macd', 'macd_signal', 'rsi', 'bbands_upper', 'bbands_lower', 'bbands_position', 'atr', 'volume_sma_ratio', 'close_lag_1', 'volume_lag_1', 'rsi_lag_1', 'price_change_lag_1', 'close_lag_2', 'volume_lag_2', 'rsi_lag_2', 'price_change_lag_2', 'close_lag_3', 'volume_lag_3', 'rsi_lag_3', 'price_change_lag_3', 'close_lag_5', 'volume_lag_5', 'rsi_lag_5', 'price_change_lag_5', 'close_lag_10', 'volume_lag_10', 'rsi_lag_10', 'price_change_lag_10', 'close_std_5', 'volume_std_5', 'price_change_std_5', 'close_min_5', 'close_max_5', 'close_position_5', 'close_std_10', 'volume_std_10', 'price_change_std_10', 'close_min_10', 'close_max_10', 'close_position_10', 'close_std_20', 'volume_std_20', 'price_change_std_20', 'close_min_20', 'close_max_20', 'close_position_20', 'hour', 'day_of_week', 'day_of_month', 'month', 'target']
+[2025-07-31T22:03:29.728+0000] {drift_monitoring.py:188} INFO - Val data sample:
+        low      high      open  ...  day_of_month  month    target
+0  0.449971  0.437625  0.438066  ...      1.680529    0.0  0.171906
+1  0.455119  0.481476  0.440506  ...      1.680529    0.0  0.095171
+2  0.491786  0.496878  0.480838  ...      1.680529    0.0  0.173062
+3  0.522652  0.534575  0.505913  ...      1.680529    0.0  0.004945
+4  0.561805  0.547110  0.548390  ...      1.680529    0.0 -0.151022
+
+[5 rows x 81 columns]
+[2025-07-31T22:03:29.732+0000] {drift_monitoring.py:193} INFO - Combined reference data: 8705 rows, columns: ['low', 'high', 'open', 'close', 'volume', 'price_change', 'volume_change', 'high_low_ratio', 'close_open_ratio', 'price_range', 'sma_5', 'ema_5', 'volume_sma_5', 'price_vs_sma_5', 'price_vs_ema_5', 'sma_10', 'ema_10', 'volume_sma_10', 'price_vs_sma_10', 'price_vs_ema_10', 'sma_20', 'ema_20', 'volume_sma_20', 'price_vs_sma_20', 'price_vs_ema_20', 'sma_50', 'ema_50', 'volume_sma_50', 'price_vs_sma_50', 'price_vs_ema_50', 'macd', 'macd_signal', 'rsi', 'bbands_upper', 'bbands_lower', 'bbands_position', 'atr', 'volume_sma_ratio', 'close_lag_1', 'volume_lag_1', 'rsi_lag_1', 'price_change_lag_1', 'close_lag_2', 'volume_lag_2', 'rsi_lag_2', 'price_change_lag_2', 'close_lag_3', 'volume_lag_3', 'rsi_lag_3', 'price_change_lag_3', 'close_lag_5', 'volume_lag_5', 'rsi_lag_5', 'price_change_lag_5', 'close_lag_10', 'volume_lag_10', 'rsi_lag_10', 'price_change_lag_10', 'close_std_5', 'volume_std_5', 'price_change_std_5', 'close_min_5', 'close_max_5', 'close_position_5', 'close_std_10', 'volume_std_10', 'price_change_std_10', 'close_min_10', 'close_max_10', 'close_position_10', 'close_std_20', 'volume_std_20', 'price_change_std_20', 'close_min_20', 'close_max_20', 'close_position_20', 'hour', 'day_of_week', 'day_of_month', 'month', 'target']
+[2025-07-31T22:03:29.817+0000] {drift_monitoring.py:194} INFO - Combined data sample:
+        low      high      open  ...  day_of_month  month    target
+0 -1.841472 -1.805576 -1.842404  ...     -1.754518    0.0  0.175052
+1 -1.790232 -1.760827 -1.795628  ...     -1.754518    0.0 -0.128173
+2 -1.787269 -1.762919 -1.756692  ...     -1.754518    0.0  0.034480
+3 -1.788614 -1.787585 -1.785251  ...     -1.754518    0.0  0.058501
+4 -1.772529 -1.766365 -1.777579  ...     -1.754518    0.0 -0.015417
+
+[5 rows x 81 columns]
+[2025-07-31T22:03:29.818+0000] {drift_monitoring.py:385} INFO - Current data for Evidently: ['prediction', 'target', 'timestamp']
+[2025-07-31T22:03:29.819+0000] {drift_monitoring.py:386} INFO - Reference data columns: ['low', 'high', 'open', 'close', 'volume', 'price_change', 'volume_change', 'high_low_ratio', 'close_open_ratio', 'price_range', 'sma_5', 'ema_5', 'volume_sma_5', 'price_vs_sma_5', 'price_vs_ema_5', 'sma_10', 'ema_10', 'volume_sma_10', 'price_vs_sma_10', 'price_vs_ema_10', 'sma_20', 'ema_20', 'volume_sma_20', 'price_vs_sma_20', 'price_vs_ema_20', 'sma_50', 'ema_50', 'volume_sma_50', 'price_vs_sma_50', 'price_vs_ema_50', 'macd', 'macd_signal', 'rsi', 'bbands_upper', 'bbands_lower', 'bbands_position', 'atr', 'volume_sma_ratio', 'close_lag_1', 'volume_lag_1', 'rsi_lag_1', 'price_change_lag_1', 'close_lag_2', 'volume_lag_2', 'rsi_lag_2', 'price_change_lag_2', 'close_lag_3', 'volume_lag_3', 'rsi_lag_3', 'price_change_lag_3', 'close_lag_5', 'volume_lag_5', 'rsi_lag_5', 'price_change_lag_5', 'close_lag_10', 'volume_lag_10', 'rsi_lag_10', 'price_change_lag_10', 'close_std_5', 'volume_std_5', 'price_change_std_5', 'close_min_5', 'close_max_5', 'close_position_5', 'close_std_10', 'volume_std_10', 'price_change_std_10', 'close_min_10', 'close_max_10', 'close_position_10', 'close_std_20', 'volume_std_20', 'price_change_std_20', 'close_min_20', 'close_max_20', 'close_position_20', 'hour', 'day_of_week', 'day_of_month', 'month', 'target']
+[2025-07-31T22:03:29.824+0000] {drift_monitoring.py:245} INFO - Current data columns: ['prediction', 'target']
+[2025-07-31T22:03:29.825+0000] {drift_monitoring.py:246} INFO - Reference data columns: ['low', 'high', 'open', 'close', 'volume', 'price_change', 'volume_change', 'high_low_ratio', 'close_open_ratio', 'price_range', 'sma_5', 'ema_5', 'volume_sma_5', 'price_vs_sma_5', 'price_vs_ema_5', 'sma_10', 'ema_10', 'volume_sma_10', 'price_vs_sma_10', 'price_vs_ema_10', 'sma_20', 'ema_20', 'volume_sma_20', 'price_vs_sma_20', 'price_vs_ema_20', 'sma_50', 'ema_50', 'volume_sma_50', 'price_vs_sma_50', 'price_vs_ema_50', 'macd', 'macd_signal', 'rsi', 'bbands_upper', 'bbands_lower', 'bbands_position', 'atr', 'volume_sma_ratio', 'close_lag_1', 'volume_lag_1', 'rsi_lag_1', 'price_change_lag_1', 'close_lag_2', 'volume_lag_2', 'rsi_lag_2', 'price_change_lag_2', 'close_lag_3', 'volume_lag_3', 'rsi_lag_3', 'price_change_lag_3', 'close_lag_5', 'volume_lag_5', 'rsi_lag_5', 'price_change_lag_5', 'close_lag_10', 'volume_lag_10', 'rsi_lag_10', 'price_change_lag_10', 'close_std_5', 'volume_std_5', 'price_change_std_5', 'close_min_5', 'close_max_5', 'close_position_5', 'close_std_10', 'volume_std_10', 'price_change_std_10', 'close_min_10', 'close_max_10', 'close_position_10', 'close_std_20', 'volume_std_20', 'price_change_std_20', 'close_min_20', 'close_max_20', 'close_position_20', 'hour', 'day_of_week', 'day_of_month', 'month', 'target']
+[2025-07-31T22:03:29.827+0000] {drift_monitoring.py:267} INFO - Generating Evidently report with 8705 reference rows and 5 current rows
+[2025-07-31T22:03:29.832+0000] {drift_monitoring.py:268} INFO - Reference data sample:
+     target  prediction
+0  0.175052    0.175052
+1 -0.128173   -0.128173
+2  0.034480    0.034480
+3  0.058501    0.058501
+4 -0.015417   -0.015417
+[2025-07-31T22:03:29.835+0000] {drift_monitoring.py:269} INFO - Current data sample:
+     target  prediction
+0 -0.145986   -0.012425
+0  0.025355   -0.000363
+0  0.065420   -0.003891
+0  0.002788   -0.003801
+0  0.083989    0.046543
+[2025-07-31T22:03:29.889+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_regression.py:492 FutureWarning: 'squared' is deprecated in version 1.4 and will be removed in 1.6. To calculate the root mean squared error, use the function'root_mean_squared_error'.
+[2025-07-31T22:03:29.892+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_regression.py:492 FutureWarning: 'squared' is deprecated in version 1.4 and will be removed in 1.6. To calculate the root mean squared error, use the function'root_mean_squared_error'.
+[2025-07-31T22:03:29.894+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_regression.py:492 FutureWarning: 'squared' is deprecated in version 1.4 and will be removed in 1.6. To calculate the root mean squared error, use the function'root_mean_squared_error'.
+[2025-07-31T22:03:29.915+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_regression.py:1211 UndefinedMetricWarning: R^2 score is not well-defined with less than two samples.
+[2025-07-31T22:03:29.919+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_regression.py:1211 UndefinedMetricWarning: R^2 score is not well-defined with less than two samples.
+[2025-07-31T22:03:29.925+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_regression.py:492 FutureWarning: 'squared' is deprecated in version 1.4 and will be removed in 1.6. To calculate the root mean squared error, use the function'root_mean_squared_error'.
+[2025-07-31T22:03:29.927+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_regression.py:492 FutureWarning: 'squared' is deprecated in version 1.4 and will be removed in 1.6. To calculate the root mean squared error, use the function'root_mean_squared_error'.
+[2025-07-31T22:03:29.929+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_regression.py:492 FutureWarning: 'squared' is deprecated in version 1.4 and will be removed in 1.6. To calculate the root mean squared error, use the function'root_mean_squared_error'.
+[2025-07-31T22:03:29.932+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_regression.py:492 FutureWarning: 'squared' is deprecated in version 1.4 and will be removed in 1.6. To calculate the root mean squared error, use the function'root_mean_squared_error'.
+[2025-07-31T22:03:29.934+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_regression.py:492 FutureWarning: 'squared' is deprecated in version 1.4 and will be removed in 1.6. To calculate the root mean squared error, use the function'root_mean_squared_error'.
+[2025-07-31T22:03:29.936+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_regression.py:492 FutureWarning: 'squared' is deprecated in version 1.4 and will be removed in 1.6. To calculate the root mean squared error, use the function'root_mean_squared_error'.
+[2025-07-31T22:03:29.938+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_regression.py:492 FutureWarning: 'squared' is deprecated in version 1.4 and will be removed in 1.6. To calculate the root mean squared error, use the function'root_mean_squared_error'.
+[2025-07-31T22:03:29.942+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_regression.py:492 FutureWarning: 'squared' is deprecated in version 1.4 and will be removed in 1.6. To calculate the root mean squared error, use the function'root_mean_squared_error'.
+[2025-07-31T22:03:29.944+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_regression.py:492 FutureWarning: 'squared' is deprecated in version 1.4 and will be removed in 1.6. To calculate the root mean squared error, use the function'root_mean_squared_error'.
+[2025-07-31T22:03:30.461+0000] {drift_monitoring.py:274} INFO - Evidently performance report saved at /opt/***/dags/reports/drift_report_202507312200.html
+[2025-07-31T22:03:30.464+0000] {drift_monitoring.py:410} INFO - No significant drift detected.
+[2025-07-31T22:03:30.464+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-31T22:03:30.465+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-31T22:03:30.477+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=drift_monitoring_dag, task_id=check_drift_and_trigger, execution_date=20250731T220320, start_date=20250731T220324, end_date=20250731T220330
+[2025-07-31T22:03:30.536+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-31T22:03:30.554+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-31T22:03:30.558+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

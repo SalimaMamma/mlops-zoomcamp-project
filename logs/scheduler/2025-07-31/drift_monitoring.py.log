@@ -5398,3 +5398,408 @@ We expect that some modules will need time to support NumPy 2.
 [2025-07-31T08:43:21.282+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:43:21.281+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2025-07-31T08:43:21.304+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:43:21.304+0000] {dag.py:3954} INFO - Setting next_dagrun for drift_monitoring to 2025-07-31 08:00:00+00:00, run_after=2025-07-31 09:00:00+00:00
 [2025-07-31T08:43:21.346+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/drift_monitoring.py took 4.754 seconds
+[2025-07-31T08:43:51.568+0000] {processor.py:161} INFO - Started process (PID=3196) to work on /opt/airflow/dags/drift_monitoring.py
+[2025-07-31T08:43:51.570+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/drift_monitoring.py for tasks to queue
+[2025-07-31T08:43:51.571+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:43:51.571+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/drift_monitoring.py
+[2025-07-31T08:43:53.140+0000] {logging_mixin.py:188} WARNING - 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/__main__.py", line 58, in main
+    args.func(args)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 114, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/scheduler_command.py", line 58, in scheduler
+    run_command_with_daemon_option(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/daemon_utils.py", line 85, in run_command_with_daemon_option
+    callback()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/scheduler_command.py", line 61, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/scheduler_command.py", line 49, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/job.py", line 402, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/job.py", line 431, in execute_job
+    ret = execute_callable()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/scheduler_job_runner.py", line 839, in _execute
+    self.processor_agent.start()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 168, in start
+    process.start()
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.12/multiprocessing/context.py", line 282, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.12/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.12/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 241, in _run_processor_manager
+    processor_manager.start()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 476, in start
+    return self._run_parsing_loop()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 619, in _run_parsing_loop
+    self.start_new_processes()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1087, in start_new_processes
+    processor.start()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 238, in start
+    process.start()
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.12/multiprocessing/context.py", line 282, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.12/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.12/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 182, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 163, in _handle_dag_file_processing
+    result: tuple[int, int] = dag_file_processor.process_file(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 833, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 797, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 147, in __init__
+    self.collect_dags(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 554, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 313, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 376, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "/opt/airflow/dags/drift_monitoring.py", line 20, in <module>
+    from evidently.report import Report
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/report/report.py", line 20, in <module>
+    from evidently.metric_preset.metric_preset import MetricPreset
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/metric_preset/__init__.py", line 2, in <module>
+    from .classification_performance import ClassificationPreset
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/metric_preset/classification_performance.py", line 8, in <module>
+    from evidently.metrics import ClassificationClassBalance
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/metrics/__init__.py", line 17, in <module>
+    from .classification_performance.probability_distribution_metric import ClassificationProbDistribution
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/metrics/classification_performance/probability_distribution_metric.py", line 8, in <module>
+    from plotly import figure_factory as ff
+  File "/home/airflow/.local/lib/python3.12/site-packages/plotly/figure_factory/__init__.py", line 31, in <module>
+    from plotly.figure_factory._county_choropleth import create_choropleth
+  File "/home/airflow/.local/lib/python3.12/site-packages/plotly/figure_factory/_county_choropleth.py", line 18, in <module>
+    shapely = optional_imports.get_module("shapely")
+  File "/home/airflow/.local/lib/python3.12/site-packages/_plotly_utils/optional_imports.py", line 28, in get_module
+    return import_module(name)
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/airflow/.local/lib/python3.12/site-packages/shapely/__init__.py", line 1, in <module>
+    from shapely.lib import GEOSException  # NOQA
+[2025-07-31T08:43:53.141+0000] {logging_mixin.py:188} WARNING - Traceback (most recent call last):
+[2025-07-31T08:43:53.142+0000] {logging_mixin.py:188} WARNING -   File "/home/airflow/.local/lib/python3.12/site-packages/numpy/core/_multiarray_umath.py", line 44, in __getattr__
+[2025-07-31T08:43:53.142+0000] {logging_mixin.py:188} WARNING -     raise ImportError(msg)
+[2025-07-31T08:43:53.143+0000] {logging_mixin.py:188} WARNING - ImportError: 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+[2025-07-31T08:43:55.678+0000] {processor.py:840} INFO - DAG(s) 'drift_monitoring' retrieved from /opt/airflow/dags/drift_monitoring.py
+[2025-07-31T08:43:55.702+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:43:55.701+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-31T08:43:55.726+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:43:55.726+0000] {dag.py:3954} INFO - Setting next_dagrun for drift_monitoring to 2025-07-31 08:00:00+00:00, run_after=2025-07-31 09:00:00+00:00
+[2025-07-31T08:43:55.747+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/drift_monitoring.py took 4.186 seconds
+[2025-07-31T08:44:26.119+0000] {processor.py:161} INFO - Started process (PID=3262) to work on /opt/airflow/dags/drift_monitoring.py
+[2025-07-31T08:44:26.121+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/drift_monitoring.py for tasks to queue
+[2025-07-31T08:44:26.123+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:44:26.123+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/drift_monitoring.py
+[2025-07-31T08:44:28.345+0000] {logging_mixin.py:188} WARNING - 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/__main__.py", line 58, in main
+    args.func(args)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 114, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/scheduler_command.py", line 58, in scheduler
+    run_command_with_daemon_option(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/daemon_utils.py", line 85, in run_command_with_daemon_option
+    callback()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/scheduler_command.py", line 61, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/scheduler_command.py", line 49, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/job.py", line 402, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/job.py", line 431, in execute_job
+    ret = execute_callable()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/scheduler_job_runner.py", line 839, in _execute
+    self.processor_agent.start()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 168, in start
+    process.start()
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.12/multiprocessing/context.py", line 282, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.12/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.12/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 241, in _run_processor_manager
+    processor_manager.start()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 476, in start
+    return self._run_parsing_loop()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 619, in _run_parsing_loop
+    self.start_new_processes()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1087, in start_new_processes
+    processor.start()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 238, in start
+    process.start()
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.12/multiprocessing/context.py", line 282, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.12/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.12/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 182, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 163, in _handle_dag_file_processing
+    result: tuple[int, int] = dag_file_processor.process_file(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 833, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 797, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 147, in __init__
+    self.collect_dags(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 554, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 313, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 376, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "/opt/airflow/dags/drift_monitoring.py", line 20, in <module>
+    from evidently.report import Report
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/report/report.py", line 20, in <module>
+    from evidently.metric_preset.metric_preset import MetricPreset
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/metric_preset/__init__.py", line 2, in <module>
+    from .classification_performance import ClassificationPreset
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/metric_preset/classification_performance.py", line 8, in <module>
+    from evidently.metrics import ClassificationClassBalance
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/metrics/__init__.py", line 17, in <module>
+    from .classification_performance.probability_distribution_metric import ClassificationProbDistribution
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/metrics/classification_performance/probability_distribution_metric.py", line 8, in <module>
+    from plotly import figure_factory as ff
+  File "/home/airflow/.local/lib/python3.12/site-packages/plotly/figure_factory/__init__.py", line 31, in <module>
+    from plotly.figure_factory._county_choropleth import create_choropleth
+  File "/home/airflow/.local/lib/python3.12/site-packages/plotly/figure_factory/_county_choropleth.py", line 18, in <module>
+    shapely = optional_imports.get_module("shapely")
+  File "/home/airflow/.local/lib/python3.12/site-packages/_plotly_utils/optional_imports.py", line 28, in get_module
+    return import_module(name)
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/airflow/.local/lib/python3.12/site-packages/shapely/__init__.py", line 1, in <module>
+    from shapely.lib import GEOSException  # NOQA
+[2025-07-31T08:44:28.346+0000] {logging_mixin.py:188} WARNING - Traceback (most recent call last):
+[2025-07-31T08:44:28.346+0000] {logging_mixin.py:188} WARNING -   File "/home/airflow/.local/lib/python3.12/site-packages/numpy/core/_multiarray_umath.py", line 44, in __getattr__
+[2025-07-31T08:44:28.347+0000] {logging_mixin.py:188} WARNING -     raise ImportError(msg)
+[2025-07-31T08:44:28.348+0000] {logging_mixin.py:188} WARNING - ImportError: 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+[2025-07-31T08:44:30.786+0000] {processor.py:840} INFO - DAG(s) 'drift_monitoring' retrieved from /opt/airflow/dags/drift_monitoring.py
+[2025-07-31T08:44:31.091+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:44:31.090+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-31T08:44:31.115+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:44:31.115+0000] {dag.py:3954} INFO - Setting next_dagrun for drift_monitoring to 2025-07-31 08:00:00+00:00, run_after=2025-07-31 09:00:00+00:00
+[2025-07-31T08:44:31.140+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/drift_monitoring.py took 5.031 seconds
+[2025-07-31T08:45:01.510+0000] {processor.py:161} INFO - Started process (PID=3328) to work on /opt/airflow/dags/drift_monitoring.py
+[2025-07-31T08:45:01.512+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/drift_monitoring.py for tasks to queue
+[2025-07-31T08:45:01.514+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:45:01.514+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/drift_monitoring.py
+[2025-07-31T08:45:03.483+0000] {logging_mixin.py:188} WARNING - 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/__main__.py", line 58, in main
+    args.func(args)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 114, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/scheduler_command.py", line 58, in scheduler
+    run_command_with_daemon_option(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/daemon_utils.py", line 85, in run_command_with_daemon_option
+    callback()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/scheduler_command.py", line 61, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/scheduler_command.py", line 49, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/job.py", line 402, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/job.py", line 431, in execute_job
+    ret = execute_callable()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/scheduler_job_runner.py", line 839, in _execute
+    self.processor_agent.start()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 168, in start
+    process.start()
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.12/multiprocessing/context.py", line 282, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.12/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.12/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 241, in _run_processor_manager
+    processor_manager.start()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 476, in start
+    return self._run_parsing_loop()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 619, in _run_parsing_loop
+    self.start_new_processes()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1087, in start_new_processes
+    processor.start()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 238, in start
+    process.start()
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.12/multiprocessing/context.py", line 282, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.12/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.12/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 182, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 163, in _handle_dag_file_processing
+    result: tuple[int, int] = dag_file_processor.process_file(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 833, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 797, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 147, in __init__
+    self.collect_dags(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 554, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 313, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 376, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "/opt/airflow/dags/drift_monitoring.py", line 20, in <module>
+    from evidently.report import Report
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/report/__init__.py", line 1, in <module>
+    from .report import Report
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/report/report.py", line 20, in <module>
+    from evidently.metric_preset.metric_preset import MetricPreset
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/metric_preset/__init__.py", line 2, in <module>
+    from .classification_performance import ClassificationPreset
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/metric_preset/classification_performance.py", line 8, in <module>
+    from evidently.metrics import ClassificationClassBalance
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/metrics/__init__.py", line 17, in <module>
+    from .classification_performance.probability_distribution_metric import ClassificationProbDistribution
+  File "/home/airflow/.local/lib/python3.12/site-packages/evidently/metrics/classification_performance/probability_distribution_metric.py", line 8, in <module>
+    from plotly import figure_factory as ff
+  File "/home/airflow/.local/lib/python3.12/site-packages/plotly/figure_factory/__init__.py", line 31, in <module>
+    from plotly.figure_factory._county_choropleth import create_choropleth
+  File "/home/airflow/.local/lib/python3.12/site-packages/plotly/figure_factory/_county_choropleth.py", line 18, in <module>
+    shapely = optional_imports.get_module("shapely")
+  File "/home/airflow/.local/lib/python3.12/site-packages/_plotly_utils/optional_imports.py", line 28, in get_module
+    return import_module(name)
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/airflow/.local/lib/python3.12/site-packages/shapely/__init__.py", line 1, in <module>
+    from shapely.lib import GEOSException  # NOQA
+[2025-07-31T08:45:03.484+0000] {logging_mixin.py:188} WARNING - Traceback (most recent call last):
+[2025-07-31T08:45:03.485+0000] {logging_mixin.py:188} WARNING -   File "/home/airflow/.local/lib/python3.12/site-packages/numpy/core/_multiarray_umath.py", line 44, in __getattr__
+[2025-07-31T08:45:03.486+0000] {logging_mixin.py:188} WARNING -     raise ImportError(msg)
+[2025-07-31T08:45:03.486+0000] {logging_mixin.py:188} WARNING - ImportError: 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+[2025-07-31T08:45:06.060+0000] {processor.py:840} INFO - DAG(s) 'drift_monitoring' retrieved from /opt/airflow/dags/drift_monitoring.py
+[2025-07-31T08:45:06.092+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:45:06.091+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-31T08:45:06.120+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:45:06.119+0000] {dag.py:3954} INFO - Setting next_dagrun for drift_monitoring to 2025-07-31 08:00:00+00:00, run_after=2025-07-31 09:00:00+00:00
+[2025-07-31T08:45:06.159+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/drift_monitoring.py took 4.660 seconds

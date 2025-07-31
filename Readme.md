@@ -60,9 +60,8 @@ A robust, production-grade MLOps pipeline for real-time **cryptocurrency price v
 ┌────────────── Airflow ──────────────┐
 │ Ingestion DAG │ Training DAG │ Drift Monitoring DAG │
 
+```
 
-
----
 
 ## 📋 Key DAGs Explained
 

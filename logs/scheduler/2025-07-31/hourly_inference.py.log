@@ -266,3 +266,31 @@
 [2025-07-31T08:43:01.924+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:43:01.923+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2025-07-31T08:43:01.963+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:43:01.963+0000] {dag.py:3954} INFO - Setting next_dagrun for preprocessing_hourly to 2025-07-31 08:00:00+00:00, run_after=2025-07-31 09:00:00+00:00
 [2025-07-31T08:43:01.989+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/hourly_inference.py took 3.957 seconds
+[2025-07-31T08:43:32.704+0000] {processor.py:161} INFO - Started process (PID=3152) to work on /opt/airflow/dags/hourly_inference.py
+[2025-07-31T08:43:32.706+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/hourly_inference.py for tasks to queue
+[2025-07-31T08:43:32.710+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:43:32.709+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/hourly_inference.py
+[2025-07-31T08:43:37.107+0000] {processor.py:840} INFO - DAG(s) 'preprocessing_hourly' retrieved from /opt/airflow/dags/hourly_inference.py
+[2025-07-31T08:43:37.199+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:43:37.198+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-31T08:43:37.235+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:43:37.235+0000] {dag.py:3954} INFO - Setting next_dagrun for preprocessing_hourly to 2025-07-31 08:00:00+00:00, run_after=2025-07-31 09:00:00+00:00
+[2025-07-31T08:43:37.265+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/hourly_inference.py took 4.570 seconds
+[2025-07-31T08:44:08.062+0000] {processor.py:161} INFO - Started process (PID=3218) to work on /opt/airflow/dags/hourly_inference.py
+[2025-07-31T08:44:08.063+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/hourly_inference.py for tasks to queue
+[2025-07-31T08:44:08.066+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:44:08.065+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/hourly_inference.py
+[2025-07-31T08:44:09.474+0000] {processor.py:840} INFO - DAG(s) 'preprocessing_hourly' retrieved from /opt/airflow/dags/hourly_inference.py
+[2025-07-31T08:44:09.508+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:44:09.507+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-31T08:44:09.545+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:44:09.545+0000] {dag.py:3954} INFO - Setting next_dagrun for preprocessing_hourly to 2025-07-31 08:00:00+00:00, run_after=2025-07-31 09:00:00+00:00
+[2025-07-31T08:44:09.573+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/hourly_inference.py took 3.551 seconds
+[2025-07-31T08:44:40.406+0000] {processor.py:161} INFO - Started process (PID=3284) to work on /opt/airflow/dags/hourly_inference.py
+[2025-07-31T08:44:40.407+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/hourly_inference.py for tasks to queue
+[2025-07-31T08:44:40.410+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:44:40.410+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/hourly_inference.py
+[2025-07-31T08:44:44.024+0000] {processor.py:840} INFO - DAG(s) 'preprocessing_hourly' retrieved from /opt/airflow/dags/hourly_inference.py
+[2025-07-31T08:44:44.058+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:44:44.057+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-31T08:44:44.092+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:44:44.092+0000] {dag.py:3954} INFO - Setting next_dagrun for preprocessing_hourly to 2025-07-31 08:00:00+00:00, run_after=2025-07-31 09:00:00+00:00
+[2025-07-31T08:44:44.114+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/hourly_inference.py took 3.717 seconds
+[2025-07-31T08:45:14.384+0000] {processor.py:161} INFO - Started process (PID=3350) to work on /opt/airflow/dags/hourly_inference.py
+[2025-07-31T08:45:14.386+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/hourly_inference.py for tasks to queue
+[2025-07-31T08:45:14.389+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:45:14.389+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/hourly_inference.py
+[2025-07-31T08:45:18.269+0000] {processor.py:840} INFO - DAG(s) 'preprocessing_hourly' retrieved from /opt/airflow/dags/hourly_inference.py
+[2025-07-31T08:45:18.311+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:45:18.310+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-31T08:45:18.336+0000] {logging_mixin.py:188} INFO - [2025-07-31T08:45:18.336+0000] {dag.py:3954} INFO - Setting next_dagrun for preprocessing_hourly to 2025-07-31 08:00:00+00:00, run_after=2025-07-31 09:00:00+00:00
+[2025-07-31T08:45:18.376+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/hourly_inference.py took 4.001 seconds
